@@ -1,0 +1,24 @@
+<div class="mat-elevation-z8">
+    <mat-accordion [displayMode]="'flat'" *ngIf="br && br.SelectedPrimaryMenu">
+        <mat-expansion-panel *ngFor="let item of br.SelectedPrimaryMenu.children; let i = index" [expanded]="(br.SelectedSecondaryMenu && item.id===br.SelectedSecondaryMenu.id) || i === 0">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{item.displayTag}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <div *ngFor="let subitem of item.children">
+                <button mat-raised-button [color]="IsSelected(subitem)?'accent':'basic'" (click)="MenuClicked(subitem,item)" class="full-width">
+                  {{subitem.displayTag}}
+                  <ng-container *ngIf="subitem.icon!=null">
+                    <small class="badge" color="primary">
+                      <div>
+                        <span color="primary">{{subitem.icon}}</span>
+                      </div>
+                    </small>
+                  </ng-container>
+                </button>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

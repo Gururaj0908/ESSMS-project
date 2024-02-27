@@ -1,0 +1,36 @@
+.menuToggler {
+  width: 1%;
+}
+
+.logo {
+  align-content: center;  
+  margin-top: -10px;
+}
+
+.userMenu {
+  float: right;
+  margin-top: 5px;
+}
+.menuToggler{
+  float: left;
+  margin: 5px 0;
+}
+.logo-container{
+  text-align: center;
+  height: 60px;
+  overflow: hidden;
+}
+.account-container{
+  display: block;
+  right: 0;
+  top: 0;
+
+  position: absolute;
+}
+.header-container{
+  display:flex;
+}
+
+.dspl{
+color: rgba(0, 0, 0, 0.54);
+}

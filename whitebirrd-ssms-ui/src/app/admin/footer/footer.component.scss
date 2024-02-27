@@ -1,0 +1,24 @@
+.sticky-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-top: rgba(0,0,0,0.54) thin solid;
+}
+table{
+    width: 100%;
+    font-size: small;
+}
+td{
+    width: 33.33%;
+}
+td:nth-child(2){
+    text-align: center;
+}
+td:last-child{
+    text-align: right;
+}
+mat-toolbar{
+    height: 20.8px;
+}

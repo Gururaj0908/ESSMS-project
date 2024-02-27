@@ -1,0 +1,80 @@
+/*
+Login template using Angular Material
+*/
+@import '../ecommerce/ecommerce.component.scss';
+
+.forget-password{
+  text-align: center;
+  color: #673ab7;
+  text-decoration: underline;
+}
+.logo-text{
+  font-size: 35px;
+  text-align: center;
+  color: rgb(150, 150, 150);
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+.login-container{
+  width: 400px;
+margin: 0 auto;
+height: 585px;
+background: #f1f1f1;
+padding: 20px;
+margin-bottom: 50px;
+margin-top: 20px;
+}
+.appHeader {
+  color: #fff;
+  // background-color: #e91e63;
+  text-align: center;
+  padding: 1%;
+  -webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+  box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+}
+
+.loginCard {
+  max-width: 100%;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  box-shadow: none!important;
+  flex-direction: column;
+}
+
+.custom-login-tab{
+  width:50%!important;
+}
+  
+// .registerCard {
+//   max-width: 28%;
+//   margin: 2em auto;
+//   text-align: center;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .fieldIcon {
+//   // margin-right: 10px;
+// }
+
+.mat-tooltip {
+  /* your own custom styles here */ 
+  /* e.g. */
+  color: yellow;
+}
+
+#logo {
+	font-weight: 900;
+	padding: 15px 10px;
+	display: block;
+}
+.mat-tab-body-wrapper{
+  width:400px;
+}
+.mat-form-field{
+  width:100%;
+}

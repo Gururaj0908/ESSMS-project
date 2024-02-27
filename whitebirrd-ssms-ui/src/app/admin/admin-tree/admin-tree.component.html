@@ -1,0 +1,16 @@
+<app-tree-area #tree [Data]="Data" [UpdateNodeAllowed]="updateAllowed" [CreateNodeAllowed]="createAllowed" [DeleteNodeAllowed]="deleteAllowed"
+   [SelectionAllowed]="selectionAllowed" (InsertNode)="SaveChild($event)" (DeleteNode)="DeleteNode($event)" (UpdateNode)="UpdateNode($event)"
+   [ShowChildCount]="showChildren" [Disabled]="disabled" [Form]="Form" [TitleKey]="titleKey" [SubtitleKey]="subtitleKey" [TooltipKey]="tooltipKey"
+   [ParentIdKey]="parentIdKey">
+</app-tree-area>
+
+<p *ngIf="IsDebug && Treeview!=null">
+   {{Treeview.SelectedIds | json}}
+</p>
+
+<p>
+   <button mat-raised-button (click)="SubmitClicked()" *ngIf="PostUrl!=null">
+      <mat-icon>save</mat-icon>
+      <span>Save Data</span>
+   </button>
+</p>

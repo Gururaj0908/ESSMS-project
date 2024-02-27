@@ -1,0 +1,50 @@
+<!-- Application header starts -->
+<mat-toolbar color="primary" style="height:100px">
+  <span id='logo'>{{title}}</span>
+</mat-toolbar>
+<!-- Application header ends -->
+
+
+<mat-card class="loginCard">
+  <mat-card-header>
+      <h3>Login Form</h3>
+  </mat-card-header>
+  <mat-card-content>
+      <form [formGroup]="LoginForm" novalidate (ngSubmit)="login()">
+          <mat-form-field class="form-control">
+              <span matPrefix matTooltip="User Name or Email Id">
+                  <mat-icon class="fieldIcon">account_box</mat-icon>
+              </span>
+              <input matInput type="text" autocomplete placeholder="User Name" formControlName="username"
+                  required>
+              <button tabindex="-1" type="button" *ngIf="LoginForm.controls['username'].value" matSuffix mat-icon-button aria-label="Clear" (click)="LoginForm.controls['username'].setValue('')">
+                  <mat-icon>close</mat-icon>
+              </button>
+              <mat-error>{{usernameError()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-control">
+              <span matPrefix>
+                  <mat-icon class="fieldIcon">vpn_key</mat-icon>
+              </span>
+              <input matInput type="password" autocomplete placeholder="Password" formControlName="password"
+                  #password required>
+              <button tabindex="-1" type="button" *ngIf="LoginForm.controls['password'].value" matSuffix mat-icon-button aria-label="Show" (mousedown)="passwordReveal(true,password)"
+                  (mouseup)="passwordReveal(false,password)">
+                  <mat-icon>remove_red_eye</mat-icon>
+              </button>
+              <mat-error>{{passwordError()}}</mat-error>
+          </mat-form-field>
+          <p>&nbsp;</p>
+          <button mat-raised-button color="primary" [disabled]="LoginForm.invalid" type="submit">
+              <mat-icon>lock_open</mat-icon>
+              <span>Sign In</span>
+          </button>
+          <p *ngIf="loading">&nbsp;</p>
+          <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+      </form>
+      <p>
+          Forgot Password?
+          <a class="mat-button mat-primary" href="#">Reset Here</a>
+      </p>
+  </mat-card-content>
+</mat-card>

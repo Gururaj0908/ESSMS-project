@@ -1,0 +1,28 @@
+
+.box{
+	background-color: white;
+	padding: 15px;
+	margin: 10px;
+}
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th{
+	text-align: start;
+}
+
+.table tr{
+	border-bottom: thin solid black;
+}
+
+.table td,.table th{
+padding: 6px;
+}
+
+.point{
+	cursor: pointer;
+	color: rgb(55, 193, 248);
+}

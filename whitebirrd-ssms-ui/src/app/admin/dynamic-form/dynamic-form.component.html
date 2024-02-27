@@ -1,0 +1,418 @@
+<div [formGroup]="form" [ngSwitch]="formEditorModel.formEditorType" class="form-unit" style="width: 100%">
+    <ng-container *ngIf="!formEditorModel.hidden">
+        <div *ngSwitchCase="formEditor.Text">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input *ngIf="formEditorModel.optionsURL!=null" matInput type="text"  autocomplete="off"   [matAutocomplete]="auto" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}" [required]="formEditorModel.required"
+                    (input)="RenewAutoSuggestList($event)">
+                <input *ngIf="formEditorModel.optionsURL==null" matInput type="text" autocomplete="off" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}" [required]="formEditorModel.required"
+                    (input)="RenewAutoSuggestList($event)">
+                <button tabindex="-1" *ngIf="formEditorModel.accept" matTooltip="Details" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.accept)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="formEditorModel.formURL" matTooltip="{{l.GetString('AddNew',formEditorModel.label)}}" matSuffix mat-icon-button (click)="addNewLinkClick()">
+          <mat-icon>add_circle</mat-icon>
+        </button>
+                <button tabindex="-1" type="button" *ngIf="ShowClearButton()" (click)="ClearValue()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.SelectList">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <mat-select formControlName="{{formEditorModel.key}}" [required]="formEditorModel.required" [focus]="formEditorModel.autoFocus" (selectionChange)="onDropDownChange($event)" placeholder="{{formEditorModel.placeHolder}}">
+                    <mat-option *ngIf="!formEditorModel.required"> -- None -- </mat-option>
+                    <mat-option *ngFor="let item of formEditorModel.options" [attr.selected]="item.selected?'selected':undefined" [value]="item.value" [attr.data-item]="GetString(item)" [attr.disabled]="item.disabled?'disabled':undefined">{{item.label | user}}</mat-option>
+                </mat-select>
+                <button tabindex="-1" *ngIf="formEditorModel.accept" matTooltip="Details" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.accept)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="formEditorModel.formURL" matTooltip="{{l.GetString('AddNew',formEditorModel.label)}}" matSuffix mat-icon-button (click)="addNewLinkClick()">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+                <button type="button" tabindex="-1" *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{l.GetString('SingleSelection')}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.CheckBoxList">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <app-multi-check-box [required]="formEditorModel.required" formControlName="{{formEditorModel.key}}" [DataSource]="formEditorModel.options" (change)="onChange($event)"></app-multi-check-box>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Color">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput type="color" [required]="formEditorModel.required" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Date">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput [min]="formEditorModel.min" [required]="formEditorModel.required" [max]="formEditorModel.max" [matDatepicker]="picker" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" (change)="onChange($event)" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+                  <mat-icon>close</mat-icon>
+                </button>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi="true" #picker></mat-datepicker>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.DateTime">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput type="datetime" [required]="formEditorModel.required" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Email">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input *ngIf="formEditorModel.optionsURL!=null" matInput type="email" autocomplete="off" [matAutocomplete]="auto" [required]="formEditorModel.required" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <input *ngIf="formEditorModel.optionsURL==null" matInput type="email" autocomplete="off" [required]="formEditorModel.required" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" *ngIf="formEditorModel.accept" matTooltip="Details" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.accept)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="formEditorModel.formURL" matTooltip="{{l.GetString('AddNew',formEditorModel.label)}}" matSuffix mat-icon-button (click)="addNewLinkClick()">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.File">
+            <mat-form-field class="form-field">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <app-mat-file-upload-control #fu formControlName="{{formEditorModel.key}}" [Accept]="$any(formEditorModel.accept)" [required]="formEditorModel.required" [UploadURL]="formEditorModel.optionsURL" placeholder="{{formEditorModel.placeHolder}}" (Cleared)="form.controls[formEditorModel.key].reset()"
+                    (UploadClicked)="uploadFile($event, fu)"></app-mat-file-upload-control>
+                <mat-error>{{GetFormError()}}{{fileError}}</mat-error>
+                <mat-hint align="start">{{fu.Hint}}</mat-hint>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.MultiFile">
+            <mat-form-field class="form-field">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <app-mat-file-upload-control #fu formControlName="{{formEditorModel.key}}" [Accept]="$any(formEditorModel.accept)" [required]="formEditorModel.required" [UploadURL]="formEditorModel.optionsURL" [multiple]="true" placeholder="{{formEditorModel.placeHolder}}"
+                    (Cleared)="form.controls[formEditorModel.key].reset()" (UploadClicked)="uploadFile($event, fu)"></app-mat-file-upload-control>
+                <mat-error>{{GetFormError()}}{{fileError}}</mat-error>
+                <mat-hint align="start">{{fu.Hint}}</mat-hint>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Month">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput [required]="formEditorModel.required" type="month" [focus]="formEditorModel.autoFocus" (change)="onChange($event)" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.MultilineText">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <textarea matInput [required]="formEditorModel.required" type="text" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="10" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}"></textarea>
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.MultiSelectList">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <mat-select [required]="formEditorModel.required" multiple formControlName="{{formEditorModel.key}}" [focus]="formEditorModel.autoFocus" (selectionChange)="onDropDownChange($event)" placeholder="{{formEditorModel.placeHolder}}">
+                    <mat-option *ngFor="let item of formEditorModel.options" [attr.selected]="item.selected?'selected':undefined" [attr.data-item]="GetString(item)" [attr.disabled]="item.disabled?'disabled':undefined" [value]="item.value">{{item.label}}</mat-option>
+                </mat-select>
+                <button tabindex="-1" *ngIf="formEditorModel.formURL" matTooltip="{{l.GetString('AddNew',formEditorModel.label)}}" matSuffix mat-icon-button (click)="addNewLinkClick()">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{l.GetString('MultipleSelection')}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Password">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput #pwd [required]="formEditorModel.required" type="password" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <button tabindex="-1" type="button" mat-button (mousedown)="pwd.type='text'" (mouseup)="pwd.type='password'" *ngIf="form.controls[formEditorModel.key].value" matSuffix mat-icon-button aria-label="Peek masked value">
+          <mat-icon>remove_red_eye</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Phone">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input *ngIf="formEditorModel.optionsURL!=null" [required]="formEditorModel.required" matInput type="tel" autocomplete="off" [matAutocomplete]="auto" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <input *ngIf="formEditorModel.optionsURL==null" [required]="formEditorModel.required" matInput type="tel" autocomplete="off" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" *ngIf="formEditorModel.accept" matTooltip="Details" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.accept)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.RadioButtonList">
+            <div class="form-field mat-form-field">
+                <mat-radio-group [required]="formEditorModel.required" formControlName="{{formEditorModel.key}}" style="flex-direction:column" (change)="onRadioChange($event)" [focus]="formEditorModel.autoFocus" (change)="onChange($event)">
+                    <mat-radio-button *ngFor="let item of formEditorModel.options" [disabled]="item.disabled" [value]="item.value">{{item.label}}</mat-radio-button>
+                </mat-radio-group>
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="formEditor.RangeSlider">
+            <div class="form-field">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <mat-slider type="range" [required]="formEditorModel.required" [max]="formEditorModel.max" [min]="formEditorModel.min" thumbLabel (change)="onChange($event)" tickInterval="1" [focus]="formEditorModel.autoFocus" formControlName="{{formEditorModel.key}}"></mat-slider>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Time">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput [required]="formEditorModel.required" type="time" [focus]="formEditorModel.autoFocus" (change)="onChange($event)" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Url">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input *ngIf="formEditorModel.optionsURL!=null" matInput [required]="formEditorModel.required" [matAutocomplete]="auto" type="url" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <input *ngIf="formEditorModel.optionsURL==null" matInput [required]="formEditorModel.required" type="url" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" *ngIf="formEditorModel.accept" matTooltip="Details" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.accept)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="formEditorModel.formURL" matTooltip="{{l.GetString('AddNew',formEditorModel.label)}}" matSuffix mat-icon-button (click)="addNewLinkClick()">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Week">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input [required]="formEditorModel.required" matInput type="week" [focus]="formEditorModel.autoFocus" (change)="onChange($event)" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Number">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input *ngIf="formEditorModel.optionsURL!=null" [required]="formEditorModel.required" matInput type="number" autocomplete="off" [matAutocomplete]="auto" [focus]="formEditorModel.autoFocus" (change)="onChange($event)" placeholder="{{formEditorModel.placeHolder}}"
+                    formControlName="{{formEditorModel.key}}">
+                <input *ngIf="formEditorModel.optionsURL==null" [required]="formEditorModel.required" matInput type="number" autocomplete="off" [focus]="formEditorModel.autoFocus" (change)="onChange($event)" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}">
+                <button tabindex="-1" *ngIf="formEditorModel.accept" matTooltip="Details" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.accept)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="formEditorModel.formURL" matTooltip="{{l.GetString('AddNew',formEditorModel.label)}}" matSuffix mat-icon-button (click)="addNewLinkClick()">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+                <button tabindex="-1" type="button" mat-button *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.CheckBox">
+            <mat-checkbox color="primary" matTooltip="{{formEditorModel.hint}}" [checked]="formEditorModel.required ? (formEditorModel.initialValue ? true : false) : formEditorModel.initialValue" (change)="onCheckboxChanged($event)" formControlName="{{formEditorModel.key}}">{{formEditorModel.label}}
+            </mat-checkbox>
+        </div>
+
+        <div *ngSwitchCase="formEditor.SlideToggle">
+            <mat-slide-toggle color="primary" [checked]="formEditorModel.required ? (formEditorModel.initialValue ? true : false) : formEditorModel.initialValue" (change)="onCheckboxChanged($event)"></mat-slide-toggle>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Hidden">
+            <input type="hidden" formControlName="{{formEditorModel.key}}" value="formEditorModel.initialValue" />
+        </div>
+
+        <div *ngSwitchCase="formEditor.Label">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput type="text" formControlName="{{formEditorModel.key}}" />
+                <button tabindex="-1" *ngIf="formEditorModel.optionsURL" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.optionsURL)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Hyperlink">
+            <span *ngIf="!formEditorModel.tag && formEditorModel.formURL == null" style="text-decoration:underline;cursor:pointer" (click)="hyperlinkClicked(formEditorModel.optionsURL, formEditorModel.initialValue)">{{formEditorModel.label}}</span>
+            <span *ngIf="!formEditorModel.tag && formEditorModel.formURL != null" style="text-decoration:underline;cursor:pointer" (click)="addNewLinkClick(formEditorModel.label)">{{formEditorModel.label}}</span>
+            <mat-icon *ngIf="formEditorModel.tag" matTooltip="{{formEditorModel.hint}}" (click)="hyperlinkClicked(formEditorModel.optionsURL, formEditorModel.initialValue)">{{formEditorModel.label}}
+            </mat-icon>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Anchor">
+            <a href="{{formEditorModel.optionsURL}}" target="{{formEditorModel.accept}}">
+                <ng-container *ngIf="!formEditorModel.tag">
+                    {{formEditorModel.label}}
+                </ng-container>
+                <mat-icon *ngIf="formEditorModel.tag" matTooltip="{{formEditorModel.hint}}">{{formEditorModel.label}}</mat-icon>
+            </a>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Span">
+            <div [style]="Style">
+                <span matTooltip="{{formEditorModel.placeHolder}}">{{formEditorModel.initialValue}}</span>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Radio">
+            <mat-radio-button name="selectGroup" (change)="onChange($event)" [value]="formEditorModel.initialValue" aria-label="Select Row"></mat-radio-button>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Separator">
+            <h4 style="font-size:1.1em">{{formEditorModel.label}}</h4>
+            <hr style="margin:-10px 0 20px;border:solid thin rgba(0,0,0,0.54)" />
+        </div>
+
+        <div *ngSwitchCase="formEditor.RichText" [style.marginBottom.px]="10">
+            <ng-container *ngIf="formEditorModel.optionsURL==null || formEditorModel.options!=null ">
+                <mat-label style="color:rgba(0,0,0,0.54)">{{formEditorModel.label}}</mat-label>
+                <editor formControlName="{{formEditorModel.key}}" [init]="MceInit()" (onKeyPress)="keypress($event)"></editor>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </ng-container>
+        </div>
+
+        <div *ngSwitchCase="formEditor.RemoteText">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput type="text" [matAutocomplete]="auto" autocomplete="off" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}" [required]="formEditorModel.required" (input)="RenewAutoSuggestList($event)">
+                <button tabindex="-1" *ngIf="formEditorModel.accept!=null" matTooltip="Details" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.accept)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="formEditorModel.formURL!=null" matTooltip="{{l.GetString('AddNew',formEditorModel.label)}}" matSuffix mat-icon-button (click)="addNewLinkClick()">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.MultiLevelSelect" style="display: contents">
+            <div style="display: contents">
+                <app-multi-level-select [DisplayStyle]="FormClass" [Error]="GetFormError()" [OriginalLabel]="formEditorModel.label" [Label]="formEditorModel.label" [required]="formEditorModel.required" [optionUrl]="formEditorModel.optionsURL" formControlName="{{formEditorModel.key}}"
+                    [parentKey]="formEditorModel.parentKey" [ParentValue]="formEditorModel.initialValue" (ValueUpdated)="UpdateMultiLevelSelect($event)" placeholder="{{formEditorModel.placeHolder}}">
+                </app-multi-level-select>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="formEditor.ProjectSelector">
+            <div style="display: content">
+                <app-stage-selection [Error]="GetFormError()" [required]="formEditorModel.required" [optionUrl]="formEditorModel.optionsURL" formControlName="{{formEditorModel.key}}" [parentKey]="formEditorModel.parentKey" [ParentValue]="formEditorModel.initialValue"
+                    (ValueUpdated)="UpdateMultiLevelSelect($event)" placeholder="{{formEditorModel.placeHolder}}">
+                </app-stage-selection>
+            </div>
+        </div>
+
+        <div *ngSwitchCase="formEditor.Search">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput type="text" autocomplete="off" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}" [required]="formEditorModel.required">
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchCase="formEditor.PriceSelector">
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input matInput type="text" autocomplete="off" [focus]="formEditorModel.autoFocus" readonly="true" formControlName="{{formEditorModel.key}}" [required]="formEditorModel.required">
+                <label matSuffix class="point" (click)="hyperlinkClicked(formEditorModel.optionsURL, formEditorModel.initialValue,true)">{{formEditorModel.placeHolder}}</label>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div *ngSwitchDefault>
+            <mat-form-field class="form-field" [hintLabel]="formEditorModel.hint">
+                <mat-label>{{formEditorModel.label}}</mat-label>
+                <input *ngIf="formEditorModel.optionsURL!=null" matInput type="text" autocomplete="off" [matAutocomplete]="auto" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}" [required]="formEditorModel.required" (input)="RenewAutoSuggestList($event)">
+                <input *ngIf="formEditorModel.optionsURL==null" matInput type="text" autocomplete="off" [focus]="formEditorModel.autoFocus" placeholder="{{formEditorModel.placeHolder}}" formControlName="{{formEditorModel.key}}" [required]="formEditorModel.required" (input)="RenewAutoSuggestList($event)">
+                <button tabindex="-1" *ngIf="formEditorModel.accept" matTooltip="Details" matSuffix mat-icon-button (click)="hyperlinkClicked(formEditorModel.accept)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="formEditorModel.formURL" matTooltip="{{l.GetString('AddNew',formEditorModel.label)}}" matSuffix mat-icon-button (click)="addNewLinkClick()">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+                <button tabindex="-1" *ngIf="ShowClearButton()" (click)="form.controls[formEditorModel.key].reset()" matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+                <mat-error>{{GetFormError()}}</mat-error>
+                <mat-hint align="end">{{GetHint()}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelectionDone($event)" [displayWith]="$any(displayFn)">
+            <mat-option *ngIf="formEditorModel.options==null || formEditorModel.options.length==0"></mat-option>
+            <mat-option *ngFor="let option of formEditorModel.options" [value]="option.value==null?option:option.value" [attr.data-item]="GetString(option)">
+                {{ option.label }}
+            </mat-option>
+        </mat-autocomplete>
+    </ng-container>
+</div>

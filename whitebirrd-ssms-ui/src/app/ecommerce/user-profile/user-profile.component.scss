@@ -1,0 +1,151 @@
+.header{
+    width: 100%;
+    margin: 0 auto;
+    /* margin-bottom: 20px; */
+    height: 75px;
+    // background-color: #25a7f5!important;
+    // color: #fff!important;
+    }    
+    .example-header-image {
+     // background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background: url(../../../assets/image/male.png) no-repeat top center;
+      
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+.logo{
+  width: 232px;
+  display: block;
+  float: left;
+  word-spacing: 53;
+  font-size: 27px;
+  letter-spacing: 7px;
+  color: #b1afa8;
+}
+.add-to-cart{
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+.custom-sidenav{
+ margin-top:75px;
+}
+.custom-nav-spec{
+  font-size: 14px!important;
+}
+.custom-margin-left{
+ 
+  span{
+    margin-left: 35px;
+  }
+}
+.material-icons{
+  // color: #2c99e8;
+  margin-right: 10px
+}
+.nav-bar{
+    width: 60%;
+    display: block;
+    float: left;
+    height: 75px;
+ }
+ .hrsearch{
+  width: 60%;
+  display: block;
+  /* float: left; */
+  height: 55px;
+  position: relative;
+  margin: 0 auto;
+ }
+ .nav-outer a{
+    margin-top: 27px!important;
+ }
+ .titlebar.titlebar1 {
+    background: url(../../../assets/image/shadow.png) no-repeat top center;
+    background-color: #d3952b;
+    height: 90px;
+
+  }
+  .titlebar {
+    padding: 16px 0;
+  }
+  .mat-list-item{
+    cursor: pointer;
+  }
+  .mat-list-item-focus{
+    color: rgb(222, 241, 255)!important;
+  //  background-color: #7b1fa2;
+    border: none!important;
+}
+  .search-product{
+    margin-top: 17px;
+    text-align: right;
+    margin-right: 2%;
+  }
+  .search-product input{
+    height: 55px;
+    padding: 10px;
+    width: 100%;
+  }
+  .search-align{
+    position: absolute;
+    right: 35px;
+    top: 14px;
+    font-size: 33px;
+    border-left: 1px solid #999;
+    padding-left: 11px;
+  }
+.custom-menu{
+  width:40px;
+  float:left;
+  i{
+    padding-top: 3px;
+    font-size: 28px;
+  }
+}
+.custom-mobile-link{
+  text-align: left!important;
+}
+  .account-info{
+    width: 25%;
+    float: right;
+    position: absolute;
+    margin-top: 20px;
+    text-align: right;
+    top: 0;
+    right: 15px;
+  }
+
+  .profile-container {
+     min-height: 840px;
+    .mat-drawer{
+      // background-color: whitesmoke!important;
+    }
+   // background-color: #f5f5f5;
+     .profile-left-panel{
+         width:250px;
+        //  background: url(../../../assets/sidebar-1.jpg);
+        
+        //  margin-right: 20px;
+         a{
+             width:100%;
+         }
+        .profile-inner-layout{
+          width: 100%;
+          margin: 0;
+          // background-color: rgba(255, 255, 255, 0.8);
+         // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .profile-avtar{
+         height:80px;
+        }
+     }
+
+     .profile-right-container{
+       padding: 10px;
+      //  background-color: #f5f5f5;
+     }
+  }

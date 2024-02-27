@@ -1,0 +1,90 @@
+<div  class="products-wrapper " fxlayout="row wrap">
+  <!---->
+  <div  class="col " fxflex="100" >
+    <mat-card  class="product-item mat-card">
+      <div  fxlayout="row wrap" >
+        <div  class="p-2" fxflex="100" fxflex.gt-xs="40" >
+          <!---->
+          <a  class="image-link" >
+            <!-- <img    src="{{globalService.API_BASE_URL}}/essms-inventory/public/file/view?absolutePath={{productData.primaryImagePath}}"  back alt="gallery image"> -->
+          </a>
+        </div>
+        <div  class="p-2" fxflex="100" fxflex.gt-xs="60" >
+          <h4  class="category text-muted">Electronics </h4>
+          <a  class="title"> Keyboard </a>
+          <p  class="py-1 text-muted lh" [innerHTML]="textFeature"></p>
+          <div  class="prices" fxlayout="row" fxlayoutalign="space-between center">
+            <div  fxlayout="column" fxlayoutalign="center start">
+              <p  class="old-price text-muted">
+                <!---->
+              </p>
+              <p  class="new-price">$175.00</p>
+            </div>
+            <div >
+              <div >
+                <div class="ratings">
+                  <!---->
+                  <mat-icon class="mat-icon-xs mat-icon material-icons " role="img" aria-hidden="true">star</mat-icon>
+                  <mat-icon class="mat-icon-xs mat-icon material-icons "
+                    role="img" aria-hidden="true">star</mat-icon>
+                  <mat-icon class="mat-icon-xs mat-icon material-icons "
+                    role="img" aria-hidden="true">star</mat-icon>
+                  <mat-icon class="mat-icon-xs mat-icon material-icons "
+                    role="img" aria-hidden="true">star</mat-icon>
+                  <mat-icon class="mat-icon-xs mat-icon material-icons "
+                    role="img" aria-hidden="true">star_half</mat-icon>
+                </div>
+                <p class="ratings-count text-muted">4 ratings</p>
+              </div>
+            </div>
+          </div>
+          <div  class="divider"></div>
+          <div  class="icons">
+            <div  >
+              <div class="text-muted" fxlayout="row" fxlayout.xs="column" >
+                <!---->
+                <!---->
+                <div class="">
+                  <button mat-icon-button="" mattooltip="Add to wishlist" class="mat-icon-button" >
+                    <span class="mat-button-wrapper">
+                      <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">favorite</mat-icon>
+                    </span>
+                    <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+                    <div class="mat-button-focus-overlay"></div>
+                  </button>
+                  <!---->
+                  <button mat-icon-button="" mattooltip="Add to cart" class="mat-icon-button ">
+                    <span class="mat-button-wrapper">
+                      <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">shopping_cart</mat-icon>
+                    </span>
+                    <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+                    <div class="mat-button-focus-overlay"></div>
+                  </button>
+                  <!---->
+                  <button mat-icon-button="" mattooltip="Add to compare" class="mat-icon-button">
+                    <span class="mat-button-wrapper">
+                      <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">compare</mat-icon>
+                    </span>
+                    <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+                    <div class="mat-button-focus-overlay"></div>
+                  </button>
+                  <!---->
+                  <button mat-icon-button="" mattooltip="Quick view" class="mat-icon-button ">
+                    <span class="mat-button-wrapper">
+                      <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">remove_red_eye</mat-icon>
+                    </span>
+                    <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+                    <div class="mat-button-focus-overlay"></div>
+                  </button>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+ 
+</div>

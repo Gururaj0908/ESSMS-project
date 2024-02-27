@@ -1,0 +1,292 @@
+<!-- The display data -->
+<tr class="topline" *ngIf="Data!=null" [ngClass]="ShowSelfChildren=='show' ? 'blue-heading' : ''">
+    <!-- <td class="td">
+      <div class="colorprofile" [style.background]="GetDisplayStyle()" [style.display]="'none'"></div>
+   </td> -->
+    <td class="td">
+        <mat-icon class="point" *ngIf="!Loading" (click)="ToggleSelfChildren()" [@expand]="ShowSelfChildren">keyboard_arrow_right</mat-icon>
+        <mat-spinner [diameter]="25" [strokeWidth]="3" *ngIf="Loading" color="accent"></mat-spinner>
+    </td>
+    <td class="td" [ngSwitch]="Data.stage">
+        <button mat-flat-button *ngSwitchCase="projectStage.Project"   matTooltip="Project" matTooltipPosition="above" aria-label="Project" class="mbo-icon">
+            <img class="mbo-icon" src="/assets/image/project.png"/>
+        </button>
+        <button mat-flat-button *ngSwitchCase="projectStage.Module"   matTooltip="Module" matTooltipPosition="above" aria-label="Project" class="mbo-icon">
+            <img class="mbo-icon" src="/assets/image/module.png"/>
+        </button>
+        <button mat-flat-button *ngSwitchCase="projectStage.SubModule"   matTooltip="Sub-Module" matTooltipPosition="above" aria-label="Project" class="mbo-icon">
+            <img class="mbo-icon" src="/assets/image/submodule.png"/>
+        </button>
+        <button mat-flat-button *ngSwitchCase="projectStage.Milestone"   matTooltip="Milestone" matTooltipPosition="above" aria-label="Project" class="mbo-icon">
+            <img class="mbo-icon" src="/assets/image/milestone.png"/>
+        </button>
+        <!--
+        <mat-chip *ngSwitchCase="projectStage.Project" class="chip">
+            <span matTooltip="Project" class="chip-icon">
+            <b>P</b>
+         </span>
+        </mat-chip>
+        <mat-chip *ngSwitchCase="projectStage.Module" class="chip">
+            <span matTooltip="Module" class="chip-icon">
+            <b>M</b>
+         </span>
+        </mat-chip>
+        <mat-chip *ngSwitchCase="projectStage.SubModule" class="chip">
+            <span matTooltip="Sub-Module" class="chip-icon">
+            <b>SM</b>
+         </span>
+        </mat-chip>
+        <mat-chip *ngSwitchCase="projectStage.Milestone" class="chip">
+            <span matTooltip="Milestone" class="chip-icon">
+            <b>MS</b>
+         </span>
+        </mat-chip>
+        -->
+    </td>
+    <td class="td">
+        <span matTooltip="{{Data.description}}" matTooltipPosition="right">
+         {{Data.title}}
+      </span>
+    </td>
+    <ng-container *ngIf="Properties">
+        <td *ngFor="let more of Properties" class="td">
+            <ng-container *ngIf="more">
+                <span matTooltip="{{more.propertyInfo.name}}" *ngIf="Data.stage!==projectStage.Project">
+               {{more.textValue}}{{more.decimalValue}}{{more.dateValue | date}}{{more.bitValue}}
+            </span>
+                <ng-container *ngIf="Data.stage===projectStage.Project">
+                    {{more.textValue}}{{more.decimalValue}}{{more.dateValue | date}}{{more.bitValue}}
+                </ng-container>
+            </ng-container>
+        </td>
+    </ng-container>
+    <td class="td">
+        <span>
+         {{Data.createdOn|date:"MMM d, yyyy"}}
+      </span>
+    </td>
+    <td class="td">
+        <span>
+         {{Data.startDate|date:"MMM d, yyyy"}}
+      </span>
+    </td>
+    <td class="td">
+        <span *ngIf="Data.completedOn!=null">
+         {{Data.completedOn|date:"MMM d, yyyy"}}
+      </span>
+        <span *ngIf="Data.completedOn==null" color="warn" matTooltip="Expected date of completion">
+         {{Data.expectedCompletionDate|date:"MMM d, yyyy"}}
+      </span>
+    </td>
+    <td class="td">
+        <div style="height:40px">
+            <div style="width:40px;height:40px;position:relative">
+        <div class="command-container">
+        <button mat-icon-button color="accent" class="command">
+                    <mat-icon aria-label="Expand Operations">arrow_left</mat-icon>
+        </button>
+        <div class="commands">
+            <ng-container [ngSwitch]="Data.stage">
+                <ng-container *ngSwitchCase="projectStage.Project">
+                    <button *ngIf="Controller.CanEditProject" mat-icon-button (click)="ToggleEditor()" matTooltip="Edit Project {{Data.title}}">
+                    <mat-icon class="text" aria-label="Edit" color="accent">create</mat-icon>
+                    </button>
+                    <button *ngIf="Controller.CanDeleteProject" mat-icon-button (click)="DeleteProjectEntry()" matTooltip="Delete Project {{Data.title}}">
+                    <mat-icon class="text" aria-label="Delete" color="warn">delete</mat-icon>
+                    </button>
+                </ng-container>
+                <ng-container *ngSwitchCase="projectStage.Module">
+                    <button *ngIf="Controller.CanEditModule" mat-icon-button (click)="ToggleEditor()" matTooltip="Edit Module {{Data.title}}">
+                    <mat-icon class="text" aria-label="Edit" color="accent">create</mat-icon>
+                    </button>
+                    <button *ngIf="Controller.CanDeleteModule" mat-icon-button (click)="DeleteProjectEntry()" matTooltip="Delete Module {{Data.title}}">
+                    <mat-icon class="text" aria-label="Delete" color="warn">delete</mat-icon>
+                    </button>
+                </ng-container>
+                <ng-container *ngSwitchCase="projectStage.SubModule">
+                    <button *ngIf="Controller.CanEditSubModule" mat-icon-button (click)="ToggleEditor()" matTooltip="Edit Sub-Module {{Data.title}}">
+                    <mat-icon class="text" aria-label="Edit" color="accent">create</mat-icon>
+                    </button>
+                    <button *ngIf="Controller.CanDeleteSubModule" mat-icon-button (click)="DeleteProjectEntry()" matTooltip="Delete Sub-Module {{Data.title}}">
+                    <mat-icon class="text" aria-label="Delete" color="warn">delete</mat-icon>
+                    </button>
+                </ng-container>
+                <ng-container *ngSwitchCase="projectStage.Milestone">
+                    <button *ngIf="Controller.CanEditMilestone" mat-icon-button (click)="ToggleEditor()" matTooltip="Edit Milestone {{Data.title}}">
+                    <mat-icon class="text" aria-label="Edit" color="accent">create</mat-icon>
+                    </button>
+                    <button *ngIf="Controller.CanDeleteMilestone" mat-icon-button (click)="DeleteProjectEntry()" matTooltip="Delete Milestone {{Data.title}}">
+                    <mat-icon class="text" aria-label="Delete" color="warn">delete</mat-icon>
+                    </button>
+                </ng-container>
+            </ng-container>
+
+            <button *ngIf="Data.stage<1 && Controller.CanCreateModule" color="primary" mat-icon-button (click)="ToggleChildCreator(projectStage.Module)"
+                matTooltip="Create Module">
+                <mat-icon class="text" aria-label="Create Module">dashboard</mat-icon>
+            </button>
+            <button *ngIf="Data.stage<2 && Controller.CanCreateSubModule" color="primary" mat-icon-button (click)="ToggleChildCreator(projectStage.SubModule)"
+                matTooltip="Create Sub-Module">
+                <mat-icon class="text" aria-label="Create Sub-Module">group_work</mat-icon>
+            </button>
+            <button *ngIf="Data.stage<3 && Controller.CanCreateMilestone" color="primary" mat-icon-button (click)="ToggleChildCreator(projectStage.Milestone)"
+                matTooltip="Create Milestone">
+                <mat-icon class="text" aria-label="Create Milestone">label</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" *ngIf="!IsNotMilestone && Controller.CanCreateMilestone" matTooltip="Analysis" (click)="ToggleAnalysis()">
+                <mat-icon class="text" aria-label="Analysis">list_alt</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="Controller.CanCreateObjective" (click)="ToggleObjectiveEditor()" matTooltip="Create Objective for {{Data.title}}">
+                <mat-icon class="text" aria-label="Add Objective" color="primary">add_alert</mat-icon>
+            </button>
+            <button *ngIf="Controller.CanCreateRequirement" mat-icon-button color="primary" matTooltip="Create Requirements" (click)="ToggleRequirementCreator()">
+                <mat-icon class="text" aria-label="Create Requirements">confirmation_number</mat-icon>
+            </button>
+            <button *ngIf="Controller.CanCreateIssue" mat-icon-button color="primary" matTooltip="Create Issues" (click)="ToggleIssueCreator()">
+                <mat-icon class="text" aria-label="Create Issues">sms_failed</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" matTooltip="Manage Permission" (click)="ShowUserAccess()" *ngIf="Controller.CanMangePermission">
+                <mat-icon aria-label="Manage Permission">supervisor_account</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" matTooltip="Refresh Data" (click)="RefreshData()">
+                <mat-icon class="text" aria-label="Refresh Data">autorenew</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" matTooltip="View Timelines" (click)="ShowTimeline()">
+                <mat-icon class="text" aria-label="View Timelines">schedule</mat-icon>
+            </button>
+        </div>
+        </div>
+        </div></div>
+    </td>
+</tr>
+<!-- Display Data End -->
+<!-- The Item Editor -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + 9" class="hid">
+        <div [@editor]="ShowEditor">
+            <ng-container *ngIf="ShowEditor==='show'">
+                <ng-container [ngSwitch]="Data.stage">
+                    <app-form-area *ngSwitchCase="projectStage.Project" [FormsList]="Controller.ProjectEditor" [PrefilledValue]="PlainData" (OnCancelButtonClick)="ToggleEditor()" (OnSubmitButtonClick)="SubmitEditorForm($event)" [ResetButtonText]="'Cancel'" [SubmitButtonText]="'Save'"></app-form-area>
+                    <app-form-area *ngSwitchCase="projectStage.Module" [FormsList]="Controller.ModuleEditor" [PrefilledValue]="PlainData" (OnCancelButtonClick)="ToggleEditor()" (OnSubmitButtonClick)="SubmitEditorForm($event)" [ResetButtonText]="'Cancel'" [SubmitButtonText]="'Save'"></app-form-area>
+                    <app-form-area *ngSwitchCase="projectStage.SubModule" [FormsList]="Controller.SubModuleEditor" [PrefilledValue]="PlainData" (OnCancelButtonClick)="ToggleEditor()" (OnSubmitButtonClick)="SubmitEditorForm($event)" [ResetButtonText]="'Cancel'" [SubmitButtonText]="'Save'"></app-form-area>
+                    <app-form-area *ngSwitchCase="projectStage.Milestone" [FormsList]="Controller.MilestoneEditor" [PrefilledValue]="PlainData" (OnCancelButtonClick)="ToggleEditor()" (OnSubmitButtonClick)="SubmitEditorForm($event)" [ResetButtonText]="'Cancel'" [SubmitButtonText]="'Save'"></app-form-area>
+                </ng-container>
+            </ng-container>
+        </div>
+    </td>
+</tr>
+<!-- Item Editor End -->
+<!-- The Child Creator -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <div [@childEditor]="ShowChildEditor">
+            <ng-container *ngIf="ChildFormGroup && ShowChildEditor==='show'">
+                <h4>Create {{ChildName}}</h4>
+                <app-form-area [ShowRawJson]="true" [FormsList]="ChildFormGroup" [PrefilledValue]="ChildEditorData" (OnCancelButtonClick)="ToggleChildCreator()" (OnSubmitButtonClick)="SubmitForm($event)" [ResetButtonText]="'Cancel'" [SubmitButtonText]="'Save'"></app-form-area>
+            </ng-container>
+        </div>
+    </td>
+</tr>
+<!-- Child creator end -->
+<!-- The Requirement Creator -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <div [@requirement]="ShowRequirementCreator">
+            <ng-container *ngIf="ShowRequirementCreator==='show'">
+                <h4>Create New Requirement</h4>
+                <app-form-area [ShowRawJson]="true" [FormsList]="Controller.RequirementCreator" [PrefilledValue]="RequirementCreatorData" (OnCancelButtonClick)="ToggleRequirementCreator()" (OnSubmitButtonClick)="CreateRequirement($event)" [ResetButtonText]="'Cancel'"
+                    [SubmitButtonText]="'Raise Requirement'"></app-form-area>
+            </ng-container>
+        </div>
+    </td>
+</tr>
+<!-- Requirement creator end -->
+<!-- The Issue Creator -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <div [@issue]="ShowIssueCreator">
+            <ng-container *ngIf="ShowIssueCreator==='show'">
+                <h4>Create New Issue</h4>
+                <app-form-area [ShowRawJson]="true" [FormsList]="Controller.IssueCreator" [PrefilledValue]="IssueCreatorData" (OnCancelButtonClick)="ToggleIssueCreator()" (OnSubmitButtonClick)="CreateIssue($event)" [ResetButtonText]="'Cancel'" [SubmitButtonText]="'Raise Issue'"></app-form-area>
+            </ng-container>
+        </div>
+    </td>
+</tr>
+<!-- Issue creator end -->
+<!-- The Objective Creator -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <div [@objectiveEditor]="ShowObjectiveCreator">
+            <ng-container *ngIf="Controller.ObjectiveController.ObjectiveEditor && ShowObjectiveCreator==='show'">
+                <h4>Create Objective</h4>
+                <app-form-area [ShowRawJson]="true" [FormsList]="Controller.ObjectiveController.ObjectiveEditor" [PrefilledValue]="ObjectiveEditorData" [SubmitButtonText]="'Save'" [ResetButtonText]="'Cancel'" [FormMarking]="Showtime.NewDataOnly" (OnCancelButtonClick)="ToggleObjectiveEditor()"
+                    (OnSubmitButtonClick)="SubmitObjectiveForm($event)"></app-form-area>
+            </ng-container>
+        </div>
+    </td>
+</tr>
+<!-- Objective creator end -->
+<!-- The Analysis Display -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <div *ngIf="Controller.AnalysisEditor && ShowAnalysis==='show'" [@analysis]="ShowAnalysis">
+            <p>
+                <mat-icon *ngIf="Analysis && Analysis.status=='Approved'" color="primary" matTooltip="Approved">done</mat-icon>
+                <mat-icon *ngIf="Analysis && Analysis.status=='Rejected'" color="warn" matTooltip="Rejected">remove_circle</mat-icon>
+                <mat-icon *ngIf="Analysis && Analysis.status=='Reviewed'" color="accent" matTooltip="Revised">cached</mat-icon>
+                <u>
+               <b>Analysis part</b>
+            </u>
+            </p>
+            <app-form-area [ShowRawJson]="true" [FormsList]="GetAnalysisFormEditor()" (OnSubmitButtonClick)="Controller.PostAnalysis($event)" [PrefilledValue]="Analysis" (OnCancelButtonClick)="ToggleAnalysis()" [SubmitButtonText]="'Update'" [ResetButtonText]="'Close'"
+                [ShowCommand]="(Analysis==null || Analysis.status!='Approved') && !IsApprover"></app-form-area>
+            <p *ngIf="Analysis && Analysis.docs!=null">
+                <button mat-button (click)="OpenFiles(Analysis)" matTooltip="View Files">
+               <mat-icon>attachment</mat-icon>Attachments </button>
+            </p>
+            <p *ngIf="IsApprover && Analysis">
+                <button color="accent" mat-raised-button (click)="UpdateAnalysisStatus(Analysis,3)" *ngIf="Analysis.status!='Approved'">
+               <mat-icon>done_outline</mat-icon>Approve </button>
+                <button color="warn" mat-raised-button (click)="UpdateAnalysisStatus(Analysis,4)" *ngIf="Analysis.status!='Rejected' && Analysis.status!='Approved'">
+               <mat-icon>remove_circle_outline</mat-icon>Reject </button>
+            </p>
+        </div>
+    </td>
+</tr>
+<!-- Analysis display end -->
+<!-- The Objective Display -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <table class="intab table" [@selfChildren]="ShowSelfChildren">
+            <app-objective-item [ParentProject]="this" class="tr" *ngFor="let d of Data.objectives" [Data]="d" [Controller]="Controller.ObjectiveController"></app-objective-item>
+        </table>
+    </td>
+</tr>
+<!-- Objective Display End -->
+<!-- The Issues -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <table class="intab table" [@selfChildren]="ShowSelfChildren">
+            <app-dynamic-issue [ParentComponent]="this" [ParentItem]="this.Data" class="tr" *ngFor="let d of Data.issues" [Data]="d" [Controller]="Controller"></app-dynamic-issue>
+        </table>
+    </td>
+</tr>
+<!-- Issue End -->
+<!-- The Requirement -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <table class="intab table" [@selfChildren]="ShowSelfChildren">
+            <app-dynamic-requirement [ParentComponent]="this" [ParentItem]="this.Data" class="tr" *ngFor="let d of Data.requirements" [Data]="d" [Controller]="Controller"></app-dynamic-requirement>
+        </table>
+    </td>
+</tr>
+<!-- Requirement End -->
+<!-- The Children Display -->
+<tr>
+    <td [attr.colspan]="ExtraLength() + ColCount" class="hid">
+        <table class="intab table" [@selfChildren]="ShowSelfChildren">
+            <app-project-item [ParentComponent]="this" [ParentItem]="this.Data" [ExtraColumn]="ExtraCol" [IsSearchMode]="IsSearchMode" class="tr" *ngFor="let d of Data.children" [Data]="d" [Controller]="Controller"></app-project-item>
+        </table>
+    </td>
+</tr>
+<!-- Children Display End -->

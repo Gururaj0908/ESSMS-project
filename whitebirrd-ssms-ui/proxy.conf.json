@@ -1,0 +1,9 @@
+{
+  "/rest": {
+    "target": "http://essms.horolab.in",
+    "pathRewrite": {
+      "^/rest": ""
+    },
+    "secure": false
+  }
+}

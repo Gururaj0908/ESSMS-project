@@ -1,0 +1,57 @@
+<h4>Timelines</h4>
+<div mat-dialog-content>
+   <mat-accordion *ngIf="data && data.length>0" [multi]="true">
+      <mat-expansion-panel *ngFor="let item of data" [hideToggle]="true">
+         <mat-expansion-panel-header>
+            <table style="width: 100%">
+               <tr>
+                  <td rowspan="2" Style="width:30px">
+                     <ng-container [ngSwitch]="item.type">
+                        <mat-icon *ngSwitchCase="operationType.Created">settings_input_antenna</mat-icon>
+                        <mat-icon *ngSwitchCase="operationType.Activated">done_outline</mat-icon>
+                        <mat-icon *ngSwitchCase="operationType.Updated">cached</mat-icon>
+                        <mat-icon *ngSwitchCase="operationType.Deactivated">cancel_presentation</mat-icon>
+                        <mat-icon *ngSwitchCase="operationType.Trashed">delete</mat-icon>
+                        <mat-icon *ngSwitchCase="operationType.Restored">exit_to_app</mat-icon>
+                        <mat-icon *ngSwitchCase="operationType.Deleted">cancel</mat-icon>
+                        <mat-icon *ngSwitchCase="operationType.Other">all_inclusive</mat-icon>
+                        <mat-icon *ngSwitchDefault>event_available</mat-icon>
+                     </ng-container>
+                  </td>
+                  <td colspan="2">{{item.title}}</td>
+               </tr>
+               <tr>
+                  <td>
+                     <small>By {{item.user | user}}</small>
+                  </td>
+                  <td style="text-align: right">
+                     <small>
+                        <i>{{$any(item.event) | timeAgo}}</i>
+                     </small>
+                  </td>
+               </tr>
+            </table>
+         </mat-expansion-panel-header>
+         <div *ngIf="item.changes">
+            <table class="table">
+               <tr>
+                  <th>Property</th>
+                  <th>Old Value</th>
+                  <th>New Value</th>
+               </tr>
+               <tr *ngFor="let change of item.changes">
+                  <td>{{change.k}}</td>
+                  <td>{{change.o}}</td>
+                  <td>{{change.n}}</td>
+               </tr>
+            </table>
+         </div>
+         <p>
+            <i>{{item.comment}}</i>
+         </p>
+      </mat-expansion-panel>
+   </mat-accordion>
+   <p *ngIf="data && data.length==0">
+      No history found for the item.
+   </p>
+</div>

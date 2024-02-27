@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>{{data.Title}}</h1>
+<div mat-dialog-content>
+   <p>
+      <mat-form-field style="width: 100%;">
+         <input type="text" [formControlName]="$any(myControl)" matInput [matAutocomplete]="auto" aria-label="Filter User" placeholder="Filter Users"
+            [value]="TypedText">
+      </mat-form-field>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="UserAdded($event)" [displayWith]="displayFn">
+         <mat-option *ngFor="let option of FilteredOption | async" [value]="option">
+            {{ option.label }}
+         </mat-option>
+      </mat-autocomplete>
+   </p>
+   <table class="table">
+      <tr>
+         <td>
+            <b>User</b>
+         </td>
+         <th>
+            <mat-icon aria-label="User can only view" matTooltip="User can only view">remove_red_eye</mat-icon>
+         </th>
+         <th>
+            <mat-icon aria-label="User can work" matTooltip="User can work">keyboard</mat-icon>
+         </th>
+         <th>
+            <mat-icon aria-label="User can Approve" matTooltip="User can Approve">done_all</mat-icon>
+         </th>
+         <th></th>
+      </tr>
+      <tr *ngFor="let user of SelectedOption">
+         <td>{{user.userId | user}}</td>
+         <th>
+            <mat-checkbox [indeterminate]="user.canView==null" [checked]="user.canView" (change)="user.canView = !user.canView"></mat-checkbox>
+         </th>
+         <th>
+            <mat-checkbox [indeterminate]="user.canEdit==null" [checked]="user.canEdit" (change)="user.canEdit = !user.canEdit"></mat-checkbox>
+         </th>
+         <th>
+            <mat-checkbox [indeterminate]="user.canApprove==null" [checked]="user.canApprove" (change)="user.canApprove = !user.canApprove"></mat-checkbox>
+         </th>
+         <td>
+            <button mat-icon-button (click)="RemoveAccess(user)" matTooltip="Remove User Access" color="warn">
+               <mat-icon aria-label="Remove User Permission">remove_circle</mat-icon>
+            </button>
+         </td>
+      </tr>
+   </table>
+</div>
+<div mat-dialog-actions style="text-align:right;display:block">
+   <button mat-raised-button color="primary" mat-dialog-close (click)="Save()">Save</button>
+   <button mat-raised-button color="accent" mat-dialog-close cdkFocusInitial>Cancel</button>
+</div>

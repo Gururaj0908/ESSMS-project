@@ -1,0 +1,193 @@
+.header{
+    width: 100%;
+    margin: 0 auto;
+    /* margin-bottom: 20px; */
+    height: 75px;
+    }   
+    .custom-sidenav{
+      margin-top:60px
+    }
+ .third-toolbar{
+      background: #fff;
+      height:50px;
+      color: rgba(0,0,0,.54)!important;
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+     .headerrow3 {
+       a {
+        min-width: 70px;
+        border-radius: 0;
+        text-transform: uppercase;
+        padding: 6px 16px;
+    }}
+}
+.cart-image{
+  width: 62px;
+  height: 62px;
+  margin-right: 10px;
+}
+.divider {
+  border-top: 1px solid rgba(204,204,204,.6);
+}
+.text-title1 {
+color: rgba(0,0,0,.54)!important;
+font-size: 14px;
+font-weight: 500;
+}
+.ext-title2{
+  color: rgba(0,0,0,.54)!important;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 400;
+}
+.top-toolbar.mat-toolbar-row {
+  height: 38px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(227,242,253,.2);
+  color: #bbdefb;
+//   background-color: #1976d2;
+  //color: #fff;
+  .mat-icon{
+    position: relative;
+    top: 6px;
+  }
+
+  .account-info{
+    
+    margin-top: 0px;
+    .mat-icon{
+      top: 0px!important;
+    }
+    .custom-matmenu .mat-menu-panel{
+      width:300px;
+      max-width:300px!important
+    }
+  }
+}
+.second-toolbar{
+//   background-color: #1976d2;
+  height: 100px;
+  .hrsearch{
+    width: 50%;
+    display: block;
+    /* height: 29px; */
+    position: relative;
+    margin: 0 auto;
+}
+.logo1{
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+}
+.search-product{
+margin-top: 0px;
+input{
+  height: 44px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 21px;
+    border: none;
+}
+}
+.search-align {
+  position: absolute;
+  right: 35px;
+  top: 6px;
+  font-size: 33px;
+  border-left: 1px solid #999;
+  padding-left: 11px;
+  color: rgba(0,0,0,.54);
+}
+}
+.headerrow3{
+  margin: 0 auto;
+}
+.cart-data{
+  margin-top: 9px!important;
+  width: 250px!important;
+  overflow-x: hidden;
+ // background: #67148a!important;
+  color: #fff;
+  .mat-list-item{
+   // border-bottom: 1px solid #000;
+  }
+}
+    .logo{
+      width: 232px;
+      display: block;
+      float: left;
+      word-spacing: 53;
+      font-size: 27px;
+      letter-spacing: 7px;
+      color: #b1afa8;
+    }
+.nav-bar{
+    width: 60%;
+    display: block;
+    float: left;
+    height: 75px;
+ }
+ .hrsearch{
+  width: 60%;
+  display: block;
+  /* float: left; */
+  height: 55px;
+  position: relative;
+  margin: 0 auto;
+ }
+ .nav-outer a{
+    margin-top: 27px!important;
+ }
+ .titlebar.titlebar1 {
+    background: url(../../../assets/image/shadow.png) no-repeat top center;
+    background-color: #fff;
+    height: 90px;
+
+  }
+  .titlebar {
+    padding: 16px 0;
+  }
+  .search-product{
+    margin-top: 17px;
+    text-align: right;
+    margin-right: 2%;
+   
+  }
+  .search-product input{
+    height: 55px;
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+  }
+  .search-align{
+    position: absolute;
+    right: 35px;
+    top: 14px;
+    font-size: 33px;
+    border-left: 1px solid #999;
+    padding-left: 11px;
+  }
+.custom-menu{
+  width:40px;
+  float:left;
+  i{
+    padding-top: 3px;
+    font-size: 28px;
+  }
+}
+.custom-mobile-link{
+  text-align: left!important;
+}
+  .account-info{
+    // width: 25%;
+    float: right;
+    position: absolute;
+    margin-top: 20px;
+    top: 0;
+    right: 0;
+  }
+  .add-to-cart{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+  }

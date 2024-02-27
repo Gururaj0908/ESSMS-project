@@ -1,0 +1,13 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+   <mat-step [stepControl]="form.Formgroup" *ngFor="let form of Form; let i = index">
+      <form [formGroup]="$any(form)">
+         <ng-template matStepLabel>Fill out your address</ng-template>
+         <app-editor-form [FormGroupItem]="form.Formgroup" [FormListModel]="form.Formlist"></app-editor-form>
+         <div>
+            <button *ngIf="i>0" mat-button matStepperPrevious>Back</button>
+            <button *ngIf="i<(Form.length-1)" mat-button matStepperNext>Next</button>
+            <button *ngIf="i===(Form.length-1)" mat-button matStepperNext>Submit</button>
+         </div>
+      </form>
+   </mat-step>
+</mat-horizontal-stepper>

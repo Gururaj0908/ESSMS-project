@@ -1,0 +1,135 @@
+<ul style="position:fixed;right:20px;bottom:10px;z-index:999999;padding:0">
+    <li *ngIf="FilterListForm && Data.length>0" style="margin-bottom:10px;display:block">
+        <button mat-mini-fab color="{{ShowFilterButton?'primary':'accent'}}" (click)="ShowFilterButton=!ShowFilterButton">
+                  <mat-icon aria-label="Search or Filter">search</mat-icon>
+            </button>
+    </li>
+    <li *ngIf="CanCreateProject" style="display:block">
+        <button color="accent" mat-mini-fab (click)="ShowEditor=!ShowEditor">
+                  <mat-icon aria-label="Create New Project">add</mat-icon>
+            </button>
+    </li>
+</ul>
+<mat-tab-group headerPosition="below" dynamicHeight="true">
+    <mat-tab label="IT - SW/Test/R&D(Semi)" data-id="IT">
+        <div [style.height.px]="MinHeight" style="overflow-y: auto">
+            <div style="margin:10px; font-family: calibri;">
+            	<ng-container *ngIf="CanCreateProject && ShowEditor">
+                <div style="text-align:center">
+                    <div>
+                        <mat-card>
+                            <mat-card-content>
+                                <div style="padding:5px">
+                                    <ng-container *ngIf="ShowEditor">
+                                        <h4>Create Project</h4>
+                                        <app-form-area [ShowRawJson]="true" [FormsList]="ProjectCreator" (OnSubmitButtonClick)="SubmitFormData($event, null, null)" (OnCancelButtonClick)="HideForm($event)" [SubmitButtonText]="'Save Project'" [ResetButtonText]="'Cancel'"></app-form-area>
+                                    </ng-container>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+				</ng-container>
+                <div class="stick">
+                	<ng-container *ngIf="FilterListForm && ShowFilterButton">
+                    <div>
+                        <div [style.marginBottom.px]="15">
+                            <mat-card [style.padding.px]="5">
+                                <mat-card-content>
+                                    <div FormGroup="FilterFG">
+                                        <app-form-area (OnCancelButtonClick)="ResetSearch($event)" (OnSubmitButtonClick)="SearchClicked($event)" [FormsList]="FilterListForm" [SubmitButtonText]="'Search MBO'" [ResetButtonText]="'Reset'"></app-form-area>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                    </ng-container>
+                    <div style="background-color:#fafafa">
+                        <mat-chip-listbox>
+                            <mat-chip-option class="Created" matTooltipPosition="above" matTooltip="Objective is newly created">Initiated</mat-chip-option>
+                            <mat-chip-option class="Locked" matTooltipPosition="above" matTooltip="Objective is locked for approval">Pending Approval
+                            </mat-chip-option>
+                            <mat-chip-option class="Approved" matTooltipPosition="above" matTooltip="Objective is Approved for work">Pending Dev Select
+                            </mat-chip-option>
+                            <mat-chip-option class="Denied" matTooltipPosition="above" matTooltip="Objective is Denied for work">Pending Revision
+                            </mat-chip-option>
+                            <mat-chip-option class="WorkInProgress" matTooltipPosition="above" matTooltip="Work is in progress">Work In Progress</mat-chip-option>
+                            <mat-chip-option class="InReview" matTooltipPosition="above" matTooltip="Objective is complete and is sent for review">Pending Review
+                            </mat-chip-option>
+                            <mat-chip-option class="Extension" matTooltipPosition="above" matTooltip="A Time-Extension is requested of the objective">Pending Extension
+                            </mat-chip-option>
+                            <!-- <mat-chip-option class="GaveUp" matTooltipPosition="above" matTooltip="Assignee Gave up the objective">Gave Up</mat-chip-option> -->
+                            <mat-chip-option class="Rejected" matTooltipPosition="above" matTooltip="Your Work has been rejected. You are useless">Pending Developer Change</mat-chip-option>
+                            <mat-chip-option class="Unacceptable" matTooltipPosition="above" matTooltip="Work is not acceptable. Review it and submit again">Needs Attention
+                            </mat-chip-option>
+                            <mat-chip-option class="Complete" matTooltipPosition="above" matTooltip="Objective is completed and accepted">Complete</mat-chip-option>
+                        </mat-chip-listbox>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <br />
+                    <div class="mat-elevation-z8" style="position: relative">
+                        <div class="spinner-host" *ngIf="DisplayLoading">
+                            <div class="spinner-display">
+                                <mat-spinner></mat-spinner>
+                            </div>
+                        </div>
+
+                        <table class="tableH" *ngIf="ExtraCol">
+                            <tr class="th stick" style="background: white">
+                                <!-- <th></th> -->
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    <span (click)="OrderBy('title')">Title</span>
+                                </th>
+                                <th *ngFor="let prop of ExtraCol">
+                                    <span (click)="OrderBy(prop)">{{prop}}</span>
+                                </th>
+                                <th>
+                                    <span (click)="OrderBy('createdOn')">Created Date</span>
+                                </th>
+                                <th>
+                                    <span (click)="OrderBy('startDate')">Started Date</span>
+                                </th>
+                                <th>
+                                    <span (click)="OrderBy('completedOn')">Completed On</span>
+                                </th>
+                                <th></th>
+                            </tr>
+                            <ng-container *ngIf="Data.length > 0">
+                                <app-project-item class="tr" *ngFor="let d of Data" [IsSearchMode]="SearchMode" [Data]="d" [Controller]="this" [ExtraColumn]="ExtraCol"></app-project-item>
+                            </ng-container>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Sales/Marketing" data-id="Sales">
+        <div [style.height.px]="MinHeight">
+            No Content
+        </div>
+    </mat-tab>
+    <mat-tab label="Strategy/BU Development"  data-id="Strategy">
+        <div [style.height.px]="MinHeight">
+            No Content
+        </div>
+    </mat-tab>
+    <mat-tab label="IT - Infra/Maintenance"  data-id="Infra">
+        <div [style.height.px]="MinHeight">
+            No Content
+        </div>
+    </mat-tab>
+    <mat-tab label="Accounting/Legal"  data-id="Accounting">
+        <div [style.height.px]="MinHeight">
+            No Content
+        </div>
+    </mat-tab>
+    <mat-tab label="Administration/Advertise/Branding"  data-id="Administration">
+        <div [style.height.px]="MinHeight">
+            No Content
+        </div>
+    </mat-tab>
+</mat-tab-group>

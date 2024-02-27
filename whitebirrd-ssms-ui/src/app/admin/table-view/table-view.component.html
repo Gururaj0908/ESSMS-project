@@ -1,0 +1,173 @@
+<ul style="position:fixed;right:20px;bottom:10px;z-index:999999;" class="noprint">
+  <li style="margin-bottom:10px;display:block">
+    <button mat-mini-fab color="accent" (click)="RefreshData()">
+      <mat-icon>autorenew</mat-icon>
+    </button>
+  </li>
+  <li *ngIf="ShowFilterButton && DataSource && !CustomForm" style="margin-bottom:10px;display:block">
+    <button mat-mini-fab color="{{ShowFilter?'primary':'accent'}}" (click)="ToggleSearch()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </li>
+  <li *ngIf="ShowCreateButton" style="display:block">
+    <button color="accent" mat-mini-fab (click)="ExecuteCreate()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </li>
+</ul>
+<ng-container *ngIf="DataSource && (ShowFilter || CustomForm)">
+<div class="header mat-elevation-z3 noprint" style="background-color: white; display: block; padding-bottom: 10px;">
+  <div>
+    <app-form-area *ngIf="(RemoteOperations || CustomForm) && SearchForm" [ShowCommand]="!CustomForm"
+      [ShowRawJson]="true" [FormsList]="SearchForm" (OnSubmitButtonClick)="ExecuteSearch($event)"
+      (OnCancelButtonClick)="ExecutedClear()" [SubmitButtonText]="l.GetString('Search')"
+      [ResetButtonText]="l.GetString('Reset')" style="width: 100%"></app-form-area>
+  </div>
+
+  <div>
+    <mat-form-field *ngIf="!RemoteOperations" style="width: 98%; padding-top: 10px;">
+      <input matInput (keyup)="applyFilter($event)" placeholder="{{l.GetString('Search')}}">
+    </mat-form-field>
+  </div>
+</div>
+</ng-container>
+<div class="container mat-elevation-z3" style="background-color: white">
+  <ng-container *ngIf="DataSource">
+    <div class="loading-shade" *ngIf="DataSource.data && DataSource.data.length==0">
+      {{l.GetString('NoDataAvailable')}}
+      <button mat-raised-button (click)="RefreshData()" [style.marginLeft.px]="10">
+        <mat-icon>refresh</mat-icon> {{l.GetString('Reload')}}
+      </button>
+    </div>
+    <div class="tabel-cover">
+      <mat-table matSort [formGroup]="Group" [dataSource]="DataSource" class="table" matSortActive="SortColumn"
+        matSortDisableClear [matSortDirection]="$any(SortDirection)">
+        <ng-container *ngFor="let column of ColumnHeaders" matColumnDef={{column.key}} formArrayName="Rose">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>{{column.value}}</mat-header-cell>
+          <mat-cell [ngStyle]="GetCellStyle(row,column.key)" *matCellDef="let row; let i = index" [formGroupName]="i">
+            <ng-container *ngIf="GetValue(row,column.key).formEditor">
+              <app-dynamic-form (HyperlinkClick)="OpenDialog($event)" (SelectionChanged)="RowSelected($event,row)"
+                [formEditorModel]="GetFormEditor(row,column.key)" [form]="$any(Form.at(i))"></app-dynamic-form>
+            </ng-container>
+            <span *ngIf="!GetValue(row,column.key).formEditor">
+              <span *ngIf="GetValue(row,column.key)===true">
+                <mat-icon>done</mat-icon>
+              </span>
+              <span *ngIf="GetValue(row,column.key)===false">
+                <mat-icon>close</mat-icon>
+              </span>
+              <span *ngIf="GetValue(row,column.key)!==true && GetValue(row,column.key)!==false">
+                {{GetValue(row,column.key)}}
+              </span>
+            </span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status" *ngIf="ShowStatusToggle && !HideActiveToggler">
+          <mat-header-cell *matHeaderCellDef> {{l.GetString('IsActive')}} </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-slide-toggle color="primary" [checked]="row.isActive"
+              (change)="StatusToggledEventHandler($event, row)"></mat-slide-toggle>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="restore">
+          <mat-header-cell *matHeaderCellDef>{{l.GetString('Restore')}}</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-slide-toggle color="primary" [checked]="!row.isDeleted"
+              (change)="RestoreToggledEventHandler($event, row)"></mat-slide-toggle>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef>
+            <!-- <mat-icon>flash_on</mat-icon> -->
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <span *ngIf="ShowEditButton && row.createdBy!=='SYSTEMDEFINED'">
+              <button mat-icon-button color="primary" (click)="EditClicked(row)"
+                matTooltip="{{l.GetString('EditRow')}}">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </span>
+            <span *ngIf="ShowDeleteButton && row.createdBy!=='SYSTEMDEFINED'">
+              <button mat-icon-button color="warn" (click)="DeleteClicked(row)"
+                matTooltip="{{l.GetString('DeleteRow')}}">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </span>
+            <span *ngIf="TimeLineUrl!=null">
+              <button mat-icon-button color="primary" matTooltip="{{l.GetString('TimeLine')}}"
+                (click)="ShowTimeline(row)">
+                <mat-icon>schedule</mat-icon>
+              </button>
+            </span>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="ShownColumns"></mat-header-row>
+        <mat-row [ngStyle]="GetStyle(row)" *matRowDef="let row; columns: ShownColumns;"></mat-row>
+      </mat-table>
+    </div>
+
+  </ng-container>
+  <mat-paginator class="mat-paginator {{(TABLE_DATA ? TABLE_DATA.length : 0)>0?'':'hide'}}" #Pager
+    [style.marginRight.px]="70" [length]="TotalRowCount ? TotalRowCount :(TABLE_DATA ? TABLE_DATA.length : 0)"
+    [pageSize]="PageSizeLocal" [pageSizeOptions]="PageSizeOptions" [showFirstLastButtons]="true"></mat-paginator>
+
+</div>
+<ng-container *ngIf="DataSource && DataSource.data && DataSource.data.length>0">
+  <section class="noprint">
+    <p class="mat-elevation-z3" *ngIf="Operations" [style.padding.px]="10">
+      <button mat-raised-button [disabled]="but.defaultDisabled || IsButtonDisabled()" class="bottom-button"
+        *ngFor="let but of Operations" (click)="NavigateToURL(but)">{{but.label}}</button>
+    </p>
+
+    <div class="mat-elevation-z3" *ngIf="Legends">
+      <mat-chip-listbox>
+        <mat-chip-option [ngStyle]="l.formatter.styleObj" *ngFor="let l of Legends">{{l.value}}</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+	<ng-container *ngIf="IsDevelopmentMode">
+    <div>
+      <span>{{Group.getRawValue() | json}}</span>
+      <h4>{{l.GetString('SelectedRow')}}</h4>
+      <span *ngFor="let g of SelectedFormGroups">{{g.getRawValue() | json}} -
+        <b>{{l.GetString('Status',l.GetString(g.status))}}</b>
+      </span>
+    </div>
+    </ng-container>
+  </section>
+</ng-container>
+<ng-container *ngIf="DataSource==null && !RM.ShowLoader">
+  <div>
+    <div style="display:table;margin:10px auto; padding:15px;">
+      <mat-icon color="warn" style="font-size:3em;width:1.2em;float:left;height:1em;margin-top:10px">
+        sentiment_very_dissatisfied</mat-icon>
+      <h4>{{l.GetString('NoData')}}</h4>
+      <mat-list role="list">
+        <h3 mat-subheader>{{l.GetString('TrialForData')}}</h3>
+        <mat-list-item role="listitem">
+          <mat-icon mat-list-icon>refresh</mat-icon>
+          <h4 mat-line>
+            <button mat-button (click)="RefreshData()">{{l.GetString('RefreshPage')}}</button>
+          </h4>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon mat-list-icon>signal_wifi_off</mat-icon>
+          <h4 mat-line>{{l.GetString('NetworkCheck')}}</h4>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon mat-list-icon>language</mat-icon>
+          <h4 mat-line>{{l.GetString('InternetReachable')}}</h4>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon mat-list-icon>wb_cloudy</mat-icon>
+          <h4 mat-line>{{l.GetString('ServerCheck')}}</h4>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon mat-list-icon>sync_problem</mat-icon>
+          <h4 mat-line>{{l.GetString('OurError')}}</h4>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</ng-container>

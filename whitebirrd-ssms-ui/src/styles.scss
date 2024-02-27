@@ -1,0 +1,250 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ssms-ui-primary: mat.define-palette(mat.$indigo-palette);
+$ssms-ui-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$ssms-ui-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$ssms-ui-theme: mat.define-light-theme((
+  color: (
+    primary: $ssms-ui-primary,
+    accent: $ssms-ui-accent,
+    warn: $ssms-ui-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($ssms-ui-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*#region for BMS*/
+
+.formcontrol {
+  width: 320px;
+  margin: 10px;
+}
+
+.form-unit {
+  display: inline;
+}
+
+.block {
+  display: block !important;
+}
+
+.input-pre-icon {
+  margin-right: 10px;
+}
+
+.spinner-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-host {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.full-width {
+  width:100%;
+  margin-bottom: 3px;
+}
+
+.header-location {
+  @extend .mat-elevation-z2 !optional;
+  @extend .mat-expansion-panel !optional;
+  padding: 10px 0 10px 24px;
+}
+
+.WorkInProgress {
+  color: black !important;
+  background: linear-gradient(#e1ec00, #bdca00) !important;
+}
+
+.Approved {
+  color: white !important;
+  background: linear-gradient(#d39400, #7b8003) !important;
+}
+
+.Denied {
+  color: white !important;
+  background: linear-gradient(#fd404e, #cc141b) !important;
+}
+
+.InReview {
+  color: black !important;
+  background: linear-gradient(#c4c4c4, #949494) !important;
+}
+
+.Extension {
+  color: white !important;
+  background: linear-gradient(#b06fec, #934fdd) !important;
+}
+
+.GaveUp {
+  color: #00f2ff !important;
+  background: linear-gradient(#696969, #000000) !important;
+}
+
+.Rejected {
+  color: black !important;
+  background: linear-gradient(#ff46fb, #dd00dd) !important;
+}
+
+.Unacceptable {
+  color: black !important;
+  background: linear-gradient(#ec7833, #ce3e1a) !important;
+}
+
+.Complete {
+  color: white !important;
+  background: linear-gradient(#4de626, #346b2c) !important;
+}
+
+.Locked {
+  color: black !important;
+  background: linear-gradient(#00ecec, #0098a0) !important;
+}
+
+
+/*#endregion*/
+
+//#region Form Field width
+.StrictlyVertical,
+.StrictlyVertical .form-field {
+  display: block !important;
+}
+
+@media (max-width:480px) {
+  .StrictlyHorizontal .form-field,
+  .StrictlyVertical .form-field,
+  .DistributeEvenly .form-field {
+      width: 100%;
+      display: block !important;
+  }
+  .DistributeEvenly,
+  .DistributeEvenly .form-unit,
+  .DistributeEvenly .form-field {
+      display: block !important;
+  }
+}
+
+@media (min-width:480px) and (max-width:800px) {
+  .StrictlyHorizontal .form-field,
+  .StrictlyVertical .form-field,
+  .DistributeEvenly .form-field {
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+  }
+}
+
+@media (min-width:800px) and (max-width:1366px) {
+  .StrictlyVertical {
+      width: calc(200px + 20%);
+      max-width: calc(200px + 20%);
+  }
+  .StrictlyVertical .form-field,
+  .DistributeEvenly .form-field {
+      display: block;
+  }
+  .DistributeEvenly {
+      display: inline-block !important;
+      width: calc(50% - 15px);
+      padding: 0 5px;
+  }
+}
+
+@media (min-width:1366px) and (max-width:1440px) {
+  .StrictlyVertical {
+      width: calc(200px + 15%);
+      max-width: calc(200px + 15%);
+  }
+  .StrictlyVertical .form-field,
+  .DistributeEvenly .form-field {
+      display: block;
+  }
+  .DistributeEvenly {
+      display: inline-block !important;
+      width: calc(33.33% - 15px);
+      padding: 0 5px;
+  }
+}
+
+@media (min-width:1440px) and (max-width:1921px) {
+  .StrictlyVertical {
+      width: calc(200px + 15%);
+      max-width: calc(200px + 15%);
+  }
+  .StrictlyVertical .form-field,
+  .DistributeEvenly .form-field {
+      display: block;
+  }
+  .DistributeEvenly {
+      display: inline-block !important;
+      width: calc(25% - 15px);
+      padding: 0 5px;
+  }
+}
+
+@media (min-width:1921px) {
+  .StrictlyVertical {
+      width: calc(200px + 10%);
+      max-width: calc(200px + 10%);
+  }
+  .StrictlyVertical .form-field,
+  .DistributeEvenly .form-field {
+      display: block;
+  }
+  .DistributeEvenly {
+      display: inline-block !important;
+      width: 374px;
+      padding: 0 5px;
+  }
+}
+
+@media (max-width:639px) {
+  .StrictlyHorizontal .form-field {
+      display: block !important;
+  }
+}
+
+@media (min-width:640px) {
+  .StrictlyHorizontal {
+      display: inline-block;
+      padding: 0 0.5%;
+  }
+}

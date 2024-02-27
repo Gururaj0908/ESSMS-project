@@ -1,0 +1,108 @@
+<div class="custom-width">
+    <form [formGroup]="RegisterForm" (ngSubmit)="updateProfile(RegisterForm.value)" novalidate>
+        <div class="sec-title">
+             <mat-icon color="accent">account_box</mat-icon> Profile Information </div>
+
+        <mat-form-field class="form-control">
+            <input matInput type="text" autocomplete placeholder="Registration No" formControlName="regNo" required>
+            <control-messages [control]="RegisterForm.controls.regNo"></control-messages>
+        </mat-form-field>
+        <mat-form-field class="form-control">
+            <input matInput type="text" autocomplete placeholder="Name" formControlName="name" required>
+            <control-messages [control]="RegisterForm.controls.name"></control-messages>
+        </mat-form-field>
+        <mat-form-field class="form-control">
+            <input matInput type="text" autocomplete placeholder="Email Id" formControlName="emailId" required>
+            <control-messages [control]="RegisterForm.controls.emailId"></control-messages>
+        </mat-form-field>
+        <mat-form-field class="form-control">
+            <input matInput type="text" autocomplete placeholder="Phone No" formControlName="mobileNo" required>
+            <control-messages [control]="RegisterForm.controls.mobileNo"></control-messages>
+        </mat-form-field>
+
+        <mat-radio-group class="custom-margin-bottom-20 form-control" formControlName="genderType">
+            <span class="custom-margin-right-20">Gender</span>
+            <mat-radio-button value="MALE" name="gndr" class="mat-radio-label">Male</mat-radio-button>
+            <mat-radio-button value="FEMALE" name="gndr">Female</mat-radio-button>
+            <control-messages [control]="RegisterForm.controls.genderType"></control-messages>
+        </mat-radio-group>
+        <mat-radio-group class=" custom-margin-bottom-20 form-control" formControlName="materialStatus">
+            <span class="custom-margin-right-20">Marital Status</span>
+            <mat-radio-button value="SINGLE" name="mts" class="mat-radio-label">Single</mat-radio-button>
+            <mat-radio-button value="MARRIED" name="mts">Married</mat-radio-button>
+            <control-messages [control]="RegisterForm.controls.materialStatus"></control-messages>
+        </mat-radio-group>
+        <mat-form-field class="form-control">
+            <input matInput [matDatepicker]="picker" placeholder="Date Of Birth" formControlName="birthDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <control-messages [control]="RegisterForm.controls.birthDate"></control-messages>
+        </mat-form-field>
+
+
+
+        <!-- <mat-form-field class="form-control">
+          <input matInput type="text" autocomplete placeholder="Pin Code"  formControlName="pinCode" 
+                required>
+                <control-messages [control]="RegisterForm.controls.pinCode"  ></control-messages>
+        </mat-form-field> -->
+		<!-- 
+        <div *ngIf="showBusinessProfile">
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Contact Person" formControlName="contactPerson" required>
+                <control-messages [control]="RegisterForm.controls.contactPerson"></control-messages>
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Landline No" formControlName="landlineNo" required>
+                <control-messages [control]="RegisterForm.controls.landlineNo"></control-messages>
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Alternate No" formControlName="alternateNo" required>
+                <control-messages [control]="RegisterForm.controls.alternateNo"></control-messages>
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Billing No" formControlName="billngNo" required>
+                <control-messages [control]="RegisterForm.controls.billngNo"></control-messages>
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Company Website Url" formControlName="phoneNo" required>
+                <control-messages [control]="RegisterForm.controls.websiteUrl"></control-messages>
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Designation" formControlName="designation" required>
+                <control-messages [control]="RegisterForm.controls.designation"></control-messages>
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Department" formControlName="department" required>
+                <control-messages [control]="RegisterForm.controls.department"></control-messages>
+            </mat-form-field>
+        </div>
+         -->
+        <div class="profile-button-container">
+            <button mat-raised-button class="custom-button" [disabled]="true" (click)="openBusinessProfile()" color="accent" type="button">
+                <span>Enable Business Profile</span>
+            </button>
+            <button mat-raised-button class="custom-button" color="accent" type="submit">
+                <mat-icon>save</mat-icon>
+                <span> Save</span>
+            </button>
+        </div>
+
+
+        <div class="account-text">
+            <h2>Faqs:</h2>
+            <div class="heading">What happens when I update my email address (or mobile number)? </div>
+            <div class="answer">Your login email id (or mobile number) changes, likewise. You'll receive all your accou r related communication on your updated email address (or mobile number). </div>
+            <div class="heading">When will my Flipkart account be updated with the new email address (or mobile number)? </div>
+            <div class="answer"> It happens as soon as you confirm the verification code sent to your email (or mobile) and save the changes. </div>
+            <div class="heading">What happens to my existing Horolabaccount when I update my email address (or mobile number)?</div>
+            <div class="answer">Updating your email address (or MOO le numper.:idoesn't invalidate your account. Your account remains fully functional. You'll continue seeing your Order history, saved information and personal details. </div>
+            <div class="heading">Does my Seller account get affected when I update my email ad 
+                    dress? </div>
+            <div class="answer">Horolab has a 'single sign-on' policy. Any changes will reflect in your Seller account also. </div>
+        </div>
+
+
+    </form>
+
+</div>

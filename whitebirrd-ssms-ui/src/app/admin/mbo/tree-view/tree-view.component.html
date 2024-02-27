@@ -1,0 +1,44 @@
+<ng-container *ngIf="TreeData!=null">
+   <p>
+      <span>
+         <button mat-icon-button (click)="IsOpen=!IsOpen">
+            <mat-icon *ngIf="!IsOpen">keyboard_arrow_right</mat-icon>
+            <mat-icon *ngIf="IsOpen">keyboard_arrow_down</mat-icon>
+         </button>
+      </span>
+      <span *ngIf="Selectable && TreeData.selectable!=false">
+         <mat-checkbox [disabled]="Disabled" [checked]="Selected" [indeterminate]="IsPartialChildrenSelected()" (change)="Checked($event)">
+            <span matTooltip="{{TreeData[Subtitle]}}">
+               {{TreeData[Title]}}
+               <small> {{TreeData[Subtitle]}}</small>
+            </span>
+         </mat-checkbox>
+      </span>
+      <span *ngIf="!(Selectable && TreeData.selectable !=false)" matTooltip="{{TreeData[Tooltip]}}">
+         {{TreeData[Title]}}
+         <small>{{TreeData[Subtitle]}}</small>
+      </span>
+      <span *ngIf="ShowChildrenCount" matBadge="{{TreeData.children?TreeData.children.length:0}}" matBadgeOverlap="false"></span>
+      <span class="ctrl" *ngIf="!Disabled">
+         <button matTooltip="Add a child Node" mat-icon-button color="primary" *ngIf="Extendable && Editor!=null" (click)="NewChildNode(TreeData)">
+            <mat-icon aria-label="Add a child node">library_add</mat-icon>
+         </button>
+         <button matTooltip="Edit this Node" mat-icon-button color="accent" *ngIf="Editable && Editor!=null && TreeData[ParentId]!=null"
+            (click)="EditExistingNode(TreeData)">
+            <mat-icon aria-label="Edit this Node">edit</mat-icon>
+         </button>
+         <button matTooltip="Delete this Node" mat-icon-button color="warn" *ngIf="Deletable && TreeData[ParentId]!=null" (click)="DeleteClicked(TreeData)">
+            <mat-icon aria-label="Delete this Node">delete</mat-icon>
+         </button>
+      </span>
+   </p>
+   <div class="child" *ngIf="IsOpen && TreeData.children!=null && TreeData.children.length>0">
+      <app-tree-view [TreeParent]="TreeData" [ParentView]="this" [Disabled]="Disabled" [Deletable]="Deletable" [Editable]="Editable"
+         [Extendable]="Extendable" [Editor]="Editor" [Tooltip]="Tooltip" [Title]="Title" (UpdateInitiated)="ChildUpdateInitiated($event)"
+         (InsertInitiated)="ChildInsertInitiated($event)" (DeleteInitiated)="ChildDeleteInitiated($event)" *ngFor="let child of TreeData.children"
+         [Selected]="ChildrenSelection" [InterConnectedNodes]="InterConnectedNodes" [Subtitle]="Subtitle" [ParentId]="ParentId"
+         [TreeData]="child" [Selectable]="Selectable" [ShowChildrenCount]="ShowChildrenCount" (CheckedChanged)="ChildSelectionChanged($event)"
+         [_internalOpen]="_internalOpen">
+      </app-tree-view>
+   </div>
+</ng-container>

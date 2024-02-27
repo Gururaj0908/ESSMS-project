@@ -1,0 +1,60 @@
+<div class="header-container">
+    <div class="menuToggler">
+        <button mat-button (click)="onMenuTogglerClick()" [disabled]="brs.SelectedPrimaryMenu && (brs.SelectedPrimaryMenu.children==null || brs.SelectedPrimaryMenu.children.length==0)">
+      <mat-icon color="accent">apps</mat-icon>
+    </button>
+    </div>
+
+    <div *ngIf="gs.TENANT_ID!=='bms'" class="logo-container">
+        <img class="logo" src="assets/image/essms.png" alt="eSSMS">
+    </div>
+
+    <div class="account-container" *ngIf="brs.LoggedUser">
+        <a mat-button [matMenuTriggerFor]="AccountOverflow" class="userMenu">
+            <mat-icon class="dspl" *ngIf="IsMobile">account_circle</mat-icon>
+            <span *ngIf="!IsMobile">
+        <span *ngIf="IsBms()">
+          {{l.GetString('Hello')}}, {{brs.LoggedUser.loginSuccess.name}}
+        </span>
+            <span *ngIf="!IsBms()">
+          {{l.GetString('Hello')}}, {{brs.LoggedUser.loginSuccess.name}}
+          <span>!&nbsp;({{branchName}})</span>
+            </span>
+            </span>
+            <mat-icon color="accent">arrow_drop_down</mat-icon>
+        </a>
+
+    </div>
+</div>
+
+
+<mat-menu #AccountOverflow="matMenu" yPosition="below" xPosition="before" [overlapTrigger]="false">
+    <a mat-menu-item *ngIf="IsMobile">
+        <mat-icon color="primary">how_to_reg</mat-icon>
+        <ng-container *ngIf="brs.LoggedUser">{{brs.LoggedUser.loginSuccess.name}}</ng-container>
+    </a>
+    <a mat-menu-item *ngIf="!IsMobile">
+        <mat-icon color="primary">vpn_key</mat-icon> {{l.GetString('Account')}}
+    </a>
+    <a mat-menu-item (click)="signOut()">
+        <mat-icon color="primary">power_settings_new</mat-icon> {{l.GetString('SignOut')}}
+    </a>
+    <a mat-menu-item href="/assets/bms_user_manual.pdf" *ngIf="IsBms()" target="_blank">
+        <mat-icon color="primary">help_outline</mat-icon> {{l.GetString('Help')}}
+    </a>
+</mat-menu>
+
+
+<mat-divider></mat-divider>
+<div>
+    <mat-tab-group #tabs color="accent" [selectedIndex]="brs.SelectedPrimaryMenuIndex" (selectedIndexChange)="TabChanged($event)">
+        <mat-tab *ngFor="let item of brs.MainMenu">
+            <ng-template mat-tab-label style="min-width: 100px;">
+                <mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+                <span [style.marginLeft.px]="5"> {{ item.objectName }} </span>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+<mat-divider></mat-divider>
+<div class="mat-elevation-z8" style="height:2px"></div>

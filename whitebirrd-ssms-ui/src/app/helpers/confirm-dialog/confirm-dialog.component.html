@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>{{data.Title}}</h1>
+<div mat-dialog-content>
+  <table>
+    <tbody>
+      <tr>
+        <td width="50">
+          <mat-icon color="primary" style="font-size:45px">{{GetIconValue()}}</mat-icon>
+        </td>
+        <td>
+          <p>{{data.Message}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div mat-dialog-actions style="text-align:right;display:block">
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">{{data.PrimaryButtonText}}</button>
+  <button mat-raised-button color="accent" [mat-dialog-close]="false" cdkFocusInitial>{{data.CloseButtonText}}</button>
+</div>

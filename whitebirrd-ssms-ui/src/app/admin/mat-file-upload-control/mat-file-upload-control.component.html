@@ -1,0 +1,21 @@
+<ng-container *ngIf="!multiple">
+    <input #uploader type="file" id="upload" accept={{Accept}} style="display: none" (change)="Changed($event)" />
+</ng-container>
+<ng-container *ngIf="multiple">
+    <input #uploader type="file" multiple id="upload" accept={{Accept}} style="display:none" (change)="Changed($event)" />
+</ng-container>
+<div>
+    <input matInput placeholder="{{placeholder}}" type="text" value="{{DisplayName}}" readonly/>
+    <ng-container *ngIf="DisplayName!=null">
+        <button mat-icon-button (click)="Upload()" matTooltip="{{l.GetString('UploadFile')}}" *ngIf="UploadURL!=null">
+         <mat-icon color="accent">backup</mat-icon>
+      </button>
+        <button mat-icon-button (click)="Clear()" matTooltip="{{l.GetString('ClearSelection')}}">
+         <mat-icon color="warn">close</mat-icon>
+      </button>
+    </ng-container>
+    <button mat-icon-button (click)="PickFile()" matTooltip="{{l.GetString('BrowseFile')}}">
+      <mat-icon>folder_open</mat-icon>
+   </button>
+</div>
+<mat-progress-bar mode="determinate" *ngIf="Progress > 0" value="{{Progress}}"></mat-progress-bar>

@@ -1,0 +1,32 @@
+
+.appHeader {
+    color: #fff;
+    text-align: center;
+    padding: 1%;
+    -webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+  }
+  
+  .registerCard {
+    max-width: 28%;
+    margin: 2em auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  
+  .mat-tooltip {
+    /* your own custom styles here */ 
+    /* e.g. */
+    color: yellow;
+  }
+  
+  #logo {
+      font-weight: 900;
+      padding: 15px 10px;
+      display: block;
+  }
+  

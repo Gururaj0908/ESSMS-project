@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-content>
+    <div>
+      <div>
+        <h2>Permissions for {{userName}}</h2>
+      </div>
+      <br>
+      <mat-divider></mat-divider>
+      <p>Templates for Common Roles</p>
+      <div>
+        <ul style="display:inline">
+          <li *ngFor="let item of roles" color="primary" style="display:inline">
+            <mat-checkbox [checked]="item.selected" (change)="CheckboxChanged($event, item)">
+              {{item.name}}
+            </mat-checkbox> &nbsp; &nbsp; &nbsp;
+          </li>
+        </ul>
+      </div>
+      <br>
+      <mat-divider></mat-divider>
+      <br>
+      <div>
+        <ngx-treeview [config]="config" [items]="items" (selectedChange)="onSelectedChange($event)"></ngx-treeview>
+      </div>
+      <p>
+        <button mat-raised-button color="primary" (click)="SaveChanges()">
+          <mat-icon>save</mat-icon>
+          <span>save</span>
+        </button>
+        <button mat-button type="button" (click)="navigateToList()">
+          <mat-icon>cancel</mat-icon>
+          <span>Cancel</span>
+        </button>
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>

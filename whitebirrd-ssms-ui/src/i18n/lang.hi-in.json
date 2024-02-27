@@ -1,0 +1,293 @@
+{
+    "LoginForm": {
+        "message": "लॉगिन फॉर्म"
+    },
+    "RegisterForm": {
+        "message": "पंजीकरण फॉर्म"
+    },
+    "UserName": {
+        "message": "उपयोगकर्ता नाम"
+    },
+    "EmailTooltip": {
+        "message": "उपयोगकर्ता नाम या ईमेल आईडी"
+    },
+    "Password": {
+        "message": "पारण शब्द"
+    },
+    "SignIn": {
+        "message": "दाखिल करें"
+    },
+    "ForgotPassword": {
+        "message": "पासवर्ड भूल गए"
+    },
+    "FullName": {
+        "message": "पूरा नाम"
+    },
+    "Email": {
+        "message": "ईमेल आईडी"
+    },
+    "Mobile": {
+        "message": "मोबाइल नंबर"
+    },
+    "ConfirmPassword": {
+        "message": "पासवर्ड की पुष्टि कीजिये"
+    },
+    "Register": {
+        "message": "पंजीकृत करें"
+    },
+    "Hello": {
+        "message": "नमस्कार"
+    },
+    "Account": {
+        "message": "मेरा खाता"
+    },
+    "SignOut": {
+        "message": "बाहर निकलें"
+    },
+    "Profile": {
+        "message": "रूपरेखा"
+    },
+    "Help": {
+        "message": "सहायता"
+    },
+    "MadeInIndia": {
+        "message": "भारत में निर्मित"
+    },
+    "Copyright": {
+        "message": "प्रतिलिप्याधिकार"
+    },
+    "Items": {
+        "message": "पंक्तियाँ प्रति पृष्ठ"
+    },
+    "EditRow": {
+        "message": "पंक्ति संपादित करें"
+    },
+    "DeleteRow": {
+        "message": "पंक्ति को मिटाएँ"
+    },
+    "TimeLine": {
+        "message": "इतिहास देखें"
+    },
+    "Delete": {
+        "message": "मिटा दिया जाए"
+    },
+    "SureDelete": {
+        "message": "क्या आप सुनिश्चित हैं?"
+    },
+    "Yes": {
+        "message": "हाँ"
+    },
+    "No": {
+        "message": "नहीं"
+    },
+    "Required": {
+        "message": "{0} आवश्यक है"
+    },
+    "MinimumVldtr": {
+        "message": "{0} {1} से कम नहीं हो सकता"
+    },
+    "MaximumVldtr": {
+        "message": "{0} {1} से अधिक नहीं हो सकता"
+    },
+    "EmailVldtr": {
+        "message": "{0} एक वैध ईमेल होना चाहिए"
+    },
+    "MinLengthVldtr": {
+        "message": "{0} {1} अक्षरों से कम नहीं हो सकता"
+    },
+    "MaxLengthVldth": {
+        "message": "{0} में {1} अक्षरों से अधिक नहीं हो सकता"
+    },
+    "CompareVldtr": {
+        "message": "{0} {1} से मेल नहीं खाता"
+    },
+    "OneFileAllow": {
+        "message": "एक {0} फ़ाइल की अनुमति है"
+    },
+    "MultipleFilesAllow": {
+        "message": "एकाधिक {0} फ़ाइलों की अनुमति है"
+    },
+    "FileSizeVldtr": {
+        "message": "फ़ाइल का आकार {0} KB और {1} KB के भीतर होना चाहिए"
+    },
+    "UploadError": {
+        "message": "फ़ाइल अपलोड नहीं की जा सकी।"
+    },
+    "MinFileSize": {
+        "message": "कुल फ़ाइल का आकार {0} से अधिक होना चाहिए"
+    },
+    "MaxFileSize": {
+        "message": "कुल फ़ाइल का आकार {0} से कम होना चाहिए"
+    },
+    "UploadStart": {
+        "message": "अपलोड शुरू हो गया है"
+    },
+    "Uploading": {
+        "message": "{1} मे {0} को अपलोड किया जा रहा है। {2}%"
+    },
+    "File": {
+        "message": "फ़ाइल"
+    },
+    "Files": {
+        "message": "फ़ाइलें"
+    },
+    "UploadDone": {
+        "message": "{0} {1} सफलतापूर्वक अपलोड किया गया"
+    },
+    "AddNew": {
+        "message": "नया {0} जोड़ें"
+    },
+    "AddNewFail": {
+        "message": "नया {0} नहीं जोड़ा जा सका"
+    },
+    "Hotline": {
+        "message": "हमसे संपर्क करें"
+    },
+    "HomeSearch": {
+        "message": "खोज करें"
+    },
+    "LoginRegister": {
+        "message": "लॉग इन / पंजीकरण"
+    },
+    "Cart": {
+        "message": "खरीदारी थैला"
+    },
+    "TotalCart": {
+        "message": "कुल"
+    },
+    "CartDetail": {
+        "message": "विवरण देखें"
+    },
+    "Home": {
+        "message": "मुख पृष्ठ"
+    },
+    "RepairStatus": {
+        "message": "मरम्मत की स्थिति"
+    },
+    "BookRepair": {
+        "message": "मरम्मत आरक्षित करें"
+    },
+    "FakeProduct": {
+        "message": "नकली उत्पाद की पहचान"
+    },
+    "CompanyName": {
+        "message": "होरोलैब"
+    },
+    "ItemsPerPage": {
+        "message": "पंक्तियाँ प्रति पृष्ठ"
+    },
+    "NoData": {
+        "message": "डेटा नहीं मिल सका"
+    },
+    "TrialForData": {
+        "message": "निम्नलिखित प्रयत्न कर सकते हैं"
+    },
+    "RefreshPage": {
+        "message": "पृष्ठ ताज़ा करें"
+    },
+    "NetworkCheck": {
+        "message": "जाँच करें कि क्या नेटवर्क उपलब्ध है"
+    },
+    "InternetReachable": {
+        "message": "सुनिश्चित करें कि इंटरनेट उपलब्ध है"
+    },
+    "ServerCheck": {
+        "message": "जाँच करें कि क्या सर्वर डाउन है"
+    },
+    "OurError": {
+        "message": "हमारे ओर भी त्रुटि हो सकती है"
+    },
+    "AppName": {
+        "message": "eSSMSs"
+    },
+    "NoDataAvailable": {
+        "message": "प्रदर्शित करने के लिए कोई डेटा उपलब्ध नहीं है"
+    },
+    "Reload": {
+        "message": "पुनः पृष्ठ उतरें"
+    },
+    "IsActive": {
+        "message": "सक्रिय है"
+    },
+    "Restore": {
+        "message": "पुनर्स्थापित"
+    },
+    "Search": {
+        "message": "खोजें"
+    },
+    "Reset": {
+        "message": "पुनः प्रारम्भि करें"
+    },
+    "VALID": {
+        "message": "मान्य"
+    },
+    "INVALID": {
+        "message": "अमान्य"
+    },
+    "PENDING": {
+        "message": "अपूर्ण"
+    },
+    "DISABLED": {
+        "message": "निर्योग्य"
+    },
+    "Status": {
+        "message": "स्थिति {0} है"
+    },
+    "SelectedRow": {
+        "message": "चयनित पंक्तियाँ"
+    },
+    "PageNoShow": {
+        "message": "{2} में {0} से {1} तक दिखा रहे हैं"
+    },
+    "FirstPage": {
+        "message": "पहला पृष्ठ"
+    },
+    "PreviousPage": {
+        "message": "पिछला पृष्ठ"
+    },
+    "NextPage": {
+        "message": "अगला पृष्ठ"
+    },
+    "LastPage": {
+        "message": "अंतिम पृष्ठ"
+    },
+    "SingleSelection": {
+        "message": "एकल चयन की अनुमति है"
+    },
+    "MultipleSelection": {
+        "message": "एकाधिक चयन की अनुमति है"
+    },
+    "BrowseFile": {
+        "message": "फ़ाइल का चयन करें"
+    },
+    "UploadFile": {
+        "message": "फ़ाइल अपलोड करें"
+    },
+    "ClearSelection": {
+        "message": "चयन हटाएं"
+    },
+    "FileSize": {
+        "message": "कुल फ़ाइल का आकार"
+    },
+    "UploadInit": {
+        "message": "अपलोड करने की तैयारी"
+    },
+    "Save": {
+        "message": "सहेजें"
+    },
+    "Cancel": {
+        "message": "रद्द करें"
+    },
+    "RequestFail": {
+        "message": "अनुरोध संसाधित नहीं किया जा सका"
+    },
+    "Saved": {
+        "message": "सफलतापूर्वक सहेजा गया"
+    },
+    "InvalidForms": {
+        "message": "निम्नलिखित अमान्य फ़ॉर्म हैं"
+    },
+    "ExtraDetails": {
+        "message": "अतिरिक्त विवरण"
+    }
+}

@@ -1,0 +1,33 @@
+    mat-sidenav {
+        width: 300px;
+    }
+
+    .outer-content {
+        width: 80%;
+        float: left;
+    }
+
+    .ms-container {
+        height: calc(100% - 130px);
+    }
+
+    #loader {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.432);
+        top: 0;
+        z-index: 100;
+    }
+
+    #loader mat-spinner {
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+    }
+
+    @media print{
+  .noprint{display:none !important;}
+  .side-content{
+    margin-left: unset!important;
+  }
+}

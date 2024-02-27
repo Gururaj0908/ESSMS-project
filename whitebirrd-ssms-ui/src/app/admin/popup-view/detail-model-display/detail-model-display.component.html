@@ -1,0 +1,52 @@
+<ng-container [ngSwitch]="GetContentType(Model.contentType)">
+    <ng-container *ngSwitchCase="contentType.Audio">
+        <div *ngIf="Model.value">
+            <audio autoplay loop controls="controls">
+          <source src="{{gst.API_BASE_URL}}{{Model.value}}" type="audio/mp3" />
+        </audio>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="contentType.File">
+        <div *ngIf="Model.value">
+            <a href="{{gst.API_BASE_URL}}{{Model.value}}" target="_blank">
+                <mat-icon>attach_file</mat-icon> {{Model.label}}
+            </a>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="contentType.Image">
+        <div *ngIf="Model.value">
+            <h3>{{Model.label}}</h3>
+            <img src="{{gst.API_BASE_URL}}{{Model.value}}" style="max-width: 100%;" />
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="contentType.Video">
+        <div *ngIf="Model.value">
+            <video controls autoplay loop>
+          <source src="{{gst.API_BASE_URL}}{{Model.value}}" type="video/mp4" />
+        </video>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="contentType.Html">
+        <div>
+            <h3>{{Model.label}}</h3>
+            <div [innerHTML]="Model.value"> </div>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="contentType.Pdf">
+        <div *ngIf="Model.value">
+            <pdf-viewer [src]="gst.API_BASE_URL+Model.value"></pdf-viewer>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="contentType.Separator">
+        <h3>{{Model.label}}</h3>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <span class="cell head">{{Model.label}}</span>
+        <ng-container *ngIf="Model.formatter">
+            <span [ngStyle]="Model.formatter.styleObj" class="cell">{{Model.value}}</span>
+        </ng-container>
+        <ng-container *ngIf="!Model.formatter">
+            <span class="cell">{{Model.value}}</span>
+        </ng-container>
+    </ng-container>
+</ng-container>

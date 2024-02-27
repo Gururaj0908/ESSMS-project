@@ -1,0 +1,28 @@
+<div>
+   <p>
+      <mat-form-field>
+         <mat-label>Search Box</mat-label>
+         <input matInput placeholder="Filter Tree" (input)="filterData($event)" autocomplete="off">
+         <mat-hint>{{_filterHint}}</mat-hint>
+      </mat-form-field>
+   </p>
+   <span *ngIf="SelectionAllowed">
+      <mat-slide-toggle [checked]="_connectedChildren" (change)="Checked($event)">Inter-Connected Nodes</mat-slide-toggle>
+   </span>
+   <span>
+      <mat-slide-toggle [checked]="ExpandAll" (change)="ExpansionChange($event)">{{ExpandAll?'Colapse All':'Expand All'}}</mat-slide-toggle>
+   </span>
+   <ng-container *ngIf="Data!=null">
+      <app-tree-view #treeview [Extendable]="CreateNodeAllowed" [Title]="TitleKey" [Editor]="Form" [TreeData]="_filteredData" [Deletable]="DeleteNodeAllowed"
+         [ShowChildrenCount]="ShowChildCount" (DeleteInitiated)="Delete($event)" [Subtitle]="SubtitleKey" [Tooltip]="TooltipKey"
+         [Editable]="UpdateNodeAllowed" (UpdateInitiated)="Update($event)" [InterConnectedNodes]="_connectedChildren" (InsertInitiated)="Insert($event)"
+         [ParentId]="ParentIdKey" [Selectable]="SelectionAllowed" [Disabled]="Disabled"></app-tree-view>
+   </ng-container>
+   <ng-container *ngIf="Data==null">
+      <strong>No Process available.</strong>
+      <ng-container *ngIf="Form">
+         <strong>Add new.</strong>
+         <app-form-area [FormsList]="Form" [SubmitButtonText]="'Save'" [ResetButtonText]="'Reset'" (OnSubmitButtonClick)="Insert($event)"></app-form-area>
+      </ng-container>
+   </ng-container>
+</div>

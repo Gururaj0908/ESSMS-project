@@ -1,0 +1,8 @@
+.table{
+    width: 100%;
+    border-spacing: 0;
+}
+.table tbody tr td, .table tbody tr th{
+    border-bottom: thin solid gray;
+    padding: 5px;
+}

@@ -1,0 +1,8 @@
+<mat-card style="padding: 10px 20px">
+    <mat-card-content>
+        <div *ngIf="resetDone">
+            <app-form-area [ShowRawJson]="true" [FormsList]="formList" [PrefilledValue]="prefilledValue" [SubmitButtonText]="l.GetString('Save')" (OnSubmitButtonClick)="submit($event)" (OnCancelButtonClick)="cancel($event)" (OnDynamicButtonClick)="DynamicButtonExecuted($event)"
+                [ResetButtonText]="cancelText"></app-form-area>
+        </div>
+    </mat-card-content>
+</mat-card>

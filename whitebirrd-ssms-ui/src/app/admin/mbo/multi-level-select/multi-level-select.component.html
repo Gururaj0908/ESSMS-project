@@ -1,0 +1,17 @@
+<mat-form-field class="form-field {{DisplayStyle}}">
+   <mat-label>{{Label}}</mat-label>
+   <mat-select (selectionChange)="onDropDownChange($event)" [required]="required">
+      <mat-option *ngIf="!required"> -- None -- </mat-option>
+      <ng-container *ngIf="Options">
+         <mat-option *ngFor="let item of Options" [value]="item.value">
+            {{item.label}}
+         </mat-option>
+      </ng-container>
+   </mat-select>
+   <mat-error>{{Error}}</mat-error>
+</mat-form-field>
+<ng-container *ngIf="ShowChild">
+   <app-multi-level-select style="display: contents" [DisplayStyle]="DisplayStyle" [required]="required" [OriginalLabel]="OriginalLabel"
+      [Label]="OriginalLabel + ' in '+ SelectedText" (ValueUpdated)="ValueUpdateReceived($event)" [parentKey]="parentKey" [ParentValue]="internalValue"
+      [optionUrl]="optionUrl" [required]="required" [disabled]="disabled" [placeholder]="placeholder"></app-multi-level-select>
+</ng-container>

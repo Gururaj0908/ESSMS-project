@@ -1,0 +1,113 @@
+<div>
+    <div fxShow="true" fxHide.lt-md="true">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row class="top-toolbar">
+                <span fxlayoutalign="center center" fxshow="false" fxshow.gt-xs="">
+          <mat-icon>call</mat-icon>{{l.GetString('Hotline')}} : (+100) 123 456 7890
+        </span>
+                <div class="account-info">
+                    <select (change)="ChangeLanguage($event)" [value]="Language">
+            <option value="en_in">English</option>
+            <option value="hi_in">हिंदी</option>
+          </select>
+                    <button mat-button *ngIf='!userData' [routerLink]="['/login']">{{l.GetString('LoginRegister')}}</button>
+                    <button *ngIf='userData' mat-button [matMenuTriggerFor]="profile" class="userMenu">
+            <mat-icon>person</mat-icon> {{userData.loginSuccess.name}}
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+                    <mat-menu #profile="matMenu" xPosition="after" class="custom-matmenu" yPosition="below" [overlapTrigger]="false">
+                        <button mat-menu-item [routerLink]="['/ecommerce/user-profile/account']">
+              <mat-icon>dialpad</mat-icon>
+              <span>{{l.GetString('Profile')}}</span>
+            </button>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item (click)="signOut()">
+              <mat-icon>power_settings_new</mat-icon>{{l.GetString('SignOut')}}
+            </button>
+                    </mat-menu>
+                </div>
+            </mat-toolbar-row>
+            <mat-toolbar-row class="second-toolbar">
+                <span class="logo1">{{l.GetString('CompanyName')}}</span>
+                <div class="hrsearch">
+                    <form role="search">
+                        <div class="search-product">
+                            <input type="search" id="mySearch" name="q" placeholder="{{l.GetString('HomeSearch')}}" aria-label="Search product Item">
+                            <i class="material-icons search-align" color="accent">&#xE8B6;</i>
+                        </div>
+                    </form>
+                </div>
+                <button [ngStyle]="colorConstant.Button" mat-button [matMenuTriggerFor]="cart">
+          <mat-icon>shopping_cart</mat-icon> {{l.GetString('Cart')}}
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+                <mat-menu #cart="matMenu" xPosition="before" yPosition="below" [overlapTrigger]="false">
+                    <mat-list class="cart-data">
+                        <mat-list-item *ngIf="cartData">
+                            <b>{{cartData.length}} Item</b>
+                        </mat-list-item>
+                        <div class="divider"></div>
+                        <mat-list-item *ngFor="let cart of cartData">
+                            <h3 matLine class="text-title1">{{cart.modelNo}}</h3>
+                            <p mat-line class="text-title1">Price:${{cart.price.price}} </p>
+                            <img src="{{globalService.API_BASE_URL}}/essms-inventory/public/file/view?absolutePath={{cart.primaryImagePath}}" back alt="gallery image">
+                            <mat-icon color="warn">close</mat-icon>
+                        </mat-list-item>
+                        <div class="divider"></div>
+                        <mat-list-item>
+                            <b>{{l.GetString('TotalCart')}}:
+                <span color="warn">${{total}} </span>
+              </b>
+                            <span class="view-details" [routerLink]="['/ecommerce/shopping-cart']">{{l.GetString('CartDetail')}}</span>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-menu>
+            </mat-toolbar-row>
+            <mat-toolbar-row class="third-toolbar">
+                <div class="headerrow3">
+                    <a mat-button *ngFor="let link of navLinks" [routerLink]="link.path">
+            {{link.label}}
+          </a>
+                </div>
+            </mat-toolbar-row>
+
+        </mat-toolbar>
+    </div>
+
+    <div color="accent" fxShow="true" fxHide.gt-sm="true">
+        <mat-toolbar color="accent">
+            <a (click)="sidenav.toggle()" class="custom-menu">
+                <i class="material-icons">
+          menu
+        </i>
+            </a>
+            <span>{{l.GetString('CompanyName')}}</span>
+
+            <mat-icon class="add-to-cart" matBadge="" matBadgeColor="warn">add_shopping_cart</mat-icon>
+        </mat-toolbar>
+    </div>
+
+</div>
+
+<mat-sidenav class="custom-sidenav" #sidenav fxLayout="column">
+
+    <div fxLayout="column" color="accent">
+
+        <div *ngFor="let link of navLinks">
+            <button (click)="sidenav.toggle()" mat-menu-item [routerLink]="link.path">{{link.label}}</button>
+            <mat-divider></mat-divider>
+        </div>
+
+
+        <button *ngIf='userData' mat-menu-item [routerLink]="['/ecommerce/user-profile/']">{{l.GetString('Profile')}}</button>
+        <mat-divider></mat-divider>
+        <button mat-raised-button *ngIf='!userData' [routerLink]="['/login']">{{l.GetString('LoginRegister')}}</button>
+        <button mat-menu-item *ngIf='userData' (click)="signOut()">
+      <mat-icon>power_settings_new</mat-icon>{{l.GetString('SignOut')}}
+    </button>
+        <mat-divider></mat-divider>
+
+        <a (click)="sidenav.toggle()" color="primary" mat-button>Close</a>
+    </div>
+
+</mat-sidenav>

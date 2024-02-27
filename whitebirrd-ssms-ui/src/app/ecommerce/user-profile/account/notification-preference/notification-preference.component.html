@@ -1,0 +1,48 @@
+<div class="custom-width">
+  <form [formGroup]="ManageNotificationForm" (ngSubmit)="updateNotificationSettings(ManageNotificationForm.value)" novalidate>
+    <div class="sec-title">Offers/Promotions Preferences </div>
+    <mat-form-field class="form-control">
+      <mat-label>Sms Notification</mat-label>
+      <mat-select formControlName="promotionalSMSPreference" placeholder="Sms Notification">
+        <mat-option> -- None -- </mat-option>
+        <mat-option value="ALL">All</mat-option>
+
+      </mat-select>
+      <!-- <control-messages [control]="ManageNotificationForm.controls.promotionalSMSPreference"></control-messages> -->
+    </mat-form-field>
+    <mat-form-field class="form-control">
+      <mat-label>Email Notification</mat-label>
+      <mat-select  formControlName="promotionalEmailPreference" placeholder="Email Notification">
+        <mat-option> -- None -- </mat-option>
+        <mat-option value="ALL">All</mat-option>
+      </mat-select>
+      <!-- <control-messages [control]="ManageNotificationForm.controls.promotionalEmailPreference"></control-messages> -->
+    </mat-form-field>
+    <div class="sec-title">Other Preferences </div>
+
+    <div class="account-text">1. Select the newsletters you want to receive</div>
+    <section class="example-section">
+      <mat-checkbox formControlName="isMarketingNewsletterEnabled" class="example-margin custom-padding-checkbox">Marketing Newsletter</mat-checkbox>
+      <mat-checkbox formControlName="isOfferNewsletterEnabled" class="example-margin">Offer Newsletter</mat-checkbox>
+    </section>
+
+    <div class="account-text">2. Your feedback helps us keep improving our services. In this regard we seek your feedback occasionally through emails.
+      Please select the feedback areas where we can kepp in touch with you.</div>
+    <section class="example-section">
+      <mat-checkbox  formControlName="isReviewEnabled" class="example-margin custom-padding-checkbox">User Reviews</mat-checkbox>
+      <mat-checkbox formControlName="isSurveyEnabled" class="example-margin">Consumer Serveys</mat-checkbox>
+    </section>
+
+
+
+    <div class="profile-button-container" style="margin-top: 40px;">
+      <button mat-raised-button class="custom-button" color="accent" type="submit">
+        <mat-icon>save</mat-icon>
+        <span>Save</span>
+      </button>
+    </div>
+
+
+  </form>
+
+</div>

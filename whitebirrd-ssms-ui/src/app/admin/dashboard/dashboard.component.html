@@ -1,0 +1,23 @@
+<div class="mat-table">
+    <div *ngFor="let cat of Data" class="mat-elevation-z4 box">
+        <h3>{{cat.key}}</h3>
+        <table class="table">
+            <tr>
+                <th>Particular</th>
+                <th width="100">Quantity</th>
+            </tr>
+            <tr *ngFor="let map of cat.value">
+                <td>
+                    <span *ngIf="map.value[0].businessObjectId!=null" (click)="GoTo(map.value[0].businessObjectId)" class="point">{{map.key}}</span>
+                    <span *ngIf="map.value[0].businessObjectId==null">{{map.key}}</span>
+                </td>
+                <td width="100">{{map.value[0].totalCount}}</td>
+            </tr>
+        </table>
+    </div>
+    <h3>{{l.GetString('ExtraDetails')}}</h3>
+    <div *ngFor="let tab of Table">
+        <app-table-view [RemoteOperations]="tab.isRemotePaginated" [TABLE_DATA]="tab.entityList" [Columns]="tab.displayableColumnsWithHeader" [ShowStatusToggle]="false" [ShowDeleteButton]="false" [ShowEditButton]="false" [PageSize]="10" [ShowCreateButton]="false"
+            [HideActiveToggler]="true"></app-table-view>
+    </div>
+</div>

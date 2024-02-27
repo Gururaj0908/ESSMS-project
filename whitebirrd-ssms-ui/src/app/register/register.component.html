@@ -1,0 +1,103 @@
+<!-- <div class="col-md-4 col-md-offset-4 register-login">
+        <div class="login-inner">
+  <h2 class="register-login-title">Register</h2>
+  <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="firstName">Name</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+          <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="lastName">emailId</label>
+          <input type="text" class="form-control" name="emailId" [(ngModel)]="model.emailId" #emailId="ngModel" required />
+          <div *ngIf="f.submitted && !emailId.valid" class="help-block">Email Id is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+        <label for="lastName">mobileNo</label>
+        <input type="text" class="form-control" name="mobileNo" [(ngModel)]="model.mobileNo" #mobileNo="ngModel" required />
+        <div *ngIf="f.submitted && !mobileNo.valid" class="help-block">Mobile No  is required</div>
+    </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+          <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+          <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+        <label for="password">Confirm Password</label>
+        <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel" required />
+        <div *ngIf="f.submitted && !confirmPassword.valid" class="help-block">confirm password is required</div>
+    </div>
+      
+      <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">Register</button>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+      </div>
+  </form>
+</div>
+</div> -->
+<!-- 
+    Login template using Angular Material
+-->
+
+
+
+
+<mat-card class="registerCard">
+    <mat-card-header>
+        <h3>Register Form</h3>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="RegisterForm" novalidate (ngSubmit)="register()">
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Full Name"  formControlName="Name" [(ngModel)]="model.name" 
+                    required>
+                <mat-error>{{nameError()}}</mat-error>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="form-control">
+              <input matInput type="text" autocomplete placeholder="Email Id"  formControlName="EmailId" [(ngModel)]="model.emailId" 
+                    required>
+                <mat-error>{{emailError()}}</mat-error>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="Mobile No"  formControlName="MobileNo" [(ngModel)]="model.mobileNo" 
+                      required>
+                  <mat-error>{{mobileNoError()}}</mat-error>
+              </mat-form-field>
+              <br/>
+              <mat-form-field class="form-control">
+                <input matInput type="text" autocomplete placeholder="User Name" formControlName="UserName" [(ngModel)]="model.username" 
+                      required>
+                  <mat-error>{{usernameError()}}</mat-error>
+              </mat-form-field>
+              <br/>
+              <mat-form-field class="form-control">
+                <input matInput type="password" autocomplete placeholder="Password" formControlName="Password" [(ngModel)]="model.password" 
+                      required>
+                  <mat-error>{{passwordError()}}</mat-error>
+              </mat-form-field>
+              <br/>
+              <mat-form-field class="form-control">
+                <input matInput type="password" autocomplete placeholder="Confirm Password" formControlName="ConfirmPassword" [(ngModel)]="model.confirmPassword" 
+                      required>
+                  <mat-error>{{confirmPasswordError()}}</mat-error>
+              </mat-form-field>
+              <br/>
+            <button mat-raised-button   color="primary" type="submit">
+                <span>Register</span>
+            </button>
+            <button mat-raised-button color="primary" [routerLink]="['/login']" type="submit">
+                <span>Sign In</span>
+            </button>
+            <p *ngIf="loading">&nbsp;</p>
+            <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+        </form>
+    </mat-card-content>
+</mat-card>

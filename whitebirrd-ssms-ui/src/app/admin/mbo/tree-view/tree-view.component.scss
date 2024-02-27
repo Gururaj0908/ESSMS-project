@@ -1,0 +1,14 @@
+.child {
+    margin: 10px 0 10px 20px;
+}
+
+.ctrl {
+    visibility: collapse;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s;
+}
+
+p:hover > .ctrl {    
+    visibility: visible;
+    opacity: 1;
+}

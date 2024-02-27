@@ -1,0 +1,27 @@
+<!-- <p>
+    <button mat-button (click)="toggleSidenav()"><mat-icon>apps</mat-icon></button>
+</p> -->
+<app-header (toggleSidenav)="toggleSidenav($event)" [IsMobile]="mobileQuery.matches" class="noprint">
+</app-header>
+
+<mat-sidenav-container class="ms-container">
+
+  <mat-sidenav class="noprint" #sidenav [mode]="GetNavMode()" [fixedInViewport]="mobileQuery.matches"
+    [fixedTopGap]="109"
+    [opened]="brs && brs.SelectedPrimaryMenu && (brs.SelectedSecondaryMenu!=null)">
+    <app-side-navigation [IsMobile]="mobileQuery.matches"></app-side-navigation>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="side-content">
+    <router-outlet *ngIf="brs.MainMenu"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-footer class="noprint"></app-footer>
+<!--
+<ng-container *ngIf="Remote.ShowLoader">
+<div class="noprint" id="loader">
+  <mat-spinner></mat-spinner>
+</div>
+</ng-container>
+-->

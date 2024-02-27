@@ -1,0 +1,297 @@
+<mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+    <mat-step [stepControl]="productFormGroup">
+        <form [formGroup]="productFormGroup">
+            <div class="custom-width">
+                <ng-template matStepLabel>Product Info</ng-template>
+                <mat-form-field class="form-field">
+                    <mat-label>Product Company</mat-label>
+                    <mat-select formControlName="brandId" (selectionChange)="checkOther()" placeholder="Product Company">
+                        <mat-option> -- None -- </mat-option>
+                        <mat-option *ngFor="let item of productCategory" [value]="item.value">{{item.label}}</mat-option>
+                    </mat-select>
+                    <mat-error>{{getErrorMessage(productFormGroup.controls['brandId'])}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                    <mat-label>Product Category</mat-label>
+                    <mat-select formControlName="itemCategoryId"  placeholder="Product Company">
+                        <mat-option> -- None -- </mat-option>
+                        <mat-option *ngFor="let item of itemCategory" [value]="item.value">{{item.label}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf='displayOtherProduct'>
+                    <input matInput formControlName="brandName" placeholder="Company Name" required>
+                    <control-messages [control]="productFormGroup.controls['brandName']"></control-messages>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="modelNo" placeholder="Model No" required>
+                    <mat-error>{{getErrorMessage(productFormGroup.controls['modelNo'])}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="claimedModelName" placeholder="Claimed Model">
+
+                    <control-messages [control]="productFormGroup.controls['claimedModelName']"></control-messages>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="serialNo" placeholder="Serial No">
+
+                    <control-messages [control]="productFormGroup.controls['serialNo']"></control-messages>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="custProductRefNo" placeholder="Customer Product Reference No">
+
+                    <control-messages [control]="productFormGroup.controls['custProductRefNo']"></control-messages>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="caliberNo" placeholder="Caliber No">
+
+                    <control-messages [control]="productFormGroup.controls['caliberNo']"></control-messages>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="backcoverNo" placeholder="Back Cover No">
+
+                    <control-messages [control]="productFormGroup.controls['backcoverNo']"></control-messages>
+                </mat-form-field>
+                <span>Front Image</span>
+                <mat-divider></mat-divider>
+                <input type="file" #fileInputFront placeholder="Upload Front Image..." (change)="uploadFrontImage()" />
+                <mat-divider></mat-divider>
+                <span>Back Image</span>
+                <mat-divider></mat-divider>
+                <input type="file" #fileInputBack (change)="uploadBackImage()" placeholder="Upload Back Image..." />
+                <mat-divider></mat-divider>
+                <span>Side Image</span>
+                <mat-divider></mat-divider>
+                <input type="file" #fileInputSide placeholder="Upload Side Image..." (change)="uploadSideImage()" />
+                <div class="mat-custom-button">
+                    <button mat-raised-button [disabled]="true" matStepperPrevious type="button"> <i class="material-icons">
+              arrow_back_ios
+            </i> Back</button>
+                    <button mat-raised-button color="primary" [disabled]="!productFormGroup.valid" mat-button matStepperNext> Next
+            <i class="material-icons">
+              arrow_forward_ios
+            </i></button>
+                </div>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="otherFormGroup">
+        <form [formGroup]="otherFormGroup">
+            <div class="custom-width">
+                <ng-template matStepLabel>Other Info</ng-template>
+                <span> Product Warranty Status</span>
+                <mat-divider></mat-divider>
+                <mat-radio-group>
+                    <mat-radio-button class="custom-margin-right" (click)="productWarrantyStatus('yes')" value="1">Yes
+                    </mat-radio-button>
+                    <mat-radio-button (click)="productWarrantyStatus('No')" value="2">No</mat-radio-button>
+                </mat-radio-group>
+
+                <span *ngIf="bookRepairModel.isWarranty">Warranty Card Images </span>
+                <mat-divider *ngIf="bookRepairModel.isWarranty"></mat-divider>
+                <input #fileInputWarrantyCard (change)="uploadwarrentyImage()" *ngIf="bookRepairModel.isWarranty" type="file" placeholder="Upload Side Image..." />
+                <mat-form-field *ngIf="bookRepairModel.isWarranty">
+                    <textarea matInput formControlName="warrantyRemarks" placeholder="Remarks"></textarea>
+                    <control-messages [control]="otherFormGroup.controls.warrantyRemarks"></control-messages>
+                </mat-form-field>
+                <span> Product for ReRepair</span>
+                <mat-divider></mat-divider>
+                <mat-radio-group>
+                    <mat-radio-button class="custom-margin-right" (click)="productReRepairStatus('yes')" value="1">Yes
+                    </mat-radio-button>
+                    <mat-radio-button (click)="productReRepairStatus('No')" value="2">No</mat-radio-button>
+                </mat-radio-group>
+
+                <span>Block</span>
+                <mat-divider></mat-divider>
+                <div class="mat-pb1">
+                    <mat-form-field class="custom-margin-top">
+                        <mat-select placeholder="Block Details" formControlName="phenomenanIdLeft" multiple required>
+                            <mat-option *ngFor="let phenomenan of phenomenanDetails" [value]="phenomenan.value">{{phenomenan.label}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>{{getErrorMessage(otherFormGroup.controls.phenomenanIdLeft)}}</mat-error>
+                    </mat-form-field>
+                    <!-- <mat-checkbox formControlName="GetPhenomenanLeft"  *ngIf="bookRepairModel.isReRepair"   *ngFor="let phenomenan of phenomenanDetails">{{phenomenan.label}}</mat-checkbox> -->
+                </div>
+                <div class="mat-pb2">
+                    <button mat-raised-button (click)="getPhenomenan()" type="button">
+            <span>Get
+              <br />Phenomenon</span>
+          </button>
+                </div>
+                <div class="mat-pb3">
+                    <mat-form-field class="custom-margin-top">
+                        <mat-select placeholder="Phenomenon Details" formControlName="phenomenonIds" multiple required>
+                            <mat-option *ngFor="let phenomenan of phenomenanDetailsRight" [value]="phenomenan.value">
+                                {{phenomenan.label}}</mat-option>
+                        </mat-select>
+                        <mat-error>{{getErrorMessage(otherFormGroup.controls.phenomenonIds)}}</mat-error>
+                    </mat-form-field>
+                    <!-- <mat-checkbox *ngFor="let phenomenan of phenomenanDetailsRight">{{phenomenan.label}}</mat-checkbox> -->
+                </div>
+                <mat-form-field class="custom-margin-top">
+                    <mat-select placeholder="Accessory Details" formControlName="accessoriesIds" multiple>
+                        <mat-option *ngFor="let accessary of accessaryDetails" [value]="accessary.value">{{accessary.label}}
+                        </mat-option>
+                    </mat-select>
+                    <control-messages [control]="otherFormGroup.controls.accessoriesIds"></control-messages>
+                </mat-form-field>
+                <div class="mat-custom-button">
+                    <button mat-raised-button color="primary" matStepperPrevious type="button"> <i class="material-icons">
+              arrow_back_ios
+            </i> Back</button>
+                    <button mat-raised-button color="primary" [disabled]="!otherFormGroup.valid" matStepperNext type="button">Next
+            <i class="material-icons">
+              arrow_forward_ios
+            </i></button>
+                </div>
+
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="personalFormGroup" *ngIf="displayRegistration">
+        <form [formGroup]="personalFormGroup">
+            <div class="custom-width">
+                <ng-template *ngIf="displayRegistration" matStepLabel>Personal Info</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="Name" formControlName="name" required>
+                    <mat-error>{{getErrorMessage(personalFormGroup.controls.name)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <!-- <input matInput placeholder="Mobile No" formControlName="MobileNo" [(ngModel)]="bookRepairModel.registerUserModel.mobileNo"
+            required> -->
+                    <input matInput placeholder="Mobile No" formControlName="mobileNo" required>
+                    <mat-error>{{getErrorMessage(personalFormGroup.controls.mobileNo)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="User Name" formControlName="username" required>
+                    <mat-error>{{getErrorMessage(personalFormGroup.controls.username)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Email  Id" (blur)="validateEmailAddress()" formControlName="emailId" required>
+                    <mat-error>{{getErrorMessage(personalFormGroup.controls.emailId)}}</mat-error>
+                    <div style="position: absolute;top: 40px;font-size: 12px;">{{validateEmail}}</div>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="password" placeholder="password" formControlName="password" required>
+                    <mat-error>{{getErrorMessage(personalFormGroup.controls.password)}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" required>
+                    <mat-error>{{getErrorMessage(personalFormGroup.controls.confirmPassword)}}</mat-error>
+                </mat-form-field>
+                <div class="mat-custom-button">
+                    <button mat-raised-button color="primary" matStepperPrevious type="button"> <i class="material-icons">
+              arrow_back_ios
+            </i> Back</button>
+                    <button mat-raised-button color="primary" [disabled]="!personalFormGroup.valid && validateEmail=='' " matStepperNext type="button">Next <i class="material-icons">
+              arrow_forward_ios
+            </i></button>
+                </div>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="addressFormGroup">
+
+        <form [formGroup]="addressFormGroup">
+            <div class="custom-width">
+                <ng-template matStepLabel>Address Info</ng-template>
+                <mat-form-field class="form-field" *ngIf="guId && !addNewAddress">
+                    <mat-label>Select Address</mat-label>
+                    <mat-select [(value)]="selectedAddress" (selectionChange)="setAddress(selectedAddress)"  placeholder="Address">
+                        <mat-option> -- None -- </mat-option>
+                        <mat-option *ngFor="let item of addressData" [value]="item">{{item.addressModel.addressLine1}}, {{item.addressModel.addressLine2}},{{item.addressModel.pinCode}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint>Address line1, Address line2, Zip Code</mat-hint>
+                </mat-form-field>
+                <button mat-raised-button color="primary" *ngIf="guId" (click)="addNewAddress=!addNewAddress" type="button">Add
+          New Address <i class="material-icons">
+            keyboard_arrow_down
+          </i></button>
+                <div class="address_block" *ngIf="addNewAddress">
+                    <mat-form-field>
+                        <mat-label>Address Type</mat-label>
+                        <mat-select formControlName="addressType" placeholder="Address Type">
+                            <mat-option> -- None -- </mat-option>
+                            <mat-option *ngFor="let item of addressType" [value]="item.value">{{item.value}}</mat-option>
+                        </mat-select>
+                        <control-messages [control]="addressFormGroup.controls.addressType"></control-messages>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <!-- <textarea matInput formControlName="Adline1" placeholder="Address Line 1" [(ngModel)]="bookRepairModel.endCustomerAddressModel.addressModel.addressLine1"
+              (click)="getLocation()" required></textarea> -->
+                        <textarea matInput formControlName="addressLine1" placeholder="Address Line 1" (click)="getLocation()" required></textarea>
+                        <mat-error>{{getErrorMessage(addressFormGroup.controls.addressLine1)}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <textarea matInput formControlName="addressLine2" placeholder="Address Line 2"></textarea>
+                        <control-messages [control]="addressFormGroup.controls.addressLine2"></control-messages>
+                    </mat-form-field>
+                    <mat-form-field class="form-field">
+                        <mat-label>State</mat-label>
+                        <mat-select formControlName="stateId" (selectionChange)="getCityBystateId()" placeholder="State">
+                            <mat-option> -- None -- </mat-option>
+                            <mat-option *ngFor="let item of stateList" [value]="item.value">{{item.label}}</mat-option>
+                        </mat-select>
+                        <control-messages [control]="addressFormGroup.controls.stateId"></control-messages>
+                    </mat-form-field>
+                    <mat-form-field class="form-field">
+                        <mat-label>City</mat-label>
+                        <mat-select formControlName="cityId" (selectionChange)="getAreaByCityId()" placeholder="City">
+                            <mat-option> -- None -- </mat-option>
+                            <mat-option *ngFor="let item of cityList" [value]="item.value">{{item.label}}</mat-option>
+                        </mat-select>
+                        <control-messages [control]="addressFormGroup.controls.cityId"></control-messages>
+                    </mat-form-field>
+                    <mat-form-field class="form-field">
+                        <mat-label>Area</mat-label>
+                        <mat-select formControlName="areaId" placeholder="Area">
+                            <mat-option> -- None -- </mat-option>
+                            <mat-option *ngFor="let item of areaList" [value]="item.value">{{item.label}}</mat-option>
+                        </mat-select>
+                        <control-messages [control]="addressFormGroup.controls.areaId"></control-messages>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput formControlName="faxNo" placeholder="Fax No">
+                        <control-messages [control]="addressFormGroup.controls.faxNo"></control-messages>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput formControlName="nearestLandMark" placeholder="Nearest Land Mark" required>
+                        <mat-error>{{getErrorMessage(addressFormGroup.controls.nearestLandMark)}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput formControlName="phoneNo" placeholder="Phone No">
+                        <control-messages [control]="addressFormGroup.controls.phoneNo"></control-messages>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput formControlName="pinCode" placeholder="Pin Code" required>
+                        <mat-error>{{getErrorMessage(addressFormGroup.controls.pinCode)}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="mat-custom-button">
+                    <button mat-raised-button color="primary" matStepperPrevious type="button"> <i class="material-icons">
+              arrow_back_ios
+            </i> Back</button>
+                    <button mat-raised-button color="primary" (click)="getProduct()" [disabled]="!addressFormGroup.valid" matStepperNext>
+            <mat-icon>save</mat-icon> Save
+          </button>
+                </div>
+
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <div class="custom-width">
+            <ng-template matStepLabel>Done</ng-template>
+            <h1>Congratulations</h1>
+            You have Successfully Created 'Service request ticket'. Our Designated Service center will be in contact with You shortly.
+
+            <h3>Your Service Request Ticket Number:
+                <span>{{ticketNumber}}</span>
+            </h3>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

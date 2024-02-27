@@ -1,0 +1,100 @@
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AuthService } from '../../services/auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ProductDataServiceService } from "../product-data-service.service";
+import { RemoteService } from '../../services/remote.service';
+import { ErrorValidatorService } from '../error-validator/errorValidatorService';
+import { Constants } from '../../constants';
+import { LanguageService } from '../../services/language.service';
+
+@Component({
+  selector: 'app-mobile-header',
+  templateUrl: './mobile-header.component.html',
+  styleUrls: ['./mobile-header.component.scss']
+})
+export class MobileHeaderComponent implements OnInit {
+
+  ngDoCheck(): void { }
+  onSignOut = new EventEmitter();
+  public headerStyle1 = false;
+  public headerStyle2 = true;
+  navLinks = [
+    {
+      'label': this.l.GetString('Home'),
+      'path': '/ecommerce/home'
+    },
+    {
+      'label': this.l.GetString('RepairStatus'),
+      'path': '/ecommerce/product-category'
+    },
+    {
+      'label': this.l.GetString('BookRepair'),
+      'path': '/ecommerce/book-product-repair'
+    },
+    {
+      'label': this.l.GetString('FakeProduct'),
+      'path': '/ecommerce/fake-product-identification'
+    },
+
+  ];
+  theme = 'my-theme';
+  userData: any;
+  cartData: any;
+  cart: any;
+  colorConstant: any;
+  constructor(public l: LanguageService, public dialog: MatDialog, private router: Router, private remoteService: RemoteService,
+    private authService: AuthService, private ProductDataServiceService: ProductDataServiceService) { }
+
+  ngOnInit() {
+    this.getUserData();
+
+    this.getColorConstants();
+    this.authService.updateSignOut.subscribe(message => {
+      this.getUserData();
+    });
+  }
+  getCartData() {
+    //this.ProductDataServiceService.updateCart.subscribe(message => this.cartData = message);
+    this.cart = { 'cart.cartType': "SHOPPING" };
+    const jsonQueryString = JSON.stringify(this.cart);
+    this.remoteService.get('/essms-inventory/cartitem/list' + encodeURI(jsonQueryString)).subscribe(
+      data => {
+        //this.successMessage.updateSuccessMsg("Address added successfully");
+        console.log(data)
+        this.cartData = data.entityList;
+      },
+      error => {
+        console.log(JSON.stringify(error));
+      })
+
+  }
+  getColorConstants() {
+    this.colorConstant = {};
+    this.colorConstant.header = {};
+    this.colorConstant.header.background = "#1976d2";
+    this.colorConstant.header.color = "#1976d2";
+    this.colorConstant.Button = {
+      // 'background-color': "#1976d2",
+      'color': '#fff',
+      'font-size': '14px'
+      // 'border-bottom': '1px solid #fff',
+      // 'margin-right': '10px'
+    };
+
+  }
+  getUserData() {
+    // console.log(sessionStorage.getItem(Constants.LOGGED_USER));
+    this.userData = JSON.parse(sessionStorage.getItem(Constants.LOGGED_USER));
+  }
+
+
+  signOut() {
+
+    this.authService.signOut();
+    this.authService.updateSignOutData();
+    this.router.navigate(['ecommerce/home']);
+  }
+
+
+}

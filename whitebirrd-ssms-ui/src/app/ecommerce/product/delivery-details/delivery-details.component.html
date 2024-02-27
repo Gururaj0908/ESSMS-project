@@ -1,0 +1,162 @@
+<div class="custom-width" style="height: 83%" *ngIf="!showAddressForm">
+  <!-- <div class="sec-title">
+   <mat-icon color="accent">account_box</mat-icon> Manage Address </div> -->
+  <div  class="address-list">
+      <mat-card (click)="addnewAddress()" color="accent"> 
+          <mat-card-title  style="font-size: 19px;">Add New Address</mat-card-title>
+          <img mat-card-image class="ad-list1" src="../../../../../assets/image/Add-icon.png" alt="Photo of a Shiba Inu">
+        </mat-card> 
+        </div>
+
+  <div  class="address-list" *ngFor="let address of addressData;let i = index">
+      <mat-card class="example-card">
+          <mat-card-header>
+          
+          </mat-card-header>
+          <mat-card-title style="font-size: 19px;">{{address.addressType}}</mat-card-title>
+         
+          <mat-card-content style="font-size: 19px;">
+             <div class="inner-text">{{address.addressModel.addressLine1}} , {{address.addressModel.addressLine2}}</div>
+             <!-- <div  class="inner-text">{{address.addressModel.addressLine2}}</div> -->
+             <div  class="inner-text"> {{address.addressModel.city}}, {{address.addressModel.state}} {{address.addressModel.pinCode}}</div>
+          </mat-card-content>
+        
+          <mat-checkbox   [checked]='address.isDefault' (change)="setAsDefault(address,$event)">Set as Delivery Address</mat-checkbox>
+          <mat-card-actions style="margin: 6px 0;">
+            <button mat-raised-button (click)="editAddress(address)"> <i class="material-icons">
+                edit
+                </i> Edit</button>
+            <button mat-raised-button (click)="openDialog(address)"> <i class="material-icons">
+                delete_forever
+                </i> Delete</button>
+            <!-- <button mat-raised-button>Set  Default</button> -->
+          </mat-card-actions>
+        </mat-card>
+   </div>
+  </div>
+  
+<div class="custom-width" *ngIf="showAddressForm">
+
+<div class="custom-close" >
+  <mat-icon (click)="closeAddressForm()">close</mat-icon>
+</div>
+
+<form [formGroup]="ManageAddressForm" (ngSubmit)="updateAddress(ManageAddressForm.value)" novalidate>
+  <div class="sec-title"> Add A new  Address </div>
+ <div class="cutom-location">
+    <!-- <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      </agm-map> -->
+    <button mat-raised-button  class="custom-button" color="accent" type="submit">
+      <i class="material-icons">
+        location_on
+        </i>
+      <span> Add Current Location</span>
+  </button>
+ </div>
+  <!-- <mat-form-field class="form-control">
+    <input matInput type="text" autocomplete placeholder="Address Name"  formControlName="addressName" 
+        required>
+        <control-messages [control]="ManageAddressForm.controls.addressName"  ></control-messages>
+</mat-form-field>    -->
+<mat-form-field class="form-control">
+  <input matInput type="text" autocomplete placeholder="Address Line 1" formControlName="addressLine1"
+        required>
+        <control-messages [control]="ManageAddressForm.controls.addressLine1"  ></control-messages>
+</mat-form-field>
+<mat-form-field class="form-control">
+  <input matInput type="text" autocomplete placeholder="Address Line 2" formControlName="addressLine2"
+        required>
+        <control-messages [control]="ManageAddressForm.controls.addressLine2"  ></control-messages>
+</mat-form-field>
+<mat-form-field class="form-control">
+  <input matInput type="text" autocomplete placeholder="Phone No"  formControlName="phoneNo"  
+        required>
+        <control-messages [control]="ManageAddressForm.controls.phoneNo"  ></control-messages>
+</mat-form-field>
+<mat-form-field class="form-control">
+    <input matInput type="text" autocomplete placeholder="Pin Code"  formControlName="pinCode" 
+          required>
+          <control-messages [control]="ManageAddressForm.controls.pinCode"  ></control-messages>
+  </mat-form-field>
+  <mat-form-field class="form-control">
+    <input matInput type="text" autocomplete placeholder="FaxNo" formControlName="faxNo"
+          required>
+          <control-messages [control]="ManageAddressForm.controls.faxNo"  ></control-messages>
+  </mat-form-field>
+  
+    
+   <mat-form-field class="form-control">
+      <mat-label>State</mat-label>
+      <mat-select formControlName="stateId" (selectionChange)="getCityBystateId(ManageAddressForm.value.stateId)" placeholder="State">
+        <mat-option> -- None -- </mat-option>
+        <mat-option *ngFor="let item of stateList" [value]="item.value">{{item.label}}</mat-option>
+      </mat-select>
+      <control-messages [control]="ManageAddressForm.controls.stateId"  ></control-messages>
+    </mat-form-field>
+
+    <mat-form-field class="form-control">
+      <mat-label>City</mat-label>
+      <mat-select formControlName="cityId"  (selectionChange)="getAreaByCityId(ManageAddressForm.value.cityId)"  placeholder="City">
+        <mat-option> -- None -- </mat-option>
+        <mat-option *ngFor="let item of cityList" [value]="item.value">{{item.label}}</mat-option>
+      </mat-select>
+      <control-messages [control]="ManageAddressForm.controls.cityId"  ></control-messages>
+    </mat-form-field>
+
+    <mat-form-field class="form-control">
+      <mat-label>Area</mat-label>
+      <mat-select formControlName="areaId"   placeholder="Area">
+        <mat-option> -- None -- </mat-option>
+        <mat-option *ngFor="let item of areaList" [value]="item.value">{{item.label}}</mat-option>
+      </mat-select>
+      <control-messages [control]="ManageAddressForm.controls.areaId"  ></control-messages>
+    </mat-form-field> 
+<!-- 
+  <mat-form-field class="form-control">
+    <input matInput type="text" autocomplete placeholder="City" formControlName="city" 
+          required>
+          <control-messages [control]="ManageAddressForm.controls.city"  ></control-messages>
+  </mat-form-field>
+  <mat-form-field class="form-control">
+        <input matInput type="text" autocomplete placeholder="State" formControlName="state" 
+              required>
+              <control-messages [control]="ManageAddressForm.controls.state"  ></control-messages>
+      </mat-form-field>  -->
+      <mat-form-field class="form-control">
+        <input matInput type="text" autocomplete placeholder="Land Mark" formControlName="nearestLandMark"
+              required>
+              <control-messages [control]="ManageAddressForm.controls.nearestLandMark"  ></control-messages>
+      </mat-form-field>
+     
+          <!-- <mat-radio-group class="custom-margin-top-20 form-control" formControlName="addressType" >
+              <span  class="custom-margin-right-20">Address Type</span>
+              <mat-radio-button value="1" class="mat-radio-label">Home</mat-radio-button>
+              <mat-radio-button value="2">Work</mat-radio-button>
+          </mat-radio-group> -->
+          <mat-form-field class="form-control">
+              <mat-label>Address Type</mat-label>
+              <mat-select formControlName="addressType"  placeholder="Address Type">
+                <mat-option> -- None -- </mat-option>
+                <mat-option *ngFor="let item of addressType" [value]="item.value">{{item.value}}</mat-option>
+              </mat-select>
+              <control-messages [control]="ManageAddressForm.controls.addressType"></control-messages>
+            </mat-form-field> 
+          
+           <div class="profile-button-container">
+              <button mat-raised-button class="custom-button"    color="accent" type="submit">
+                  <mat-icon>save</mat-icon> <span> Save</span>
+              </button>
+          </div>
+
+
+</form>
+
+</div>
+ 
+<div class="delivery-details-container">
+  <button mat-raised-button class="custom-button"  [routerLink]="['/ecommerce/card-details']"  color="accent" type="submit">
+      <mat-icon>save</mat-icon> <span> Next</span>
+  </button>
+</div>

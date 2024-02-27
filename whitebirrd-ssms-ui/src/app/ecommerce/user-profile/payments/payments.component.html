@@ -1,0 +1,125 @@
+<div class="custom-width" *ngIf="!showCardForm">
+    <div class="sec-title"><mat-icon color="accent">account_balance_wallet</mat-icon> Manage Cards</div>
+    <!-- <div  class="address-list">
+        <mat-card color="accent" (click)="addnewCard()"> 
+            <mat-card-title  style="font-size: 19px;">Add New Card</mat-card-title>
+            <img  class="ad-list1" src="../../../../../assets/image/Add-icon.png" >
+          </mat-card> 
+          </div> -->
+          <mat-grid-list  [cols]="columnNum" rowHeight="3:3" gutterSize="16px">
+
+                <!-- <mat-grid-tile class="item" [colspan]="1" [rowspan]="1">
+                        <mat-card color="accent" (click)="addnewCard()"> 
+                                <mat-card-title  style="font-size: 19px;">Add New Card</mat-card-title>
+                                <img  class="ad-list1" src="../../../../../assets/image/Add-icon.png" >
+                              </mat-card> 
+                    </mat-grid-tile> -->
+            <mat-grid-tile class="item" *ngFor="let card of cardData" [colspan]="1" [rowspan]="1">
+                <mat-card>
+                    <mat-card-header>
+                    
+                    </mat-card-header>
+                    <mat-card-title style="font-size: 19px;">{{card.nameOfCard}}</mat-card-title>
+                   
+                    <mat-card-content style="font-size: 19px;">
+                       <div class="inner-text">Card No : {{card.cardNo}}</div>
+                       <!-- <div  class="inner-text">{{card.cardModel.cardLine2}}</div> -->
+                       <div  class="inner-text">Name On Card: {{card.nameOnCard}}</div>
+                       <div  class="inner-text">Expiry Date: {{card.expriryDate | date}}</div>
+                    </mat-card-content>
+        
+                    <mat-checkbox>Set as Default</mat-checkbox>
+        
+                    <mat-card-actions style="margin: 6px 0;">
+                      <button mat-raised-button (click)="editcard(card)"><i class="material-icons">
+                            edit
+                            </i> Edit</button>
+                      <button mat-raised-button (click)="openDialog(card)"><i class="material-icons">
+                            delete_forever
+                            </i> Delete</button>
+                      <!-- <button mat-raised-button>Set  Default</button> -->
+                    </mat-card-actions>
+                  </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+    <!-- <div  class="address-list" *ngFor="let card of cardData">
+       
+     </div> -->
+     <div class="account-text">
+            <h2>Faqs:</h2>
+            <div class="heading">Why is my Card being saved on Horolab?</div>
+            <div class="answer">It's quicker. You can save the hassle of typing in the complete card information every time you shop at H orolab by saving your card details. You can make your payment by selecting the saved card of your choice at checkout. While this is obviously faster, it is also very secure. </div>
+            <div class="heading">Is it safe to save my cards on Horolab?  </div>
+            <div class="answer"> Absolutely. Your card information is 100 percent safe with us. We use world class encryption technology while saving your card information on our highly secure systems. Our payment systems have passed stringent security compliance checks like PCI DS (Payment Card Industry Data Security Standards) to ensure that your card information remains confidential at all times.  </div>
+            <div class="heading">What all card information does Horolab store? </div>
+            <div class="answer">Harolab only stores card information when the customer selects the option_ We only store your card number, cardholder name and card expiry date. We do not store your card's CVV number or the 3D Secure password. Can I delete my saved cards? Yes, you can delete your saved cards at any given time.  </div>
+        </div>
+    </div>
+    
+<div class="custom-width" *ngIf="showCardForm">
+
+<div class="custom-close" >
+    <mat-icon (click)="closecardForm()" color="accent">close</mat-icon>
+</div>
+
+<form [formGroup]="ManageCardForm" (ngSubmit)="updateCard(ManageCardForm.value)" novalidate>
+    <div class="sec-title">Add A New  Card </div>
+    <!-- <mat-form-field class="form-control">
+      <input matInput type="text" autocomplete placeholder="card Name"  formControlName="cardName" 
+          required>
+          <control-messages [control]="ManageCardForm.controls.cardName"  ></control-messages>
+  </mat-form-field>    -->
+  <mat-form-field class="form-control">
+    <input matInput type="text" autocomplete placeholder="Card No" formControlName="cardNo"
+          required>
+          <control-messages [control]="ManageCardForm.controls.cardNo"  ></control-messages>
+  </mat-form-field>
+  <!-- <mat-form-field class="form-control">
+    <input matInput type="text" autocomplete placeholder="Expriry Date" formControlName="expriryDate"
+          required>
+          <control-messages [control]="ManageCardForm.controls.expriryDate"  ></control-messages>
+  </mat-form-field> -->
+  <!-- <mat-form-field class="form-control">
+    <input matInput [matDatepicker]="picker" placeholder="Expiry Date" formControlName="expriryDate" >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <control-messages [control]="ManageCardForm.controls.expriryDate"  ></control-messages>
+  </mat-form-field> -->
+  <mat-form-field class="form-control">
+        <input matInput [matDatepicker]="dp" placeholder="Month and Year" [formControl]="expriryDate">
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp
+                        startView="multi-year"
+                        (yearSelected)="chosenYearHandler($event)"
+                        (monthSelected)="chosenMonthHandler($event, dp)"
+                        panelClass="example-month-picker">
+        </mat-datepicker>
+        <!-- <mat-datepicker #dp
+                        startView="multi-year"
+                        (yearSelected)="chosenYearHandler($event)"
+                        (monthSelected)="chosenMonthHandler($event, dp)"
+                        panelClass="example-month-picker">
+        </mat-datepicker> -->
+      </mat-form-field>
+  <mat-form-field class="form-control">
+    <input matInput type="text" autocomplete placeholder="Name Of Card"  formControlName="nameOfCard"  
+          required>
+          <control-messages [control]="ManageCardForm.controls.nameOfCard"  ></control-messages>
+  </mat-form-field>
+  <mat-form-field class="form-control">
+      <input matInput type="text" autocomplete placeholder="Name On Card"  formControlName="nameOnCard" 
+            required>
+            <control-messages [control]="ManageCardForm.controls.nameOnCard"  ></control-messages>
+    </mat-form-field>
+    
+            
+             <div class="profile-button-container">
+                <button mat-raised-button class="custom-button"    color="accent" type="submit">
+                        <mat-icon>save</mat-icon> <span>Save</span>
+                </button>
+            </div>
+ 
+
+</form>
+
+</div>

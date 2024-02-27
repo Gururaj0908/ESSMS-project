@@ -1,0 +1,71 @@
+<!-- FormList objects have two fields: Forms (List of form editors like textbox) and Sub forms (List of SubForm)-->
+<!-- SubForm has three fields: groupOrArrayName (Name(to be used in backend only) of the form Group), formLists (List of form editors like testbox) and isArray (true if the subform  is array(will have a add new button)) -->
+
+<ng-container [formGroup]="FormGroupItem">
+   <!-- Firstly loop over the Forms -->
+   <ng-container *ngFor="let editor of FormListModel.forms">
+      <app-dynamic-form (HyperlinkClick)="OpenDialog($event)" [formEditorModel]="editor" [ngStyle]="GetStyle(editor)" [form]="FormGroupItem" [ControlClass]="$any(GetDisplayModeForAppDynamicForm(FormListModel.displayStyle, editor))"
+         (SameControlRepeat)="AddMoreControl($event)" (SelectionChanged)="selectionChanged($event,FormListModel.forms,FormGroupItem)"
+         [FormClass]="displayMode[FormListModel.displayStyle]" class="{{GetClassForDisplayMode(GetDisplayModeForAppDynamicForm(FormListModel.displayStyle, editor))}}"></app-dynamic-form>
+   </ng-container>
+
+   <!-- Next loop over Sub Forms (if it is there) -->
+   <ng-container *ngIf="FormListModel.subForms">
+      <ng-container *ngFor="let SubForm of FormListModel.subForms">
+
+         <!-- We have a Form here. now lets see if this is an array or not. -->
+         <!-- Lets test for array first -->
+         <!-- Create the subform and set the form array name -->
+         <div *ngIf="SubForm.isArray" [formArrayName]="SubForm.groupOrArrayName" style="display: contents">
+
+            <!-- Lets see if item2 is one or many. If it's one, then we provide add and remove button -->
+            <ng-container *ngIf="SubForm.isDynamic">
+               <!-- get the number of controls in the form array required to be displayed by calling this function and loop over it -->
+               <div *ngFor="let formlistitem of GetFormArrayForSize(SubForm.groupOrArrayName); let i = index;" [formGroupName]="i">
+                  <!-- each loop means one group in the array -->
+                  <fieldset>
+                     <!-- Set the display name from group or array name -->
+                     <legend>{{SubForm.groupOrArrayName | namify}} {{i+1}}
+                        <!-- provide a remove button when array length is more than 1 -->
+                        <button mat-icon-button matTooltip="Remove {{SubForm.groupOrArrayName | namify}}" (click)="RemoveArray(SubForm.groupOrArrayName,i)"
+                           *ngIf="GetFormArrayFromArrayName(SubForm.groupOrArrayName).controls.length>1">
+                           <mat-icon aria-label="Remove">clear</mat-icon>
+                        </button>
+                     </legend>
+                     <!-- call the recursion because it's essentially same thing-->
+                     <!-- Pass the FormList to generate UI -->
+                     <!-- Pass the FormGroup to generate ViewModel -->
+                     <!-- Pass the Pre-Filled Value to display data to be edited -->
+                     <app-editor-form [FormListModel]="formlistitem" [FormGroupItem]="GetFormGroupFromArrayName(SubForm.groupOrArrayName,i)" [PrefilledValue]="GetPrefilledValue(SubForm.groupOrArrayName,i)"></app-editor-form>
+                  </fieldset>
+               </div>
+               <br/>
+               <button mat-raised-button (click)="AddMore(SubForm.groupOrArrayName,SubForm.formLists[0])">Add More {{SubForm.groupOrArrayName | namify}}</button>
+            </ng-container>
+            <!-- We do not provide add or remove button here when form array is not dynamic -->
+            <ng-container *ngIf="!SubForm.isDynamic">
+               <!--Lets loop over item2 which is an array of FormList and also provide the form group name as array index-->
+               <div *ngFor="let innerFormList of SubForm.formLists; let i = index;" [formGroupName]="i" style="display: contents">
+                  <!-- So innerFormList here is basically a formlist object and hence we can call this in recursion here -->
+                  <app-editor-form [FormListModel]="innerFormList" [FormGroupItem]="GetFormGroupFromArrayName(SubForm.groupOrArrayName,i)"
+                     [PrefilledValue]="GetPrefilledValue(SubForm.groupOrArrayName,i)"></app-editor-form>
+               </div>
+            </ng-container>
+
+            <ng-container *ngIf="SubForm.formLists.length<1">
+               <b>Server response for array is incorrect</b>
+            </ng-container>
+
+         </div>
+         <!-- So we have not an array but a sub group. -->
+         <!-- Create the subform and set the form group name this time -->
+         <div *ngIf="!SubForm.isArray" [formGroupName]="SubForm.groupOrArrayName">
+            <!-- Now loop over the list of formlist -->
+            <ng-container *ngFor="let formlist of SubForm.formLists">
+               <!-- now we can call this recursively -->
+               <app-editor-form [FormGroupItem]="GetFormGroupFromGroupName(SubForm.groupOrArrayName)" [FormListModel]="formlist" [PrefilledValue]="GetPrefilledValue(SubForm.groupOrArrayName)"></app-editor-form>
+            </ng-container>
+         </div>
+      </ng-container>
+   </ng-container>
+</ng-container>

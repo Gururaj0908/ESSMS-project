@@ -1,0 +1,61 @@
+<div class="custom-width" *ngIf="!showCardForm">
+    <div class="sec-titler">{{l.GetString('RepairStatus')}}</div>
+    <!-- <div  class="address-list">
+      <mat-card color="accent" (click)="addnewCard()">
+          <mat-card-title  style="font-size: 19px;">Add New Card</mat-card-title>
+          <img  class="ad-list1" src="../../../../../assets/image/Add-icon.png" >
+        </mat-card>
+        </div> -->
+    <mat-grid-list [cols]="columnNum" rowHeight="4:4" gutterSize="16px">
+
+        <!-- <mat-grid-tile class="item" [colspan]="1" [rowspan]="1">
+                      <mat-card color="accent" (click)="addnewCard()">
+                              <mat-card-title  style="font-size: 19px;">Add New Card</mat-card-title>
+                              <img  class="ad-list1" src="../../../../../assets/image/Add-icon.png" >
+                            </mat-card>
+                  </mat-grid-tile> -->
+        <mat-grid-tile class="item" *ngFor="let repair of repairStatus" [colspan]="1" [rowspan]="1">
+            <mat-card>
+                <mat-card-header>
+
+                </mat-card-header>
+
+
+                <mat-card-content style="font-size: 19px;">
+                    <div class="inner-text">Model No : {{repair.modelNo}}</div>
+                    <div class="inner-text">Service Record No : {{repair.serviceRecordNo.formEditor.label}}</div>
+
+                    <div class="inner-text">Product Category: {{repair.productCategory}}</div>
+                    <div class="inner-text">Receive Date: {{repair.receiveDate }}</div>
+                </mat-card-content>
+
+
+
+                <mat-card-actions style="margin: 6px 0;">
+                    <button mat-raised-button (click)="getCardDetails(repair.serviceRecordNo.formEditor.label)"><i class="material-icons">
+                          edit
+                          </i> Details</button>
+
+                    <!-- <button mat-raised-button>Set  Default</button> -->
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<div class="custom-width" *ngIf="showCardForm">
+
+    <div class="custom-close">
+        <mat-icon (click)="closecardForm()" color="accent">close</mat-icon>
+    </div>
+
+    <div class="service-details">
+        <div *ngFor="let repair of repairDetails">
+            <div class="label">{{repair.label}}</div>
+            <div class="Value">{{repair.value}}</div>
+        </div>
+    </div>
+
+
+
+</div>

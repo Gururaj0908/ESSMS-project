@@ -1,0 +1,39 @@
+div {
+  display: flex;
+}
+
+input {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  font: inherit;
+}
+
+span {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+:host.floating span {
+  opacity: 1;
+}
+button{
+  height:14px;
+  width:14px;
+  line-height: normal;
+}
+
+button mat-icon{
+  height: 14px;
+  width: 14px;
+  line-height: 14px;
+  font-size: 14px;
+  color: rgba(0,0,0,0.54);
+}
+
+mat-progress-bar{
+  position: absolute;
+  bottom: -3px;
+  height: 3px;
+}

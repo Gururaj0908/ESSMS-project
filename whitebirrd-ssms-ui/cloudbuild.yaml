@@ -1,0 +1,39 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args:
+      - '-c'
+      - |
+        git clone https://whitebirrd-admin:$_APP_PASSWORD@bitbucket.org/whitebirrd/ssms-ui.git;
+    entrypoint: 'bash'
+    
+  - name: gcr.io/cloud-builders/npm
+    args: [ install, --legacy-peer-deps  ]
+
+  - name: gcr.io/cloud-builders/npm
+    args: [ run, build, --configuration=production ]
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:latest'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |-
+        echo Deploying $_UPLOAD_DIRNAME @ $_COMPUTE_INSTANCE
+        gcloud config set project $PROJECT_ID
+        gcloud config set compute/zone $_COMPUTE_ZONE
+        mkdir -p /builder/home/.ssh
+        gcloud compute config-ssh
+        gcloud compute ssh $_COMPUTE_INSTANCE --ssh-key-expire-after=$_SSH_KEY_EXPIRE_AFTER --ssh-flag="${_SSH_FLAG}" --command="rm -rf $_REMOTE_PATH/demo.horolab/*  && exit"
+        gcloud compute ssh $_COMPUTE_INSTANCE --ssh-key-expire-after=$_SSH_KEY_EXPIRE_AFTER --ssh-flag="${_SSH_FLAG}" --command="rm -rf $_REMOTE_PATH/demo.bms/*  && exit"
+        gcloud compute scp --ssh-key-expire-after=$_SSH_KEY_EXPIRE_AFTER --scp-flag="${_SSH_FLAG}" --recurse $_UPLOAD_DIRNAME/ssms-ui/* $_COMPUTE_INSTANCE:$_REMOTE_PATH/demo.horolab
+        gcloud compute scp --ssh-key-expire-after=$_SSH_KEY_EXPIRE_AFTER --scp-flag="${_SSH_FLAG}" --recurse $_UPLOAD_DIRNAME/ssms-ui/* $_COMPUTE_INSTANCE:$_REMOTE_PATH/demo.bms
+        gcloud compute ssh $_COMPUTE_INSTANCE --ssh-key-expire-after=$_SSH_KEY_EXPIRE_AFTER --ssh-flag="${_SSH_FLAG}" --command="${_SSH_COMMAND}"
+    env:
+      - '_COMPUTE_ZONE=$_COMPUTE_ZONE'
+      - '_COMPUTE_INSTANCE=$_COMPUTE_INSTANCE'
+      - '_UPLOAD_DIRNAME=$_UPLOAD_DIRNAME'
+      - '_REMOTE_PATH=$_REMOTE_PATH'
+      - '_SSH_FLAG=$_SSH_FLAG'
+      - '_SSH_COMMAND=$_SSH_COMMAND'
+      - '_SSH_KEY_EXPIRE_AFTER=$_SSH_KEY_EXPIRE_AFTER'
+      - 'PROJECT_ID=$PROJECT_ID'
+      - '_APP_PASSWORD=$_APP_PASSWORD'

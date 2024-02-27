@@ -1,0 +1,31 @@
+@import '../../ecommerce/user-profile/account/account.component.scss';
+.service-details{
+    width:60%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+}
+.label{
+    width: 50%;
+    float: left;
+    height: 20px;
+    border-bottom: 1px solid #d4d4d4;
+    padding: 10px 0;
+}
+.sec-titler{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.Value {
+    // width: 50%;
+    // float: left;
+    height: 20px;
+    border-bottom: 1px solid #d4d4d4;
+    padding: 10px 0;
+}
+.mat-grid-tile{
+    background-color: #fff;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow:none!important;
+}

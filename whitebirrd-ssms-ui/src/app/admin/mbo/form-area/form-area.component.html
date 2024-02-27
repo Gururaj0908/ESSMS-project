@@ -1,0 +1,32 @@
+<!-- Create the form -->
+<form novalidate>
+    <ng-container *ngIf="FormsList">
+        <!-- Call the editor -->
+        <app-editor-form [FormGroupItem]="FORM_GROUP" [FormListModel]="FormsList" [PrefilledValue]="PrefilledValue"></app-editor-form>
+
+        <!-- Show Debug Information -->
+        <div *ngIf="ShowRawJson && IsDevelopment && FORM_GROUP">
+            {{FORM_GROUP.getRawValue() | json}}
+            <hr /> {{l.GetString('InvalidForms')}} : {{GetInvalidForms() | json}}
+        </div>
+
+        <!-- The button area -->
+        <p *ngIf="ShowCommand &&(Buttons==null || Buttons.length===0)">
+            <button mat-raised-button color="accent" type="submit" (click)="Submit()">
+            <mat-icon>save</mat-icon>
+            <span>{{SubmitButtonText}}</span>
+         </button>
+            <button mat-raised-button color="warn" type="button" (click)="Cancel()" style="margin-left:10px;">
+            <mat-icon>cancel</mat-icon>
+            <span>{{ResetButtonText}}</span>
+         </button>
+        </p>
+        <p *ngIf="Buttons!=null">
+            <button [style.marginRight.px]="10" mat-raised-button color="accent" type="submit" (click)="Clicked(button)" *ngFor="let button of Buttons">
+            <mat-icon>{{button.leftIcon}}</mat-icon>
+            <span>{{button.label}}</span>
+            <mat-icon>{{button.rightIcon}}</mat-icon>
+         </button>
+        </p>
+    </ng-container>
+</form>

@@ -1,0 +1,264 @@
+<tr class="{{objStatus[Data.status]}} tr">
+    <td class="td">
+      <button mat-flat-button matTooltip="Objective" matTooltipPosition="above" aria-label="Objective" class="mbo-icon">
+         <img class="mbo-icon" src="/assets/image/task.png"/>
+     </button>
+    </td>
+    <td class="td">
+        <span matTooltip="{{Data.description}}">{{Data.title}}</span>
+    </td>
+
+    <td class="td">
+        <span matTooltip="Assigned To">{{Data.assignedTo | user}}</span>
+    </td>
+
+    <td class="td">
+        <span matTooltip="Priority">{{priority[Data.priority]}}</span>
+    </td>
+
+    <td class="td">
+        <span matTooltip="Development Time">{{Data.minutes}} Minutes</span>
+    </td>
+    <td class="td">
+        <span matTooltip="Created On">{{Data.createdOn | date:"MMM d, yyyy"}}</span>
+    </td>
+
+    <td class="td">
+        <span matTooltip="Start Date">{{Data.startDate| date:"MMM d, yyyy"}}</span>
+    </td>
+    <td class="td">
+        <span *ngIf="Data.completeOn!=null" matTooltip='Completed On {{Data.completeOn| date:"MMM d, yyyy HH:mm"}}'>{{Data.completeOn| date:"MMM d, yyyy"}}</span>
+        <span *ngIf="Data.completeOn==null" matTooltip="Due Date">{{Data.dueDate| date:"MMM d, yyyy"}}</span>
+    </td>
+    <td style="width: 40px; z-index: 0;">
+        <div style="height:40px">
+            <div style="width:40px;height:40px;position:relative">
+               <div class="command-container">
+               <button mat-icon-button color="accent" class="command">
+                  <mat-icon aria-label="Expand Operations">arrow_left</mat-icon>
+               </button>
+               <div class="commands">
+                  <ng-container *ngIf="(Data.status==objStatus.Created || Data.status==objStatus.Denied) && (IAmOwner||IsAssignedToMe||AmIModerator||ICanEdit)">
+                     <button mat-icon-button color="accent" matTooltip="Edit the objective {{Data.title}}" (click)="ToggleObjectiveEditor()">
+                        <mat-icon class="text" aria-label="Edit the objective">create</mat-icon>
+                     </button>
+                  </ng-container>
+                  <ng-container [ngSwitch]="Data.status">
+                     <ng-container *ngSwitchCase="objStatus.Created">
+                        <ng-container *ngIf="IsAssignedToMe">
+                           <button mat-icon-button color="primary" matTooltip="Lock the objective" (click)="LockMOB()">
+                              <mat-icon class="text" aria-label="Lock the objective">lock</mat-icon>
+                           </button>
+                        </ng-container>
+                        <!-- <ng-container *ngIf="AmIModerator||ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="Objective is not locked yet by {{Data.assignedTo | user}}">
+                        <mat-icon aria-label="Pending lock" class="text">lock_open</mat-icon>
+                     </button>
+                  </ng-container> -->
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.Locked">
+                        <!-- <ng-container *ngIf="IsAssignedToMe ||ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="Objective is not yet approved by any moderator">
+                        <mat-icon class="text">thumbs_up_down</mat-icon>
+                     </button>
+                  </ng-container> -->
+                        <ng-container *ngIf="AmIModerator">
+                           <button mat-icon-button color="primary" matTooltip="Objective is locked by {{Data.assignedTo | user}}. Approve it now" (click)="ApproveMBO()">
+                              <mat-icon class="text">thumb_up</mat-icon>
+                           </button>
+                           <button mat-icon-button color="primary" color="warn" matTooltip="Objective is locked by {{Data.assignedTo | user}}. Deny it now"
+                              (click)="DenyMBO()">
+                              <mat-icon class="text">thumb_down</mat-icon>
+                           </button>
+                        </ng-container>
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.Approved">
+                        <ng-container *ngIf="IsAssignedToMe">
+                           <button mat-icon-button color="primary" matTooltip="Start working" (click)="StartWorkingMBO()">
+                              <mat-icon class="text">keyboard</mat-icon>
+                           </button>
+                        </ng-container>
+                        <!-- <ng-container *ngIf="ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="{{Data.assignedTo | user}} has not started working on this objective">
+                        <mat-icon class="text">feedback</mat-icon>
+                     </button>
+                  </ng-container> -->
+                        <ng-container *ngIf="AmIModerator">
+                           <button mat-icon-button color="warn" matTooltip="Objective is approved but {{Data.assignedTo | user}} has not started working on this objective.You
+               can deny it by pressing this icon" (click)="DenyMBO()">
+                              <mat-icon class="text">thumb_down</mat-icon>
+                           </button>
+                        </ng-container>
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.Denied">
+                        <!-- <ng-container *ngIf="IsAssignedToMe || ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="Objective has been denined.">
+                        <mat-icon class="text">not_interested</mat-icon>
+                     </button>
+                  </ng-container> -->
+                        <ng-container *ngIf="AmIModerator">
+                           <button mat-icon-button color="primary" matTooltip="Objective is denied. You can approve it." (click)="ApproveMBO()">
+                              <mat-icon class="text">thumb_up</mat-icon>
+                           </button>
+                        </ng-container>
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.WorkInProgress">
+                        <ng-container *ngIf="IsAssignedToMe">
+                           <button mat-icon-button color="primary" matTooltip="Work Completed? Submit it now." (click)="SubmitMBO()">
+                              <mat-icon class="text">dvr</mat-icon>
+                           </button>
+                           <button mat-icon-button color="warn" matTooltip="Need more time? Ask an extension." (click)="AskExtensionMBO()">
+                              <mat-icon class="text">timelapse</mat-icon>
+                           </button>
+                        </ng-container>
+                        <!-- <ng-container *ngIf="AmIModerator || ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="{{Data.assignedTo | user}} has started working on this objective">
+                        <mat-icon class="text">nfc</mat-icon>
+                     </button>
+                  </ng-container> -->
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.InReview">
+                        <!-- <ng-container *ngIf="IsAssignedToMe">
+                     <button mat-icon-button color="primary" matTooltip="You have submitted it. Now review is in progress">
+                        <mat-icon class="text">timer</mat-icon>
+                     </button>
+                  </ng-container>
+                  <ng-container *ngIf="ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="{{Data.assignedTo | user}} has submitted the work.">
+                        <mat-icon class="text">done</mat-icon>
+                     </button>
+                  </ng-container> -->
+                        <ng-container *ngIf="AmIModerator">
+                           <button mat-icon-button color="accent" matTooltip="{{Data.assignedTo | user}} has submitted the work. Work Looks Good? Accept It"
+                              (click)="AcceptMBO()">
+                              <mat-icon class="text">done_all</mat-icon>
+                           </button>
+                           <button mat-icon-button color="warn" matTooltip="{{Data.assignedTo | user}} has submitted the work. Work is not acceptable? Ask {{Data.assignedTo
+               | user}} to fix it" (click)="DontExceptMBO()">
+                              <mat-icon class="text">archive</mat-icon>
+                           </button>
+                           <button mat-icon-button color="warn" matTooltip="{{Data.assignedTo | user}} has submitted the work. This is bad work? Reject It"
+                              (click)="RejectOrDenyExtensionMBO()">
+                              <mat-icon class="text">layers_clear</mat-icon>
+                           </button>
+                        </ng-container>
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.Extension">
+                        <!-- <ng-container *ngIf="IsAssignedToMe">
+                     <button mat-icon-button color="primary" matTooltip="You have requested for an extension. Keep Working. If accepted, it will be added to your code time.">
+                        <mat-icon class="text">timer</mat-icon>
+                     </button>
+                  </ng-container>
+                  <ng-container *ngIf="ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="{{Data.assignedTo | user}} has requested for more time.">
+                        <mat-icon class="text">timer</mat-icon>
+                     </button>
+                  </ng-container> -->
+                        <ng-container *ngIf="AmIModerator">
+                           <button mat-icon-button color="accent" matTooltip="{{Data.assignedTo | user}} has requested for more time. Allow more time."
+                              (click)="AllowExtensionMBO()">
+                              <mat-icon class="text">alarm_on</mat-icon>
+                           </button>
+                           <button mat-icon-button color="warn" matTooltip="{{Data.assignedTo | user}} has requested for more time. This is bad estimation? Reject It"
+                              (click)="RejectOrDenyExtensionMBO()">
+                              <mat-icon class="text">alarm_off</mat-icon>
+                           </button>
+                        </ng-container>
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.GaveUp">
+                        <!-- <ng-container *ngIf="IsAssignedToMe">
+                     <button mat-icon-button color="primary" matTooltip="You have gave-up this this task. Let's see what you'r worth.">
+                        <mat-icon class="text">sentiment_very_dissatisfied</mat-icon>
+                     </button>
+                  </ng-container>
+                  <ng-container *ngIf="ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="{{Data.assignedTo | user}} has gave-up this this task.">
+                        <mat-icon class="text">mood_bad</mat-icon>
+                     </button>
+                  </ng-container> -->
+                        <ng-container *ngIf="AmIModerator">
+                           <button mat-icon-button color="primary" matTooltip="{{Data.assignedTo | user}} has gave-up this this task. Re-assign it some one"
+                              (click)="ReAssignMBO()">
+                              <mat-icon class="text">supervisor_account</mat-icon>
+                           </button>
+                        </ng-container>
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.Rejected">
+                        <!-- <ng-container *ngIf="IsAssignedToMe">
+                     <button mat-icon-button color="primary" matTooltip="Your work has been rejected. This will affect negatively on your performance card">
+                        <mat-icon class="text">sentiment_dissatisfied</mat-icon>
+                     </button>
+                  </ng-container>
+                  <ng-container *ngIf="ICanOnlySeeIt">
+                     <button mat-icon-button color="primary" matTooltip="The work has been rejected.">
+                        <mat-icon class="text">mood_bad</mat-icon>
+                     </button>
+                  </ng-container> -->
+                        <ng-container *ngIf="AmIModerator">
+                           <button mat-icon-button color="primary" matTooltip="The work has been rejected. Re-assign it some one" (click)="ReAssignMBO()">
+                              <mat-icon class="text">supervisor_account</mat-icon>
+                           </button>
+                        </ng-container>
+                     </ng-container>
+
+                     <ng-container *ngSwitchCase="objStatus.Unacceptable">
+                        <ng-container *ngIf="IsAssignedToMe">
+                           <button *ngIf="NeedExtentionAfterRejection()" mat-icon-button color="primary" matTooltip="Your work has not been accepted. Ask for an extension, Fix it and submit it again"
+                              (click)="AskExtensionMBO()">
+                              <mat-icon class="text">timelapse</mat-icon>
+                           </button>
+                           <button *ngIf="!NeedExtentionAfterRejection()" mat-icon-button color="primary" matTooltip="Your work has not been accepted. Fix it and submit it again"
+                              (click)="StartWorkingMBO()">
+                              <mat-icon class="text">keyboard</mat-icon>
+                           </button>
+                        </ng-container>
+                        <!-- <ng-container *ngIf="ICanOnlySeeIt || AmIModerator">
+                     <button mat-icon-button color="primary" matTooltip="The work has not been accepted. {{Data.assignedTo | user}} needs to fix it and submit it again">
+                        <mat-icon class="text">mood_bad</mat-icon>
+                     </button>
+                  </ng-container> -->
+                     </ng-container>
+
+                     <!-- <ng-container *ngSwitchCase="objStatus[objStatus.Complete]">
+                  <ng-container *ngIf="IsAssignedToMe">
+                     <button mat-icon-button color="primary" matTooltip="Congratulations! Your work has been accepted.">
+                        <mat-icon class="text" aria-label="Congratulations! Your work has been accepted.">mood</mat-icon>
+                     </button>
+                  </ng-container>
+                  <ng-container *ngIf="ICanOnlySeeIt || AmIModerator">
+                     <button mat-icon-button color="primary" matTooltip="This Work has been completed by {{Data.assignedTo | user}}">
+                        <mat-icon class="text" aria-label="This Work has been completed">mood</mat-icon>
+                     </button>
+                  </ng-container>
+               </ng-container> -->
+
+                  </ng-container>
+                  <button mat-icon-button color="primary" matTooltip="Refresh Data" (click)="RefreshData()">
+                     <mat-icon class="text" aria-label="Refresh Data">autorenew</mat-icon>
+                  </button>
+                  <button mat-icon-button color="primary" matTooltip="View Timelines" (click)="ShowTimeline()">
+                     <mat-icon class="text" aria-label="View Timelines">schedule</mat-icon>
+                  </button>
+               </div>
+            </div>
+            </div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td [attr.colspan]="9" class="hid">
+        <div [@objectiveEditor]="ShowObjectiveCreator">
+            <ng-container *ngIf="ShowObjectiveCreator=='show'">
+                <app-form-area [FormsList]="Controller.ObjectiveEditor" (OnCancelButtonClick)="ToggleObjectiveEditor()" (OnSubmitButtonClick)="SubmitEditorForm($event)" [PrefilledValue]="Data" [ResetButtonText]="'Cancel'" [SubmitButtonText]="'Save'"></app-form-area>
+            </ng-container>
+        </div>
+    </td>
+</tr>

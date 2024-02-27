@@ -1,0 +1,124 @@
+ .td {
+    padding: 6px 12px;
+    vertical-align: middle;
+ }
+
+ .td span {
+    user-select: text !important
+ }
+
+ .td:nth-child(1) {
+    width: 39px;
+    padding: 6px;
+ }
+
+ .td:nth-child(2) {
+    width: 24px;
+    padding: 6px;
+ }
+
+ .td:last-child {
+    width: 40px;
+    padding: 0;
+ }
+
+ .td:nth-last-child(2),
+ .td:nth-last-child(3),
+ .td:nth-last-child(4) {
+    width: 110px;
+ }
+
+ .hlogo {
+    font-size: 24px;
+ }
+
+ .text {
+    font-size: 18px;
+    cursor: pointer;
+ }
+
+ .chip {
+    padding: 4px !important;
+ }
+
+ .hid {
+    overflow: hidden;
+    padding: 0 0 0 5px;
+    border: 0;
+ }
+
+ .intab {
+    padding-left: 8px;
+    margin-top: -100%;
+ }
+
+ .tr {
+    display: table-row-group;
+    border-bottom: solid 1px #494949
+ }
+
+ .table {
+    width: 100%;
+    border: 0px;
+    border-spacing: 0;
+    margin: 0;
+    border-collapse: collapse;
+    background-color: white;
+ }
+
+ .point {
+    cursor: pointer;
+ }
+
+ .chip-icon {
+    width: 17px;
+    text-align: center;
+ }
+
+ .topline {
+    border-top: gray thin solid;
+ }
+
+ .command-container:hover>.commands {
+    max-width: 900px;
+ }
+
+ .command-container:hover {
+    background-color: white;
+    box-shadow: 0 0 3px;
+ }
+
+ .commands {
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 0;
+    transition: max-width 0.3s, background-color 0.3s
+ }
+
+ .commands>button {
+    display: inline-block;
+ }
+
+ .command-container {
+    white-space: nowrap;
+    border-radius: 4px;
+    right: 0;
+    position: absolute;
+    overflow-x: hidden;
+ }
+
+ .colorprofile {
+    border: solid thin #00000054;
+    width: 6px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+ }
+
+ .mbo-icon {
+   width:24px;
+   height:24px;
+   min-width:24px;
+   border-radius: 4px;
+   background:none;
+ }

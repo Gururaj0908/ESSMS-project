@@ -1,0 +1,14 @@
+<app-table-view #tableCtrl [RemoteOperations]="$any(Remote_Paginated)" [TABLE_DATA]="Table_Data" [Columns]="displayableHeader"
+  [ShowStatusToggle]="activateDeactivateAllowed" [ShowDeleteButton]="deleteAllowed" [ShowEditButton]="updateAllowed"
+  (DeleteButtonClicked)="confirmDelete($event.DataRow)" [CustomForm]="CustomForm" [TimeLineUrl]="logUrl"
+  (EditButtonClicked)="editRecord($event.DataRow)" (StatusToggled)="activateDeactivate($event)"
+  (RestoreToggled)="restore($event)" [Operations]="Table_Buttons" (CreateClicked)="navigateToForm(Editor)"
+  [TotalRowCount]="Data_Count" (SortingOrPagingExecuted)="PageChanged($event)" (SearchExecuted)="Search($event)"
+  [SearchForm]="Search_Form" [ShowCreateButton]="createAllowed" (SearchCleared)="SearchCleared()"
+  (OperationExecuted)="BottomOperationExecuted($event)" (ReloadData)="ReloadData()"
+  [HideActiveToggler]="hideStatusToggle" [Legends]="Legends"></app-table-view>
+
+<p *ngIf="eventArgs && eventArgs.ReturnValue">
+  <button [disabled]="tableCtrl.SelectedFormGroups.length===0" mat-raised-button mat-dialog-close color="primary"
+    (click)="DialogButtonClicked()">Select</button>
+</p>

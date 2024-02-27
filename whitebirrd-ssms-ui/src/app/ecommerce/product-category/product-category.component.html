@@ -1,0 +1,143 @@
+<mat-sidenav class="custom-sidenav"  #sidenav fxLayout="column">
+
+    <div fxLayout="column">
+   
+            <!-- <div  *ngFor="let link of navLinks"> 
+              <button mat-menu-item  [routerLink]="link.path">{{link.label}}</button>
+              <mat-divider></mat-divider></div> -->
+          
+
+                <button mat-menu-item [routerLink]="['/ecommerce/user-profile/']">Profile</button>
+                <mat-divider></mat-divider>
+
+               
+                    <mat-divider></mat-divider>
+
+                    <a (click)="sidenav.toggle()" color="primary" href="#" mat-button>Close</a>
+            </div>
+</mat-sidenav>
+
+
+
+<div fxShow="true" fxHide.lt-md="true">
+<mat-drawer-container class="profile-container">
+<mat-drawer mode="side" opened="true" color="secondary" class="profile-left-panel">
+    <!-- <a class="custom-mobile-link" mat-button *ngFor="let link of navLinks" [routerLink]="link.path" >
+        {{link.label}}
+      </a> -->
+    <!-- <div class="profile-avtar profile-inner-layout">
+        <mat-list>
+            <mat-list-item>
+                <div mat-card-avatar class="example-header-image"></div> Test User</mat-list-item>
+        </mat-list>
+       
+    </div> -->
+
+    <div class="profile-inner-layout">
+      
+          <!-- <mat-accordion > -->
+              <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header class="custom-backround">
+                  <mat-panel-title >
+                   Product Category
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-panel-description>
+                    <mat-list>
+                        <!-- <h3 mat-subheader>Folders</h3> -->
+                        <mat-list-item *ngFor="let category of categoryList">
+                            <!-- <mat-icon>map</mat-icon>
+                          <h4 mat-line> {{category.label}}</h4> -->
+                          <mat-divider></mat-divider>
+                          <mat-checkbox class="example-margin" [(ngModel)]="category.value"> {{category.label}}</mat-checkbox>
+                        </mat-list-item>
+                       
+                       
+                      </mat-list>
+                  </mat-panel-description>
+              </mat-expansion-panel>
+            
+              <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header  class="custom-backround" >
+                  <mat-panel-title >
+                   Brand
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-panel-description>
+                    <mat-list>
+                        <!-- <h3 mat-subheader>Folders</h3> -->
+                        <mat-list-item *ngFor="let category of categoryList">
+                            <!-- <mat-icon>map</mat-icon>
+                          <h4 mat-line> {{category.label}}</h4> -->
+                          <mat-checkbox class="example-margin" [(ngModel)]="category.value"> {{category.label}}</mat-checkbox>
+                          <mat-divider></mat-divider>
+                        </mat-list-item>
+                       
+                       
+                      </mat-list>
+                  </mat-panel-description>
+              </mat-expansion-panel>
+            <!-- </mat-accordion> -->
+            <!-- <mat-divider></mat-divider>
+        <mat-list>
+            <mat-list-item class="custom-nav-spec ">
+                <i class="material-icons">
+                    store
+                </i> MY ORDERS</mat-list-item>
+            <mat-list-item class="custom-nav-spec custom-margin-left">
+                <span>Order Summary</span>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-list>
+            <mat-list-item class="custom-nav-spec">
+                <i class="material-icons">
+                    account_box
+                </i> ACCOUNT SETTINGS</mat-list-item>
+            <mat-list-item class="custom-nav-spec custom-margin-left" [routerLink]="['/ecommerce/user-profile/account']">
+                <span>Profile Information</span>
+            </mat-list-item>
+            <mat-list-item class="custom-nav-spec custom-margin-left" [routerLink]="['/ecommerce/user-profile/manage-address']">
+                <span>Manage Address</span>
+            </mat-list-item>
+            <mat-list-item class="custom-nav-spec custom-margin-left">
+                <span>Notification Preference</span>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-list>
+            <mat-list-item class="custom-nav-spec">
+                <i class="material-icons">
+                    account_balance_wallet
+                </i> PAYMENTS</mat-list-item>
+            <mat-list-item  [routerLink]="['/ecommerce/user-profile/save-cards']" class="custom-nav-spec custom-margin-left">
+                <span>Saved Cards</span>
+            </mat-list-item>
+            <mat-list-item class="custom-nav-spec custom-margin-left">
+                <span>Gift Cards</span>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-list>
+            <mat-list-item class="custom-nav-spec">
+                <i class="material-icons">
+                    accessible
+                </i> MY STUFF</mat-list-item>
+            <mat-list-item class="custom-nav-spec custom-margin-left">
+                <span>My Reviews & Ratings</span>
+            </mat-list-item>
+            <mat-list-item class="custom-nav-spec custom-margin-left">
+                <span>All Notification</span>
+            </mat-list-item>
+            <mat-list-item class="custom-nav-spec custom-margin-left">
+                <span>My Wishlist</span>
+            </mat-list-item>
+        </mat-list> -->
+    </div>
+
+</mat-drawer>
+<mat-drawer-content class="profile-right-container">
+      <app-product [data]="productList"></app-product>
+</mat-drawer-content>
+</mat-drawer-container>
+</div>

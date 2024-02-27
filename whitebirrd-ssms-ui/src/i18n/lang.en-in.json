@@ -1,0 +1,293 @@
+{
+    "LoginForm": {
+        "message": "Login Form"
+    },
+    "RegisterForm": {
+        "message": "Register Form"
+    },
+    "UserName": {
+        "message": "User Name"
+    },
+    "EmailTooltip": {
+        "message": "User Name or Email Id"
+    },
+    "Password": {
+        "message": "Password"
+    },
+    "SignIn": {
+        "message": "Sign In"
+    },
+    "ForgotPassword": {
+        "message": "Forgot Password"
+    },
+    "FullName": {
+        "message": "Full Name"
+    },
+    "Email": {
+        "message": "Email Id"
+    },
+    "Mobile": {
+        "message": "Mobile Number"
+    },
+    "ConfirmPassword": {
+        "message": "Confirm Password"
+    },
+    "Register": {
+        "message": "Register"
+    },
+    "Hello": {
+        "message": "Hello"
+    },
+    "Account": {
+        "message": "Account"
+    },
+    "SignOut": {
+        "message": "Sign Out"
+    },
+    "Profile": {
+        "message": "Profile"
+    },
+    "Help": {
+        "message": "Help"
+    },
+    "MadeInIndia": {
+        "message": "Made in India"
+    },
+    "Copyright": {
+        "message": "Copyright"
+    },
+    "Items": {
+        "message": "Items per page"
+    },
+    "EditRow": {
+        "message": "Edit Row"
+    },
+    "DeleteRow": {
+        "message": "Delete Row"
+    },
+    "TimeLine": {
+        "message": "View Timelines"
+    },
+    "Delete": {
+        "message": "Delete"
+    },
+    "SureDelete": {
+        "message": "Are you sure?"
+    },
+    "Yes": {
+        "message": "Yes"
+    },
+    "No": {
+        "message": "No"
+    },
+    "Required": {
+        "message": "{0} is Required"
+    },
+    "MinimumVldtr": {
+        "message": "{0} cannot be less than {1}"
+    },
+    "MaximumVldtr": {
+        "message": "{0} cannot be more than {1}"
+    },
+    "EmailVldtr": {
+        "message": "{0} must be a valid email"
+    },
+    "MinLengthVldtr": {
+        "message": "{0} cannot have less than {1} characters"
+    },
+    "MaxLengthVldth": {
+        "message": "{0} cannot have more than {1} characters"
+    },
+    "CompareVldtr": {
+        "message": "{0} does not match with {1}"
+    },
+    "OneFileAllow": {
+        "message": "One {0} file allowed"
+    },
+    "MultipleFilesAllow": {
+        "message": "Multiple {0} files allowed"
+    },
+    "FileSizeVldtr": {
+        "message": "File size should be within {0}KB and {1}KB"
+    },
+    "UploadError": {
+        "message": "File couldn't be uploaded."
+    },
+    "MinFileSize": {
+        "message": "Total file size should be more than {0}"
+    },
+    "MaxFileSize": {
+        "message": "Total file size should be less than {1}"
+    },
+    "UploadStart": {
+        "message": "Upload Started"
+    },
+    "Uploading": {
+        "message": "Uploading {0} of {1} {2}%"
+    },
+    "File": {
+        "message": "File"
+    },
+    "Files": {
+        "message": "Files"
+    },
+    "UploadDone": {
+        "message": "{0} {1} Uploaded Successfully"
+    },
+    "AddNew": {
+        "message": "Add New {0}"
+    },
+    "AddNewFail": {
+        "message": "Couldn't add new {0}"
+    },
+    "Hotline": {
+        "message": "Call Us"
+    },
+    "HomeSearch": {
+        "message": "Search Product Item"
+    },
+    "LoginRegister": {
+        "message": "Login/Register"
+    },
+    "Cart": {
+        "message": "Shopping Cart"
+    },
+    "TotalCart": {
+        "message": "Total"
+    },
+    "CartDetail": {
+        "message": "View Details"
+    },
+    "Home": {
+        "message": "Home"
+    },
+    "RepairStatus": {
+        "message": "Product Repair Status"
+    },
+    "BookRepair": {
+        "message": "Book Product Repair"
+    },
+    "FakeProduct": {
+        "message": "Fake Product Identification"
+    },
+    "CompanyName": {
+        "message": "HOROLAB"
+    },
+    "ItemsPerPage": {
+        "message": "Items per page"
+    },
+    "NoData": {
+        "message": "Couldn't get the data"
+    },
+    "TrialForData": {
+        "message": "Things you can try"
+    },
+    "RefreshPage": {
+        "message": "Refresh the page"
+    },
+    "NetworkCheck": {
+        "message": "Check if network is available"
+    },
+    "InternetReachable": {
+        "message": "Make sure Internet is reachable"
+    },
+    "ServerCheck": {
+        "message": "Check if the server is down"
+    },
+    "OurError": {
+        "message": "Could be an error on our part"
+    },
+    "AppName": {
+        "message": "eSSMSs"
+    },
+    "NoDataAvailable": {
+        "message": "No Data Available to Display"
+    },
+    "Reload": {
+        "message": "Reload"
+    },
+    "IsActive": {
+        "message": "Is Active"
+    },
+    "Restore": {
+        "message": "Restore"
+    },
+    "Search": {
+        "message": "Search"
+    },
+    "Reset": {
+        "message": "Reset"
+    },
+    "VALID": {
+        "message": "Valid"
+    },
+    "INVALID": {
+        "message": "Invalid"
+    },
+    "PENDING": {
+        "message": "Pending"
+    },
+    "DISABLED": {
+        "message": "Disabled"
+    },
+    "Status": {
+        "message": "Status is {0}"
+    },
+    "SelectedRow": {
+        "message": "Selected Rows"
+    },
+    "PageNoShow": {
+        "message": "Showing {0} to {1} of {2}"
+    },
+    "FirstPage": {
+        "message": "First Page"
+    },
+    "PreviousPage": {
+        "message": "Previous Page"
+    },
+    "NextPage": {
+        "message": "Next Page"
+    },
+    "LastPage": {
+        "message": "Last Page"
+    },
+    "SingleSelection": {
+        "message": "Single Selection Allowed"
+    },
+    "MultipleSelection": {
+        "message": "Multiple Selection Allowed"
+    },
+    "BrowseFile": {
+        "message": "Browse File"
+    },
+    "UploadFile": {
+        "message": "Upload File"
+    },
+    "ClearSelection": {
+        "message": "Clear Selection"
+    },
+    "FileSize": {
+        "message": "Total File Size"
+    },
+    "UploadInit": {
+        "message": "Preparing for Upload"
+    },
+    "Save": {
+        "message": "Save"
+    },
+    "Cancel": {
+        "message": "Cancel"
+    },
+    "RequestFail": {
+        "message": "Couldn't process the request"
+    },
+    "Saved": {
+        "message": "Saved Successfully"
+    },
+    "InvalidForms": {
+        "message": "Invalid Forms are"
+    },
+    "ExtraDetails": {
+        "message": "Extra Details"
+    }
+}

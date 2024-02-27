@@ -1,0 +1,18 @@
+<h3 class="mat-calendar" *ngIf="data.Title!=null">{{data.Title}}</h3>
+<div class="mat-calendar" mat-dialog-content style="font-size: small">
+    <div *ngIf="data.Type && data.Type=== popupType.Form">
+        <!-- render form -->
+        <app-form-area [FormsList]="Form" (OnSubmitButtonClick)="SubmitForm($event)" [PrefilledValue]="data.prefilled_form_data" [SubmitButtonText]="'Save'" [ResetButtonText]="'Cancel'" (OnCancelButtonClick)="HideForm()" [ShowRawJson]="true"></app-form-area>
+    </div>
+    <div *ngIf="!(data.Type && data.Type===popupType.Form)" style="display: table">
+        <!-- display data -->
+        <ng-container *ngIf="data.Data">
+            <div *ngFor="let d of data.Data" class="{{d.contentType!=null?'':'row'}}">
+                <app-detail-model-display [Model]="d"></app-detail-model-display>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div *ngIf="data.Data" mat-dialog-actions style="text-align:right;display:block">
+    <button mat-raised-button color="accent" mat-dialog-close cdkFocusInitial>Close</button>
+</div>

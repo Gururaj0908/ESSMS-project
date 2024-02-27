@@ -1,0 +1,83 @@
+<div class="hr-inner-content container">
+	<div>
+		<div class="container">
+			<div class="owl-carousel banner owl-theme">
+				<div class="item">
+					<img class="d-block w-100" src="../../assets/banner1.jpg"
+						alt="First slide">
+					<div class="overlay"></div>
+					<div class="content" fxlayout="column"
+						fxlayoutalign="center center"
+						style="flex-direction: column; box-sizing: border-box; display: flex; max-width: 100%; align-content: center; align-items: center; justify-content: center;">
+						<h1>The biggest sale</h1>
+						<h3>Special for today</h3>
+						<button color="accent" mat-raised-button=""
+							class="mat-raised-button mat-primary">
+							<span class="mat-button-wrapper">Shop now</span>
+							<div class="mat-button-ripple mat-ripple" matripple=""></div>
+							<div class="mat-button-focus-overlay"></div>
+						</button>
+					</div>
+				</div>
+				<div class="item">
+					<img class="d-block w-100" src="../../assets/banner1.jpg"
+						alt="Second slide">
+					<div class="overlay"></div>
+					<div class="content" fxlayout="column"
+						fxlayoutalign="center center"
+						style="flex-direction: column; box-sizing: border-box; display: flex; max-width: 100%; align-content: center; align-items: center; justify-content: center;">
+						<h1>The biggest sale</h1>
+						<h3>Special for today</h3>
+						<button color="accent" mat-raised-button=""
+							class="mat-raised-button mat-primary">
+							<span class="mat-button-wrapper">Shop now</span>
+							<div class="mat-button-ripple mat-ripple" matripple=""></div>
+							<div class="mat-button-focus-overlay"></div>
+						</button>
+					</div>
+				</div>
+				<div class="item">
+					<img class="d-block w-100" src="../../assets/banner1.jpg"
+						alt="Third slide">
+					<div class="overlay"></div>
+					<div class="content" fxlayout="column"
+						fxlayoutalign="center center">
+						<h1>The biggest sale</h1>
+						<h3>Special for today</h3>
+						<button color="accent" mat-raised-button=""
+							class="mat-raised-button mat-primary">
+							<span class="mat-button-wrapper">Shop now</span>
+							<div class="mat-button-ripple mat-ripple" matripple=""></div>
+							<div class="mat-button-focus-overlay"></div>
+						</button>
+					</div>
+				</div>
+				<div class="item">
+					<img class="d-block w-100" src="../../assets/banner1.jpg"
+						alt="Fourth slide">
+					<div class="overlay"></div>
+					<div class="content" fxlayout="column"
+						fxlayoutalign="center center">
+						<h1>The biggest sale</h1>
+						<h3>Special for today</h3>
+						<button color="accent" mat-raised-button=""
+							class="mat-raised-button mat-primary">
+							<span class="mat-button-wrapper">Shop now</span>
+							<div class="mat-button-ripple mat-ripple" matripple=""></div>
+							<div class="mat-button-focus-overlay"></div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<mat-tab-group color="accent"> <mat-tab
+			label="Featuared"> <app-product [data]="productList"></app-product>
+		</mat-tab> <mat-tab label="Top Rated"> <app-product
+			[data]="productList"></app-product> </mat-tab> <mat-tab label="On Sale">
+		<app-product [data]="productList"></app-product> </mat-tab> <mat-tab
+			label="New Arraival"> <app-product [data]="productList"></app-product></mat-tab>
+		</mat-tab-group>
+	</div>
+</div>

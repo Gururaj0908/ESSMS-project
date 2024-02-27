@@ -1,0 +1,52 @@
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$my-theme-primary: mat-palette($mat-green);
+$my-theme-accent: mat-palette($mat-teal);
+$my-theme-warn: mat-palette($mat-red, A200);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$my-theme: mat-light-theme( $my-theme-primary, $my-theme-accent, $my-theme-warn );
+
+// .mat-app-background {
+//   min-height: 100%;
+// }
+
+// // .form-control {
+// //   width: 320px;
+// //   margin: 10px;
+// // }
+
+// .block {
+//   display: block !important;
+// }
+
+// .input-pre-icon {
+//   margin-right: 10px;
+// }
+
+// .spinner-display {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 56px;
+//   right: 0;
+//   background: rgba(0, 0, 0, 0.45);
+//   z-index: 100000;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .spinner-host {
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   height: 100%;
+//   width: 100%;
+// }
+
+// .header-location {
+//   @extend .mat-elevation-z2 !optional;
+//   @extend .mat-expansion-panel !optional;
+//   padding: 10px 0 10px 24px;
+// }

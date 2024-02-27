@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-content>
+
+        <div *ngIf="createAllowed" style="padding-bottom: 5px;">
+            <button mat-raised-button color="accent" (click)="navigateToForm(data.formList)">
+        <mat-icon>add</mat-icon>
+        Create
+      </button>
+        </div>
+        <div>
+            <div class="example-header">
+                <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+                </mat-form-field>
+            </div>
+            <mat-table #table [dataSource]="tableData" matSort>
+                <ng-container *ngFor="let col of displayableColumns" matColumnDef={{col}}>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>{{ displayableHeader[col] }}</mat-header-cell>
+                    <mat-cell *matCellDef="let row">{{displayProperty(col, row)}}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="permission">
+                    <mat-header-cell *matHeaderCellDef> Permission </mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <a (click)="managePermission(row)" color="primary">Manage Permission</a>
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="action" *ngIf="updateAllowed || deleteAllowed">
+                    <mat-header-cell *matHeaderCellDef>
+                        <mat-icon>flash_on</mat-icon>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <span *ngIf="updateAllowed">
+              <mat-icon color="primary" (click)="editRecord(row)" style="cursor:pointer" matTooltip="Edit Row">edit</mat-icon>
+              <span class="cdk-visually-hidden">Edit Row</span>
+                        </span>
+                        <span *ngIf="deleteAllowed">
+              <mat-icon color="warn" (click)="confirmDelete(row)" style="cursor:pointer" matTooltip="Delete Row">delete</mat-icon>
+              <span class="cdk-visually-hidden">Delete Row</span>
+                        </span>
+                    </mat-cell>
+                </ng-container>
+                <mat-header-row *cdkHeaderRowDef="displayedHeaders"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedHeaders;"></mat-row>
+            </mat-table>
+            <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+            </mat-paginator>
+        </div>
+    </mat-card-content>
+</mat-card>

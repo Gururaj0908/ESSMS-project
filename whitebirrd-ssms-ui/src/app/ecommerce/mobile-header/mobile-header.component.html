@@ -1,0 +1,23 @@
+<mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav fxLayout="column">
+
+        <div fxLayout="column">
+
+            <div *ngFor="let link of navLinks">
+                <button mat-menu-item [routerLink]="link.path">{{link.label}}</button>
+                <mat-divider></mat-divider>
+            </div>
+
+
+            <button *ngIf='userData' mat-menu-item [routerLink]="['/ecommerce/user-profile/']">{{l.GetString('Profile')}}</button>
+            <mat-divider></mat-divider>
+            <button mat-raised-button *ngIf='!userData' [routerLink]="['/login']">{{l.GetString('LoginRegister')}}</button>
+            <button mat-menu-item *ngIf='userData' (click)="signOut()">
+        <mat-icon>power_settings_new</mat-icon>{{l.GetString('SignOut')}}</button>
+            <mat-divider></mat-divider>
+
+            <a (click)="sidenav.toggle()" color="primary" href="#" mat-button>Close</a>
+        </div>
+
+    </mat-sidenav>
+</mat-sidenav-container>

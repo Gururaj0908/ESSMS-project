@@ -1,0 +1,72 @@
+.tr {
+   display: contents;
+   border-bottom: solid thin gray;
+}
+
+.table {
+   width: 100%;
+   border: 0px;
+   border-spacing: 0px;
+   border-collapse: collapse;
+}
+
+.table .tr:hover {
+   background: rgba(128, 128, 128, 0.123);
+}
+
+.tableH {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+.tableH tr td {
+   padding: 8px;
+   border-bottom: gray thin solid;
+}
+
+.tableH tr td:last-child {
+   width: 150px;
+   padding: 8px;
+}
+
+.tableH tr td:nth-last-child(2),
+.tableH tr td:nth-last-child(3),
+.tableH tr td:nth-last-child(4) {
+   width: 110px;
+   padding: 8px;
+}
+
+.tableH tr td:first-child {
+   width: 0px;
+}
+
+.tableH tr td:nth-child(2) {
+   width: 25px;
+}
+
+.th {
+   text-align: left;
+   height: 35px;
+   border-bottom: thin solid gray;
+}
+
+.th th {
+   padding-left: 12px;
+}
+
+mat-chip-listbox div {
+   display: block;
+   flex-direction: unset;
+   flex-wrap: unset;
+   text-align: right
+}
+
+.stick {
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+}
+
+.stay {
+   position: fixed;
+}

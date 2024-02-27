@@ -1,0 +1,25 @@
+  <mat-list class="cart-data">
+    <mat-list-item *ngIf="cartData">
+      <b>{{cartData.length}} Item</b>
+    </mat-list-item>
+    <div class="divider"></div>
+    <mat-list-item *ngFor="let cart of cartData">
+      <h3 matLine class="text-title1">{{cart.modelNo}}</h3>
+      <p mat-line class="text-title1">Price:{{cart.price.price}} </p>
+      <img    src="{{globalService.API_BASE_URL}}/essms-inventory/public/file/view?absolutePath={{cart.primaryImagePath}}"  back alt="gallery image">
+      <mat-icon color="warn">close</mat-icon>
+    </mat-list-item>
+    <div class="divider"></div>
+   <div class="checkout-box">
+    <b>Total:
+      <span color="warn">${{total}} </span>
+      
+    </b>
+   
+    <button mat-raised-button class="checkout"  [routerLink]="['/ecommerce/delivery-details']" color="accent" type="button">
+      <mat-icon>save</mat-icon> <span> checkout</span>
+  </button>
+   </div>
+     
+   
+  </mat-list>

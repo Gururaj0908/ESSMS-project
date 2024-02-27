@@ -1,0 +1,34 @@
+div{
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+section{
+    vertical-align: middle;
+    display: table-cell;
+}
+
+mat-icon{
+    font-size: 40px;
+    height: 30px;
+    width: 50px;
+}
+
+mat-progress-bar{
+left: -30%;
+overflow: unset;
+margin-bottom: -25px;
+width: 80%;
+}
+
+span{
+    width: 300px;
+    display: inline-block;
+    margin-top: 25px
+}
+table{
+    width: 300px;
+}

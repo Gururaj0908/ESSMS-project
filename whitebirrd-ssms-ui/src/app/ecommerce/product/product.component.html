@@ -1,0 +1,150 @@
+<mat-grid-list *ngIf="productStyle1" [cols]="columnNum" rowHeight="4:4" gutterSize="16px">
+  <mat-grid-tile class="item" *ngFor="let product of data" [colspan]="1" [rowspan]="1">
+    <img    (click)="navigateTodetails(product)" src="{{globalService.API_BASE_URL}}/essms-inventory/public/file/view?absolutePath={{product.primaryImagePath}}"  back alt="gallery image">
+    <div class="product-information">
+      <div class="product-info">
+        <span class="product-title">{{product.modelNo}}</span>
+        <span class="product-price">Price {{product.price.price}}$</span>
+      </div>
+      <div class="product-add" (click)="addTocart(product)" [style.color]="product.color">
+        <i class="material-icons">add_shopping_cart</i>
+      </div>
+
+    </div>
+
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div *ngIf="productStyle2">
+    <mat-card  class="product-list" *ngFor="let product of data" >
+        <img mat-card-image src="../../../assets/image/image1.png" >
+        <mat-chip-listbox>
+        <mat-chip-option color="accent" selected>15% Off</mat-chip-option>
+        </mat-chip-listbox>
+        <mat-card-content >
+          <div class="text-center">
+              <h4  class="text-title">{{product.brand}}</h4>
+              <a class="brand">{{product.modelNo}}</a>
+          </div>
+          <p  class="product-price">${{product.price.price}}</p>
+        </mat-card-content>
+        <div class="divider"></div>
+        <mat-card-actions class="text-center">
+            <mat-icon >favorite</mat-icon>
+            <mat-icon (click)="addTocart(product)" >shopping_cart</mat-icon>
+        </mat-card-actions>
+      </mat-card>
+</div>
+
+
+<!-- <div class="container" fxLayout fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+    <div class="item item-1" [ngClass]="product.color" fxFlex="25%" *ngFor="let product of productList | slice:0:1">
+      <img [src]="product.imagesrc" back alt="gallery image">
+      <div class="product-information">
+        <div class="product-info">
+          <span class="product-title">{{product.title}}</span>
+          <span class="product-price">{{product.price}}</span>
+        </div>
+        <div class="product-add" [style.color]="product.color">
+          <i class="material-icons">add_shopping_cart</i>
+        </div>
+
+      </div>
+    </div>
+    <div class="item item-2" [ngClass]="product.color" fxFlex="20%" *ngFor="let product of productList | slice:1:2" fxFlexOrder="3">
+      <img [src]="product.imagesrc" back alt="gallery image">
+      <div class="product-information">
+        <div class="product-info">
+          <span class="product-title">{{product.title}}</span>
+          <span class="product-price">{{product.price}}</span>
+        </div>
+        <div class="product-add" [style.color]="product.color">
+          <i class="material-icons">add_shopping_cart</i>
+        </div>
+
+      </div>
+    </div>
+    <div class="item item-3" [ngClass]="product.color" fxFlex *ngFor="let product of productList | slice:2:3">
+      <img [src]="product.imagesrc" back alt="gallery image">
+      <div class="product-information">
+        <div class="product-info">
+          <span class="product-title">{{product.title}}</span>
+          <span class="product-price">{{product.price}}</span>
+        </div>
+        <div class="product-add" [style.color]="product.color">
+          <i class="material-icons">add_shopping_cart</i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container"  fxLayout.xs="column"  fxLayout.sm="column" *ngFor="let product of productList | slice:3:4" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+    <div class="item item-4" [ngClass]="product.color" fxFlex fxFlexOffset="50px" fxFlexOffset.xs="0"> <img [src]="product.imagesrc" back alt="gallery image">
+      <div class="product-information">
+        <div class="product-info">
+          <span class="product-title">{{product.title}}</span>
+          <span class="product-price">{{product.price}}</span>
+        </div>
+        <div class="product-add" [style.color]="product.color">
+          <i class="material-icons">add_shopping_cart</i>
+        </div>
+
+      </div></div>
+    <div class="item item-5" [ngClass]="product.color" fxFlex="60%" *ngFor="let product of productList | slice:4:5"> <img [src]="product.imagesrc" back alt="gallery image">
+      <div class="product-information">
+        <div class="product-info">
+          <span class="product-title">{{product.title}}</span>
+          <span class="product-price">{{product.price}}</span>
+        </div>
+        <div class="product-add" [style.color]="product.color">
+          <i class="material-icons">add_shopping_cart</i>
+        </div>
+
+      </div></div>
+  </div> -->
+<!-- 
+ <div fxLayout="row" fxLayoutAlign="center center" class="row-example">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div> -->
+<!-- <div class="container"
+      fxLayout
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="10px"
+      fxLayoutGap.xs="0">
+   <div class="item item-4" fxFlex fxFlexOffset="50px"  fxFlexOffset.xs="0">Item 4</div>
+   <div class="item item-5" fxFlex="200px">Item 5</div>
+
+   <mat-grid-list cols="4" rowHeight="4:4">
+   <mat-grid-tile  class="item"  fxFlex="20%" *ngFor="let product of productList"
+   [colspan]="product.cols"
+   [rowspan]="product.rows"
+   [ngClass]="product.color"  ><img [src]="product.imagesrc" back  alt="gallery image">
+   <div class="product-information">
+     <div class="product-info"><span class="product-title">{{product.title}}</span><span  class="product-price">{{product.price}}</span></div>
+     <div class="product-add"  [style.color]="product.color"><i class="material-icons" >add_shopping_cart</i></div>
+     
+     </div>
+  
+   </mat-grid-tile>
+  </mat-grid-list>
+ </div> -->
+<!-- <h1>Latest Product</h1>
+<mat-grid-list cols="4" rowHeight="4:4">
+    <mat-grid-tile  *ngFor="let product of productList"
+    [colspan]="product.cols"
+    [rowspan]="product.rows"
+    [ngClass]="product.color"  ><img [src]="product.imagesrc" back  alt="gallery image">
+    <div class="product-information">
+      <div class="product-info"><span class="product-title">{{product.title}}</span><span  class="product-price">{{product.price}}</span></div>
+      <div class="product-add"  [style.color]="product.color"><i class="material-icons" >add_shopping_cart</i></div>
+      
+      </div>
+   
+    </mat-grid-tile>
+  
+  </mat-grid-list>
+   -->

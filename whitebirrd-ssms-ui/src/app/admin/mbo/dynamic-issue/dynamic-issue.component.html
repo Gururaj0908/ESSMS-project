@@ -1,0 +1,91 @@
+<tr>
+    <!-- toggle placeholder -->
+    <td class="td"></td>
+    <!-- toggle placeholder end -->
+    <td class="td">
+        <!--
+        <mat-chip class="chip">
+            <span matTooltip="Issue" class="chip-icon">
+            <b>I</b>
+         </span>
+        </mat-chip>
+    -->
+        <button mat-flat-button matTooltip="Issue" matTooltipPosition="above" aria-label="Issue" class="mbo-icon">
+            <img class="mbo-icon" src="/assets/image/issues.png"/>
+        </button>
+    </td>
+    <td class="td">
+        <span matTooltip="{{Data.description}}" matTooltipPosition="right">
+         {{Data.title}}
+      </span>
+    </td>
+    <td class="td">
+        <span>
+         {{trackingStatus[Data.currentStatus]}}
+      </span>
+    </td>
+
+    <td class="td">
+        <span>
+         {{Data.createdBy|user}}
+      </span>
+    </td>
+    <td class="td">
+        <span>
+         {{Data.createdOn|date:"MMM d, yyyy"}}
+      </span>
+    </td>
+    <td class="td"></td>
+    <td class="td">
+        <span>
+
+      </span>
+    </td>
+    <td class="td">
+        <div style="height:40px">
+            <div style="width:40px;height:40px;position:relative">
+               <div class="command-container">
+               <button mat-icon-button color="accent" class="command">
+                  <mat-icon aria-label="Expand Operations">arrow_left</mat-icon>
+               </button>
+               <div class="commands">
+                  <button color="primary" mat-icon-button matTooltip="Edit Issue" (click)="ToggleEditor()">
+                     <mat-icon class="text" aria-label="Edit Issue">edit</mat-icon>
+                  </button>
+                  <button color="accent" *ngIf="(Data.currentStatus===trackingStatus.Raised || Data.currentStatus===trackingStatus.Denied)&& IsBA"
+                     mat-icon-button matTooltip="Forward to Technical Team" (click)="CallStatusChange(trackingStatus.Analysis)">
+                     <mat-icon class="text" aria-label="Forward to Technical Team">send</mat-icon>
+                  </button>
+                  <button color="accent" *ngIf="Data.currentStatus===trackingStatus.Analysis && IsTH" mat-icon-button matTooltip="Accept and Import"
+                     (click)="CallStatusChange(trackingStatus.Accepted)">
+                     <mat-icon class="text" aria-label="Accept and Import">save_alt</mat-icon>
+                  </button>
+                  <button color="warn" *ngIf="Data.currentStatus===trackingStatus.Analysis && IsTH" mat-icon-button matTooltip="Deny Issue"
+                     (click)="CallStatusChange(trackingStatus.Denied)">
+                     <mat-icon class="text" aria-label="Deny Issue">block</mat-icon>
+                  </button>
+                  <button color="warn" *ngIf="(Data.currentStatus===trackingStatus.Raised || Data.currentStatus===trackingStatus.Denied)&& IsBA"
+                     mat-icon-button matTooltip="Close Issue" (click)="CallStatusChange(trackingStatus.Closed)">
+                     <mat-icon class="text" aria-label="Close Issue">clear</mat-icon>
+                  </button>
+                  <button color="warn" mat-icon-button matTooltip="Delete Issue" (click)="DeleteItem()">
+                     <mat-icon class="text" aria-label="Delete">delete</mat-icon>
+                  </button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- The Item Editor -->
+<tr>
+    <td [attr.colspan]="8" class="hid">
+        <div [@editor]="ShowEditor">
+            <ng-container *ngIf="ShowEditor==='show'">
+                <app-form-area [FormsList]="Controller.IssueEditor" [PrefilledValue]="EditData" (OnCancelButtonClick)="ToggleEditor()" (OnSubmitButtonClick)="SubmitEditorForm($event)" [ResetButtonText]="'Cancel'" [SubmitButtonText]="'Save'"></app-form-area>
+            </ng-container>
+        </div>
+    </td>
+</tr>
+<!-- Item Editor End -->

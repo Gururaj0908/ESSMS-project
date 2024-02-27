@@ -1,0 +1,70 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+     Header Style
+      </mat-panel-title>
+      <mat-panel-description>
+       Modify your header Style and text
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason1">
+      <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <!-- <div class="example-selected-value">Your favorite season is: {{favoriteSeason}}</div> -->
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+     Manage Navigation
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <h3>Rearrange your link</h3>
+    <!-- <button mat-raised-button color="accent">Add new</button> -->
+    <div class="button-row">
+      <button mat-raised-button  *ngFor="let link of navLinks">{{link.label}}</button>
+      <!-- <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+      <button mat-raised-button disabled>Disabled</button>
+      <a mat-raised-button routerLink=".">Link</a> -->
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState1 = true"
+                       (closed)="panelOpenState1 = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+      Manage Logo
+      </mat-panel-title>
+      <mat-panel-description>
+      
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  
+  </mat-expansion-panel>
+  
+</mat-accordion>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+     Product Style
+      </mat-panel-title>
+      <mat-panel-description>
+       Customize your product style and arrangement  
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason2">
+      <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-expansion-panel>
+</mat-accordion>

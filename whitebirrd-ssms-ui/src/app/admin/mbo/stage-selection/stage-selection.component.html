@@ -1,0 +1,48 @@
+<mat-form-field class="form-field">
+   <mat-label>Project</mat-label>
+   <mat-select (selectionChange)="onDropDownChange($event,0)" [required]="required" #project>
+      <mat-option *ngIf="!required"> -- None -- </mat-option>
+      <ng-container *ngIf="ProjectOptions">
+         <mat-option *ngFor="let item of ProjectOptions" [value]="item.value">
+            {{item.label}}
+         </mat-option>
+      </ng-container>
+   </mat-select>
+   <mat-error>{{Error}}</mat-error>
+</mat-form-field>
+
+<mat-form-field class="form-field">
+   <mat-label>Module</mat-label>
+   <mat-select (selectionChange)="onDropDownChange($event,1)" #module>
+      <mat-option> -- None -- </mat-option>
+      <ng-container *ngIf="ModuleOptions">
+         <mat-option *ngFor="let item of ModuleOptions" [value]="item.value">
+            {{item.label}}
+         </mat-option>
+      </ng-container>
+   </mat-select>
+</mat-form-field>
+
+<mat-form-field class="form-field">
+   <mat-label>Sub-Module</mat-label>
+   <mat-select (selectionChange)="onDropDownChange($event,2)" #submodule>
+      <mat-option> -- None -- </mat-option>
+      <ng-container *ngIf="SubmoduleOptions">
+         <mat-option *ngFor="let item of SubmoduleOptions" [value]="item.value">
+            {{item.label}}
+         </mat-option>
+      </ng-container>
+   </mat-select>
+</mat-form-field>
+
+<mat-form-field class="form-field">
+   <mat-label>Milestone</mat-label>
+   <mat-select (selectionChange)="onDropDownChange($event,3)" #milestone>
+      <mat-option> -- None -- </mat-option>
+      <ng-container *ngIf="MilestoneOptions">
+         <mat-option *ngFor="let item of MilestoneOptions" [value]="item.value">
+            {{item.label}}
+         </mat-option>
+      </ng-container>
+   </mat-select>
+</mat-form-field>

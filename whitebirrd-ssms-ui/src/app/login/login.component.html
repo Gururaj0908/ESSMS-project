@@ -1,0 +1,132 @@
+<div [class]="theme">
+    <div>
+
+        <app-header></app-header>
+        <mat-sidenav-container fxFlexFill>
+
+            <mat-sidenav #sidenav fxLayout="column">
+
+                <div fxLayout="column">
+
+                    <div *ngFor="let link of navLinks">
+                        <button mat-menu-item [routerLink]="link.path">{{link.label}}</button>
+                        <mat-divider></mat-divider>
+                    </div>
+
+                    <a (click)="sidenav.toggle()" color="accent" href="#" mat-button>Close</a>
+                </div>
+
+            </mat-sidenav>
+
+            <mat-sidenav-content fxFlexFill>
+                <div class="login-container">
+                    <mat-tab-group>
+                        <mat-tab label="{{l.GetString('LoginForm')}}">
+                            <mat-card class="loginCard">
+                                <mat-card-header>
+                                    <h3 i18n>{{l.GetString('LoginForm')}}</h3>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <form [formGroup]="LoginForm" novalidate (ngSubmit)="login()">
+                                        <mat-form-field class="form-control">
+                                            <span matPrefix matTooltip="{{l.GetString('EmailTooltip')}}">
+                        <mat-icon class="fieldIcon">account_box</mat-icon>
+                      </span>
+                                            <input matInput type="text" autocomplete placeholder="{{l.GetString('UserName')}}" [(ngModel)]="model.username" formControlName="UserName" required>
+                                            <button tabindex="-1" type="button"  *ngIf="model.username" matSuffix mat-icon-button aria-label="Clear" (click)="model.username=''">
+                        <mat-icon>close</mat-icon>
+                      </button>
+                                            <mat-error>{{usernameError()}}</mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field class="form-control">
+                                            <span matPrefix>
+                        <mat-icon class="fieldIcon">vpn_key</mat-icon>
+                      </span>
+                                            <input matInput type="password" autocomplete placeholder="{{l.GetString('Password')}}" [(ngModel)]="model.password" formControlName="Password" #password required>
+                                            <button tabindex="-1" type="button"  *ngIf="model.password" matSuffix mat-icon-button aria-label="Show" (mousedown)="passwordReveal(true,password)" (mouseup)="passwordReveal(false,password)">
+                        <mat-icon>remove_red_eye</mat-icon>
+                      </button>
+                                            <mat-error>{{passwordError()}}</mat-error>
+                                        </mat-form-field>
+                                        <p>&nbsp;</p>
+
+                                        <button mat-raised-button color="accent" [disabled]="LoginForm.invalid" type="submit">
+                      <mat-icon>lock_open</mat-icon>
+                      <span>{{l.GetString('SignIn')}}</span>
+                    </button>
+
+                                        <!-- <p *ngIf="loading">&nbsp;</p>
+                                            <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar> -->
+                                    </form>
+                                    <!-- <p>
+                                            Forgot Password?
+                                            <a class="mat-button mat-primary" href="#">Reset Here</a>
+                                        </p> -->
+                                </mat-card-content>
+                            </mat-card>
+                        </mat-tab>
+                        <mat-tab label="{{l.GetString('RegisterForm')}}">
+                            <mat-card class="loginCard">
+                                <mat-card-header>
+                                    <h3>{{l.GetString('RegisterForm')}}</h3>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <form [formGroup]="RegisterForm" novalidate (ngSubmit)="register()">
+                                        <mat-form-field class="form-control">
+
+                                            <input matInput type="text" autocomplete placeholder="{{l.GetString('FullName')}}" formControlName="Name" [(ngModel)]="model.name" required>
+                                            <button tabindex="-1" type="button" *ngIf="model.username" matSuffix mat-icon-button aria-label="Clear" (click)="model.username=''">
+                        <mat-icon>close</mat-icon>
+                      </button>
+                                            <mat-error>{{nameError()}}</mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field class="form-control">
+
+                                            <input matInput type="text" autocomplete placeholder="{{l.GetString('Email')}}" formControlName="EmailId" [(ngModel)]="model.emailId" required>
+
+                                            <button tabindex="-1" type="button" *ngIf="model.username" matSuffix mat-icon-button aria-label="Clear" (click)="model.username=''">
+                        <mat-icon>close</mat-icon>
+                      </button>
+                                            <mat-error>{{emailError()}}</mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field class="form-control">
+
+                                            <input matInput type="text" autocomplete placeholder="{{l.GetString('Mobile')}}" formControlName="MobileNo" [(ngModel)]="model.mobileNo" required>
+                                            <button tabindex="-1" type="button" *ngIf="model.username" matSuffix mat-icon-button aria-label="Clear" (click)="model.username=''">
+                        <mat-icon>close</mat-icon>
+                      </button>
+                                            <mat-error>{{mobileNoError()}}</mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field class="form-control">
+                                            <input matInput type="text" autocomplete placeholder="{{l.GetString('UserName')}}" formControlName="UserName" [(ngModel)]="model.username" required>
+                                            <mat-error>{{usernameError()}}</mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field class="form-control">
+                                            <input matInput type="password" autocomplete placeholder="{{l.GetString('Password')}}" formControlName="Password" [(ngModel)]="model.password" required>
+                                            <mat-error>{{passwordError()}}</mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field class="form-control">
+                                            <input matInput type="password" autocomplete placeholder="{{l.GetString('ConfirmPassword')}}" formControlName="ConfirmPassword" [(ngModel)]="model.confirmPassword" required>
+                                            <mat-error>{{confirmPasswordError()}}</mat-error>
+                                        </mat-form-field>
+                                        <button mat-raised-button color="accent" type="submit">
+                      <span>{{l.GetString('Register')}}</span>
+                    </button>
+
+                                        <p *ngIf="loading">&nbsp;</p>
+                                        <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+                                    </form>
+                                </mat-card-content>
+                            </mat-card>
+                        </mat-tab>
+
+                    </mat-tab-group>
+                    <div class="forget-password">{{l.GetString('ForgotPassword')}}</div>
+                </div>
+
+            </mat-sidenav-content>
+
+        </mat-sidenav-container>
+
+    </div>
+</div>

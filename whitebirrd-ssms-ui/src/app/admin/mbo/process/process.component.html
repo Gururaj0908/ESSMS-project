@@ -1,0 +1,5 @@
+<h4>All Process</h4>
+
+<app-tree-area [Data]="Data" [UpdateNodeAllowed]="true" [CreateNodeAllowed]="true" [DeleteNodeAllowed]="true" (InsertNode)="SaveChild($event)"
+(DeleteNode)="DeleteProcess($event)" (UpdateNode)="UpdateProcess($event)" [ShowChildCount]="true" [Form]="Form"
+[TitleKey]="'name'" [SubtitleKey]="'minutes'" [TooltipKey]="'description'" [ParentIdKey]="'parentProcessId'"></app-tree-area>
