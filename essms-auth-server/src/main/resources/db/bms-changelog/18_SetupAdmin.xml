@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<changeSet author="Kumar Gaurav" id="20180305-01">
+		<insert tableName="business_object">
+			<column name="id">20714</column>
+			<column name="action">/essms-auth/rolepermission/fetch</column>
+			<column name="display_order">5</column>
+			<column name="display_tag">Manage Permission</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/essms-auth/rolepermission/fetch</column>
+			<column name="parent_id">2071</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-02">
+		<insert tableName="user_permission">
+			<column name="business_object_id">20714</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180420-1">
+		<insert tableName="business_object">
+			<column name="id">500</column>
+			<column name="action" />
+			<column name="display_order">1</column>
+			<column name="display_tag">Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Repair</column>
+			<column name="url" />
+			<column name="parent_id">5</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-2">
+		<insert tableName="business_object">
+			<column name="id">5000</column>
+			<column name="action">/essms-repair/repair/pending/assign</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Pending Assign</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending Assign</column>
+			<column name="url">/essms-repair/repair/pending/assign</column>
+			<column name="parent_id">500</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-3">
+		<insert tableName="business_object">
+			<column name="id">50000</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Assign</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Assign</column>
+			<column name="url"></column>
+			<column name="parent_id">5000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-4">
+		<insert tableName="business_object">
+			<column name="id">5001</column>
+			<column name="action">/essms-repair/repair/pending/observation</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Pending Observation</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending Observation</column>
+			<column name="url">/essms-repair/repair/pending/observation</column>
+			<column name="parent_id">500</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-5">
+		<insert tableName="business_object">
+			<column name="id">50010</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Observe</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Observe</column>
+			<column name="url"></column>
+			<column name="parent_id">5001</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-6">
+		<insert tableName="business_object">
+			<column name="id">5002</column>
+			<column name="action">/essms-repair/repair/customer/forapproval</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Pending Cust. Approval</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending Cust. Approval</column>
+			<column name="url">/essms-repair/repair/customer/forapproval</column>
+			<column name="parent_id">500</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-7">
+		<insert tableName="business_object">
+			<column name="id">50020</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url"></column>
+			<column name="parent_id">5002</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-8">
+		<insert tableName="business_object">
+			<column name="id">5003</column>
+			<column name="action">/essms-repair/repair/pending</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Pending for Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending for Repair</column>
+			<column name="url">/essms-repair/repair/pending</column>
+			<column name="parent_id">500</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-9">
+		<insert tableName="business_object">
+			<column name="id">50030</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Repair</column>
+			<column name="url"></column>
+			<column name="parent_id">5003</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-10">
+		<insert tableName="business_object">
+			<column name="id">50031</column>
+			<column name="action"></column>
+			<column name="display_order">2</column>
+			<column name="display_tag">ReObserve</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ReObserve</column>
+			<column name="url"></column>
+			<column name="parent_id">5003</column>
+		</insert>
+	</changeSet>
+
+</databaseChangeLog>

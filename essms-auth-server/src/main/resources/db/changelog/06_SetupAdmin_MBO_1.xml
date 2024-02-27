@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<!-- <changeSet author="Kumar Gaurav" id="20180321-1">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-2">
+		<insert tableName="user_permission">
+			<column name="business_object_id">120</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-3">
+		<insert tableName="user_permission">
+			<column name="business_object_id">121</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-4">
+		<insert tableName="user_permission">
+			<column name="business_object_id">1200</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-5">
+		<insert tableName="user_permission">
+			<column name="business_object_id">1201</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-6">
+		<insert tableName="user_permission">
+			<column name="business_object_id">1202</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-7">
+		<insert tableName="user_permission">
+			<column name="business_object_id">1203</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-9">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12000</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-10">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12001</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-11">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12002</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-12">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12003</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-13">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12010</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-14">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12011</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-15">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12012</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-16">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12013</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-17">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12020</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-18">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12021</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-19">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12022</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-20">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12023</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-21">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12030</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-22">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12031</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-23">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12032</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-24">
+		<insert tableName="user_permission">
+			<column name="business_object_id">12033</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet> -->
+</databaseChangeLog>

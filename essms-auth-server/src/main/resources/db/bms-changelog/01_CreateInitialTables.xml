@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gaurav (generated)" id="1522487826449-6">
+        <createTable tableName="business_object">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="action" type="VARCHAR(100)"/>
+            <column name="display_order" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="display_tag" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_hidden" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="object_level" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="object_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="url" type="VARCHAR(600)"/>
+            <column name="parent_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-7">
+        <createTable tableName="role">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="role_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-8">
+        <createTable tableName="role_permission">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="role_permission_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="business_object_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-9">
+        <createTable tableName="system_user">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="system_user_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="account_non_expired" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="account_non_locked" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="credentials_non_expired" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email_id" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enabled" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_login_time" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="mobile_no" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-10">
+        <createTable tableName="user_permission">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="user_permission_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="user_guid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="business_object_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-11">
+        <createTable tableName="user_role">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="user_role_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="system_user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-12">
+        <addPrimaryKey columnNames="id" constraintName="business_object_pkey" tableName="business_object"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-13">
+        <addUniqueConstraint columnNames="username" constraintName="uk_74y7xiqrvp39wycn0ron4xq4h" tableName="system_user"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-14">
+        <addUniqueConstraint columnNames="name" constraintName="uk_8sewwnpamngi6b1dwaa88askk" tableName="role"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-15">
+        <addUniqueConstraint columnNames="email_id" constraintName="uk_k6ieyqxvfpwakuqrhneue1es4" tableName="system_user"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-16">
+        <addForeignKeyConstraint baseColumnNames="system_user_id" baseTableName="user_role" constraintName="fk4nu3my2w1mqjmv9sr0au36a7g" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="system_user"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-17">
+        <addForeignKeyConstraint baseColumnNames="parent_id" baseTableName="business_object" constraintName="fk79ah043avrspw3y04hird8n8x" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="business_object"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-18">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_role" constraintName="fka68196081fvovjhkek5m97n3y" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="role"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-19">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="role_permission" constraintName="fka6jx8n8xkesmjmv6jqug6bg68" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="role"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-20">
+        <addForeignKeyConstraint baseColumnNames="business_object_id" baseTableName="user_permission" constraintName="fkff5dqs6ig3t1srpvd150vu5vk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="business_object"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487826449-21">
+        <addForeignKeyConstraint baseColumnNames="business_object_id" baseTableName="role_permission" constraintName="fkpdv78y6260mm19asank1p4ln3" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="business_object"/>
+    </changeSet>
+</databaseChangeLog>

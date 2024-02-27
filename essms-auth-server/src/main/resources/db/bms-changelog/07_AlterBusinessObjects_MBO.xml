@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<!-- <changeSet author="Kumar Gaurav" id="20180512-11">
+		<delete tableName="business_object">
+			<where>id = '12000'</where>
+		</delete>
+	</changeSet>
+	
+	<changeSet author="Kumar Gaurav" id="20180512-12">
+		<delete tableName="business_object">
+			<where>id = '12001'</where>
+		</delete>
+	</changeSet>
+	
+	<changeSet author="Kumar Gaurav" id="20180512-13">
+		<delete tableName="business_object">
+			<where>id = '12002'</where>
+		</delete>
+	</changeSet>
+	
+	<changeSet author="Kumar Gaurav" id="20180512-14">
+		<delete tableName="business_object">
+			<where>id = '12003'</where>
+		</delete>
+	</changeSet> -->
+
+	<!-- <changeSet author="Kumar Gaurav" id="20180512-1">
+		<insert tableName="business_object">
+			<column name="id">12000</column>
+			<column name="action">/bms-objective/ProjectItem/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create Project</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create Project</column>
+			<column name="url">/bms-objective/ProjectItem/create</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet> -->
+	<!-- <changeSet author="Kumar Gaurav" id="20180512-2">
+		<insert tableName="business_object">
+			<column name="id">12001</column>
+			<column name="action">/bms-objective/ProjectItem/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update Project</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update Project</column>
+			<column name="url">/bms-objective/ProjectItem/update</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-15">
+		<insert tableName="business_object">
+			<column name="id">12002</column>
+			<column name="action">/bms-objective/ProjectItem/update</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">View Project</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">View Project</column>
+			<column name="url">/bms-objective/ProjectItem/update</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-3">
+		<insert tableName="business_object">
+			<column name="id">12003</column>
+			<column name="action">/bms-objective/ProjectItem/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete Project</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete Project</column>
+			<column name="url">/bms-objective/ProjectItem/delete</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-4">
+		<insert tableName="business_object">
+			<column name="id">12004</column>
+			<column name="action">/bms-objective/projectItem/delete</column>
+			<column name="display_order">5</column>
+			<column name="display_tag">Create Module</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create Module</column>
+			<column name="url">/bms-objective/projectItem/delete,/bms-objective/projectItem/restore
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+
+	<changeSet author="Kumar Gaurav" id="20180512-5">
+		<insert tableName="business_object">
+			<column name="id">12005</column>
+			<column name="action">/bms-objective/projectItem/delete</column>
+			<column name="display_order">6</column>
+			<column name="display_tag">Create SubModule</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create SubModule</column>
+			<column name="url">/bms-objective/projectItem/delete,/bms-objective/projectItem/restore
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet> -->
+
+	<changeSet author="Kumar Gaurav" id="20180512-6">
+		<insert tableName="business_object">
+			<column name="id">12006</column>
+			<column name="action">/bms-objective/projectItem/delete</column>
+			<column name="display_order">7</column>
+			<column name="display_tag">Create Milestone</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create Milestone</column>
+			<column name="url">/bms-objective/projectItem/delete,/bms-objective/projectItem/restore
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+
+	<changeSet author="Kumar Gaurav" id="20180512-7">
+		<insert tableName="business_object">
+			<column name="id">12007</column>
+			<column name="action">/bms-objective/projectItem/delete</column>
+			<column name="display_order">8</column>
+			<column name="display_tag">Create Objective</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create Objective</column>
+			<column name="url">/bms-objective/projectItem/delete,/bms-objective/projectItem/restore
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-8">
+		<insert tableName="business_object">
+			<column name="id">12008</column>
+			<column name="action">/bms-objective/projectItem/delete</column>
+			<column name="display_order">9</column>
+			<column name="display_tag">Add Developer</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Add Developer</column>
+			<column name="url">/bms-objective/projectItem/delete,/bms-objective/projectItem/restore
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-9">
+		<insert tableName="business_object">
+			<column name="id">12009</column>
+			<column name="action">/bms-objective/projectItem/delete</column>
+			<column name="display_order">10</column>
+			<column name="display_tag">Add Approver</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Add Approver</column>
+			<column name="url">/bms-objective/projectItem/delete,/bms-objective/projectItem/restore
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-10">
+		<insert tableName="business_object">
+			<column name="id">120010</column>
+			<column name="action">/bms-objective/projectItem/delete</column>
+			<column name="display_order">11</column>
+			<column name="display_tag">Manage Access</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Manage Access</column>
+			<column name="url">/bms-objective/projectItem/delete,/bms-objective/projectItem/restore
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

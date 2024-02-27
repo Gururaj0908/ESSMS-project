@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Kumar Gaurav (generated)" id="1536781486433-1">
+        <addColumn tableName="business_object">
+            <column name="display_on_mobile" type="bool" defaultValueBoolean="false"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1536781486433-5">
+        <dropNotNullConstraint columnDataType="varchar(20)" columnName="mobile_no" tableName="system_user"/>
+    </changeSet>
+</databaseChangeLog>

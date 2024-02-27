@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<changeSet author="Kumar Gaurav" id="20180305-36">
+		<insert tableName="business_object">
+			<column name="id">2072</column>
+			<column name="action">/ssms-inventory/brand/listwithforms</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Manage Company</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Manage Company</column>
+			<column name="url">/ssms-inventory/brand/listwithforms</column>
+			<column name="parent_id">207</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-37">
+		<insert tableName="business_object">
+			<column name="id">20720</column>
+			<column name="action">/ssms-inventory/brand/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-inventory/brand/create</column>
+			<column name="parent_id">2072</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-38">
+		<insert tableName="business_object">
+			<column name="id">20721</column>
+			<column name="action">/ssms-inventory/brand/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-inventory/brand/update</column>
+			<column name="parent_id">2072</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-39">
+		<insert tableName="business_object">
+			<column name="id">20722</column>
+			<column name="action">/ssms-inventory/brand/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-inventory/brand/activatedeactivate</column>
+			<column name="parent_id">2072</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-40">
+		<insert tableName="business_object">
+			<column name="id">20723</column>
+			<column name="action">/ssms-inventory/brand/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-inventory/brand/delete,/ssms-inventory/brand/restore
+			</column>
+			<column name="parent_id">2072</column>
+		</insert>
+	</changeSet>
+
+	<changeSet author="Kumar Gaurav" id="20180324-1">
+		<insert tableName="business_object">
+			<column name="id">204</column>
+			<column name="action" />
+			<column name="display_order">5</column>
+			<column name="display_tag">Parts and Models</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Parts and Models</column>
+			<column name="url" />
+			<column name="parent_id">2</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-2">
+		<insert tableName="business_object">
+			<column name="id">2040</column>
+			<column name="action">/ssms-inventory/itemcategory/listwithforms?includeDeActive=true
+			</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Product Category</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Product Category</column>
+			<column name="url">/ssms-inventory/itemcategory/listwithforms
+			</column>
+			<column name="parent_id">204</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-3">
+		<insert tableName="business_object">
+			<column name="id">20400</column>
+			<column name="action">/ssms-inventory/itemcategory/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-inventory/itemcategory/create</column>
+			<column name="parent_id">2040</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-4">
+		<insert tableName="business_object">
+			<column name="id">20401</column>
+			<column name="action">/ssms-inventory/itemcategory/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-inventory/itemcategory/update</column>
+			<column name="parent_id">2040</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-5">
+		<insert tableName="business_object">
+			<column name="id">20402</column>
+			<column name="action">/ssms-inventory/itemcategory/activatedeactivate
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-inventory/itemcategory/activatedeactivate
+			</column>
+			<column name="parent_id">2040</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-6">
+		<insert tableName="business_object">
+			<column name="id">20403</column>
+			<column name="action">/ssms-inventory/itemcategory/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-inventory/itemcategory/delete,/ssms-inventory/itemcategory/restore
+			</column>
+			<column name="parent_id">2040</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-7">
+		<insert tableName="business_object">
+			<column name="id">2041</column>
+			<column name="action">/ssms-inventory/accessories/listwithforms?includeDeActive=true
+			</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Accessories</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Accessories</column>
+			<column name="url">/ssms-inventory/accessories/listwithforms
+			</column>
+			<column name="parent_id">204</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-8">
+		<insert tableName="business_object">
+			<column name="id">20410</column>
+			<column name="action">/ssms-inventory/accessories/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-inventory/accessories/create</column>
+			<column name="parent_id">2041</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-9">
+		<insert tableName="business_object">
+			<column name="id">20411</column>
+			<column name="action">/ssms-inventory/accessories/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-inventory/accessories/update</column>
+			<column name="parent_id">2041</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-10">
+		<insert tableName="business_object">
+			<column name="id">20412</column>
+			<column name="action">/ssms-inventory/accessories/activatedeactivate
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-inventory/accessories/activatedeactivate
+			</column>
+			<column name="parent_id">2041</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180324-11">
+		<insert tableName="business_object">
+			<column name="id">20413</column>
+			<column name="action">/ssms-inventory/accessories/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-inventory/accessories/delete,/ssms-inventory/accessories/restore
+			</column>
+			<column name="parent_id">2041</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180330-1">
+		<insert tableName="business_object">
+			<column name="id">8</column>
+			<column name="action" />
+			<column name="display_order">7</column>
+			<column name="display_tag">Parts</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">2</column>
+			<column name="object_name">Parts</column>
+			<column name="url" />
+			<column name="parent_id">1</column>
+		</insert>
+	</changeSet>
+
+	<changeSet author="Kumar Gaurav" id="20180330-2">
+		<insert tableName="business_object">
+			<column name="id">9</column>
+			<column name="action" />
+			<column name="display_order">8</column>
+			<column name="display_tag">Product</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">2</column>
+			<column name="object_name">Product</column>
+			<column name="url" />
+			<column name="parent_id">1</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

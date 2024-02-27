@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<changeSet author="gaurav (generated)" id="1543939889106-1">
+		<addColumn tableName="email_reset">
+			<column name="otp" type="varchar(10)" />
+		</addColumn>
+	</changeSet>
+	<changeSet author="gaurav (generated)" id="1543939889106-4">
+		<dropDefaultValue columnDataType="bool"
+			columnName="display_on_mobile" tableName="business_object" />
+	</changeSet>
+	<changeSet author="gaurav (generated)" id="1543939889106-6">
+		<modifyDataType columnName="password"
+			newDataType="varchar(500)" tableName="system_user" />
+	</changeSet>
+</databaseChangeLog>

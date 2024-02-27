@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180512-1">
+		<insert tableName="role">
+			<column name="name">INVESTOR</column>
+			<column name="created_by">SYSTEMDEFINED</column>
+			<column name="last_modified_by">SYSTEMDEFINED</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date"
+				valueDate="CURRENT_TIMESTAMP" />
+			<column name="is_deleted">false</column>
+			<column name="is_active">true</column>
+			<column name="guid">ac4ba1e3-7008-4fef-95cf-5a83b9ed2f9e</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-2">
+		<delete tableName="business_object">
+			<where>id = '121'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-4">
+		<delete tableName="business_object">
+			<where>id = '12030'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-5">
+		<delete tableName="business_object">
+			<where>id = '12031'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-6">
+		<delete tableName="business_object">
+			<where>id = '12032'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-7">
+		<delete tableName="business_object">
+			<where>id = '12033'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-3">
+		<delete tableName="business_object">
+			<where>id = '1203'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-8">
+		<delete tableName="business_object">
+			<where>id = '12000'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-9">
+		<delete tableName="business_object">
+			<where>id = '12001'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-10">
+		<delete tableName="business_object">
+			<where>id = '12002'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-11">
+		<delete tableName="business_object">
+			<where>id = '12003'</where>
+		</delete>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-12">
+		<insert tableName="business_object">
+			<column name="id">12002</column>
+			<column name="action"></column>
+			<column name="display_order">3</column>
+			<column name="display_tag">View Project</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">View Project</column>
+			<column name="url"></column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180512-13">
+		<insert tableName="business_object">
+			<column name="id">120010</column>
+			<column name="action"></column>
+			<column name="display_order">11</column>
+			<column name="display_tag">Manage Access</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Manage Access</column>
+			<column name="url"></column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

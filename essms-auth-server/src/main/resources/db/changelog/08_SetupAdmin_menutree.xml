@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180404-1">
+		<insert tableName="user_permission">
+			<column name="business_object_id">2090</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-2">
+		<insert tableName="user_permission">
+			<column name="business_object_id">20900</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-3">
+		<insert tableName="user_permission">
+			<column name="business_object_id">20901</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-4">
+		<insert tableName="user_permission">
+			<column name="business_object_id">20902</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-5">
+		<insert tableName="user_permission">
+			<column name="business_object_id">20903</column>
+			<column name="user_guid">5609c6a9-3629-40cc-852e-1ba41bbf4aeb</column>
+			<column name="created_by">admin</column>
+			<column name="last_modified_by">admin</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+		</insert>
+	</changeSet>
+	
+</databaseChangeLog>

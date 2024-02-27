@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180305-51">
+		<insert tableName="business_object">
+			<column name="id">2075</column>
+			<column name="action">/ssms-money/investor/listwithforms
+			</column>
+			<column name="display_order">6</column>
+			<column name="display_tag">Manage Investor</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Manage Investor</column>
+			<column name="url">/ssms-money/investor/listwithforms</column>
+			<column name="parent_id">207</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-52">
+		<insert tableName="business_object">
+			<column name="id">20750</column>
+			<column name="action">/ssms-money/investor/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-money/investor/create</column>
+			<column name="parent_id">2075</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-53">
+		<insert tableName="business_object">
+			<column name="id">20751</column>
+			<column name="action">/ssms-money/investor/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-money/investor/update</column>
+			<column name="parent_id">2075</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-54">
+		<insert tableName="business_object">
+			<column name="id">20752</column>
+			<column name="action">/ssms-money/investor/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-money/investor/activatedeactivate</column>
+			<column name="parent_id">2075</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-55">
+		<insert tableName="business_object">
+			<column name="id">20753</column>
+			<column name="action">/ssms-money/investor/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-money/investor/delete,/ssms-money/investor/restore
+			</column>
+			<column name="parent_id">2075</column>
+		</insert>
+	</changeSet>
+
+	<changeSet author="Kumar Gaurav" id="20180314-21">
+		<insert tableName="business_object">
+			<column name="id">208</column>
+			<column name="action" />
+			<column name="display_order">9</column>
+			<column name="display_tag">Accounting</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Accounting</column>
+			<column name="url" />
+			<column name="parent_id">2</column>
+		</insert>
+	</changeSet>
+
+	<changeSet author="Kumar Gaurav" id="20180401-1">
+		<insert tableName="business_object">
+			<column name="id">11</column>
+			<column name="action" />
+			<column name="display_order">10</column>
+			<column name="display_tag">Money</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">2</column>
+			<column name="object_name">Money</column>
+			<column name="url" />
+			<column name="parent_id">1</column>
+		</insert>
+	</changeSet>
+
+
+</databaseChangeLog>

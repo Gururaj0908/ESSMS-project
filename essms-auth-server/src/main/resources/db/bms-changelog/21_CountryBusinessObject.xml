@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Rakesh Mishra" id="20230712-1">
+		<insert tableName="business_object">
+			<column name="id">2005</column>
+			<column name="action">/essms-admin/country/listwithforms
+			</column>
+			<column name="display_order">0</column>
+			<column name="display_tag">country</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Country</column>
+			<column name="url">/essms-admin/country/listwithforms</column>
+			<column name="parent_id">200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Rakesh Mishra" id="20180305-5">
+		<insert tableName="business_object">
+			<column name="id">20050</column>
+			<column name="action">/essms-admin/country/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/essms-admin/country/create</column>
+			<column name="parent_id">2005</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Rakesh Mishra" id="20180305-6">
+		<insert tableName="business_object">
+			<column name="id">20051</column>
+			<column name="action">/essms-admin/country/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/essms-admin/country/update</column>
+			<column name="parent_id">2005</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Rakesh Mishra" id="20180305-7">
+		<insert tableName="business_object">
+			<column name="id">20052</column>
+			<column name="action">/essms-admin/country/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/essms-admin/country/activatedeactivate</column>
+			<column name="parent_id">2005</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Rakesh Mishra" id="20180305-8">
+		<insert tableName="business_object">
+			<column name="id">20053</column>
+			<column name="action">/essms-admin/country/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/essms-admin/country/delete,/essms-admin/country/restore
+			</column>
+			<column name="parent_id">2005</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

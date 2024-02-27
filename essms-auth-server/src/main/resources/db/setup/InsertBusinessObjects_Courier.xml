@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<changeSet author="Kumar Gaurav" id="20180315-1">
+	<insert tableName="business_object">
+		<column name="id">2020</column>
+		<column name="action">/ssms-admin/block/listwithforms</column>
+		<column name="display_order">1</column>
+		<column name="display_tag">Block</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Block</column>
+		<column name="url">/ssms-admin/block/listwithforms</column>
+		<column name="parent_id">202</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-2">
+	<insert tableName="business_object">
+		<column name="id">2021</column>
+		<column name="action">/ssms-admin/blockcomponent/listwithforms</column>
+		<column name="display_order">2</column>
+		<column name="display_tag">Block Component</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Block Component</column>
+		<column name="url">/ssms-admin/blockcomponent/listwithforms</column>
+		<column name="parent_id">202</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-3">
+	<insert tableName="business_object">
+		<column name="id">2022</column>
+		<column name="action">/ssms-admin/phenomenon/listwithforms</column>
+		<column name="display_order">3</column>
+		<column name="display_tag">Phenomenon</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Phenomenon</column>
+		<column name="url">/ssms-admin/phenomenon/listwithforms</column>
+		<column name="parent_id">202</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-4">
+	<insert tableName="business_object">
+		<column name="id">2023</column>
+		<column name="action">/ssms-admin/repaircode/listwithforms</column>
+		<column name="display_order">4</column>
+		<column name="display_tag">Repair Code</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Repair Code</column>
+		<column name="url">/ssms-admin/repaircode/listwithforms</column>
+		<column name="parent_id">202</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-5">
+	<insert tableName="business_object">
+		<column name="id">2030</column>
+		<column name="action">/ssms-admin/observationoutcome/listwithforms</column>
+		<column name="display_order">1</column>
+		<column name="display_tag">Observation Outcome</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Observation Outcome</column>
+		<column name="url">/ssms-admin/observationoutcome/listwithforms</column>
+		<column name="parent_id">203</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-6">
+	<insert tableName="business_object">
+		<column name="id">2031</column>
+		<column name="action">/ssms-admin/replacementoutcome/listwithforms</column>
+		<column name="display_order">2</column>
+		<column name="display_tag">Replacement Outcome</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Replacement Outcome</column>
+		<column name="url">/ssms-admin/replacementoutcome/listwithforms</column>
+		<column name="parent_id">203</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-7">
+	<insert tableName="business_object">
+		<column name="id">2032</column>
+		<column name="action">/ssms-admin/cancellationoutcome/listwithforms</column>
+		<column name="display_order">3</column>
+		<column name="display_tag">Cancellation Outcome</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Cancellation Outcome</column>
+		<column name="url">/ssms-admin/cancellationoutcome/listwithforms</column>
+		<column name="parent_id">203</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-8">
+	<insert tableName="business_object">
+		<column name="id">2033</column>
+		<column name="action">/ssms-admin/repairoutcome/listwithforms</column>
+		<column name="display_order">4</column>
+		<column name="display_tag">Repair Undertaken</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Repair Undertaken</column>
+		<column name="url">/ssms-admin/repairoutcome/listwithforms</column>
+		<column name="parent_id">203</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-9">
+	<insert tableName="business_object">
+		<column name="id">2040</column>
+		<column name="action">/ssms-inventory/itemcategory/listwithforms</column>
+		<column name="display_order">1</column>
+		<column name="display_tag">Product Category</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Product Category</column>
+		<column name="url">/ssms-inventory/itemcategory/listwithforms</column>
+		<column name="parent_id">204</column>
+	</insert>
+</changeSet>
+<changeSet author="Kumar Gaurav" id="20180315-10">
+	<insert tableName="business_object">
+		<column name="id">2041</column>
+		<column name="action">/ssms-inventory/accessories/listwithforms</column>
+		<column name="display_order">2</column>
+		<column name="display_tag">Accessories</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Accessories</column>
+		<column name="url">/ssms-inventory/accessories/listwithforms</column>
+		<column name="parent_id">204</column>
+	</insert>
+</changeSet>
+<!-- <changeSet author="Kumar Gaurav" id="20180315-10">
+	<insert tableName="business_object">
+		<column name="id">2042</column>
+		<column name="action">/ssms-inventory/resetsequence/listwithforms</column>
+		<column name="display_order">2</column>
+		<column name="display_tag">Accessories</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">4</column>
+		<column name="object_name">Accessories</column>
+		<column name="url">/ssms-inventory/reset/listwithforms</column>
+		<column name="parent_id">204</column>
+	</insert>
+</changeSet> -->
+</databaseChangeLog>

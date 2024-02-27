@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<changeSet author="Kumar Gaurav" id="20180401-2">
+	<insert tableName="business_object">
+		<column name="id">13</column>
+		<column name="action" />
+		<column name="display_order">11</column>
+		<column name="display_tag">Reports</column>
+		<column name="is_deleted">false</column>
+		<column name="is_hidden">false</column>
+		<column name="object_level">2</column>
+		<column name="object_name">Reports</column>
+		<column name="url" />
+		<column name="parent_id">1</column>
+	</insert>
+</changeSet>
+</databaseChangeLog>

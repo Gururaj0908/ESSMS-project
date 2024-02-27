@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180418-2">
+		<insert tableName="business_object">
+			<column name="id">400</column>
+			<column name="action" />
+			<column name="display_order">1</column>
+			<column name="display_tag">Receive</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Receive</column>
+			<column name="url" />
+			<column name="parent_id">4</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-3">
+		<insert tableName="business_object">
+			<column name="id">4000</column>
+			<column name="action">/essms-admin/customer/list
+			</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Receive</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Receive</column>
+			<column name="url">/essms-admin/customer/list</column>
+			<column name="parent_id">400</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-4">
+		<insert tableName="business_object">
+			<column name="id">40000</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Receive</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Receive</column>
+			<column name="url"></column>
+			<column name="parent_id">4000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-5">
+		<insert tableName="business_object">
+			<column name="id">40001</column>
+			<column name="action"></column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Register New Customer</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Register New Customer</column>
+			<column name="url"></column>
+			<column name="parent_id">4000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-6">
+		<insert tableName="business_object">
+			<column name="id">40002</column>
+			<column name="action"></column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Edit Customer</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Edit Customer</column>
+			<column name="url"></column>
+			<column name="parent_id">4000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-7">
+		<insert tableName="business_object">
+			<column name="id">40003</column>
+			<column name="action"></column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Quick Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Quick Repair</column>
+			<column name="url"></column>
+			<column name="parent_id">4000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-8">
+		<insert tableName="business_object">
+			<column name="id">40004</column>
+			<column name="action"></column>
+			<column name="display_order">5</column>
+			<column name="display_tag">Book Product</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Book Product</column>
+			<column name="url"></column>
+			<column name="parent_id">4000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-9">
+		<insert tableName="business_object">
+			<column name="id">40005</column>
+			<column name="action"></column>
+			<column name="display_order">6</column>
+			<column name="display_tag">Book Part</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Book Part</column>
+			<column name="url"></column>
+			<column name="parent_id">4000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-10">
+		<insert tableName="business_object">
+			<column name="id">40006</column>
+			<column name="action"></column>
+			<column name="display_order">7</column>
+			<column name="display_tag">Product Quick Sale</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Product Quick Sale</column>
+			<column name="url"></column>
+			<column name="parent_id">4000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-11">
+		<insert tableName="business_object">
+			<column name="id">40007</column>
+			<column name="action"></column>
+			<column name="display_order">8</column>
+			<column name="display_tag">Part Quick Sale</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Part Quick Sale</column>
+			<column name="url"></column>
+			<column name="parent_id">4000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-12">
+		<insert tableName="business_object">
+			<column name="id">4001</column>
+			<column name="action"></column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Customer Clarification</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Customer Clarification</column>
+			<column name="url"></column>
+			<column name="parent_id">400</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-13">
+		<insert tableName="business_object">
+			<column name="id">40010</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Update Status</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update Status</column>
+			<column name="url"></column>
+			<column name="parent_id">4001</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-14">
+		<insert tableName="business_object">
+			<column name="id">4002</column>
+			<column name="action">/essms-admin/customer/list
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Pending/Receive from Vendor</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending/Receive from Vendor</column>
+			<column name="url">/essms-admin/customer/list</column>
+			<column name="parent_id">400</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-15">
+		<insert tableName="business_object">
+			<column name="id">40020</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Update Status</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update Status</column>
+			<column name="url"></column>
+			<column name="parent_id">4002</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-16">
+		<insert tableName="business_object">
+			<column name="id">4003</column>
+			<column name="action">/essms-admin/customer/list
+			</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Pending Check from Internet Customer</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending Check from Internet Customer</column>
+			<column name="url">/essms-admin/customer/list</column>
+			<column name="parent_id">400</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-17">
+		<insert tableName="business_object">
+			<column name="id">40030</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Edit</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Edit</column>
+			<column name="url"></column>
+			<column name="parent_id">4003</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-18">
+		<insert tableName="business_object">
+			<column name="id">40031</column>
+			<column name="action"></column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url"></column>
+			<column name="parent_id">4003</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-19">
+		<insert tableName="business_object">
+			<column name="id">4004</column>
+			<column name="action">/essms-admin/customer/list
+			</column>
+			<column name="display_order">5</column>
+			<column name="display_tag">Pending Collection and Delivery</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending Collection and Delivery</column>
+			<column name="url">/essms-admin/customer/list</column>
+			<column name="parent_id">400</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-20">
+		<insert tableName="business_object">
+			<column name="id">40040</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url"></column>
+			<column name="parent_id">4004</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-21">
+		<insert tableName="business_object">
+			<column name="id">40041</column>
+			<column name="action"></column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Move to customer clarification</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Move to customer clarification</column>
+			<column name="url"></column>
+			<column name="parent_id">4004</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-22">
+		<insert tableName="business_object">
+			<column name="id">40042</column>
+			<column name="action"></column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Print</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Print</column>
+			<column name="url"></column>
+			<column name="parent_id">4004</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-23">
+		<insert tableName="business_object">
+			<column name="id">401</column>
+			<column name="action" />
+			<column name="display_order">2</column>
+			<column name="display_tag">Extra Details</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Extra Details</column>
+			<column name="url" />
+			<column name="parent_id">4</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-24">
+		<insert tableName="business_object">
+			<column name="id">4010</column>
+			<column name="action">/ssms-repair/receive/uploadkml
+			</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Upload KML</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Upload KML</column>
+			<column name="url">/ssms-repair/receive/uploadkml</column>
+			<column name="parent_id">401</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-25">
+		<insert tableName="business_object">
+			<column name="id">4011</column>
+			<column name="action">/ssms-repair/receive/uploadbills
+			</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Upload Bills</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Upload Bills</column>
+			<column name="url">/ssms-repair/receive/uploadbills</column>
+			<column name="parent_id">401</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180418-26">
+		<insert tableName="business_object">
+			<column name="id">4012</column>
+			<column name="action">/ssms-repair/receive/dealersatisfaction
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Dealer Satisfaction Form</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Dealer Satisfaction Form</column>
+			<column name="url">/ssms-repair/receive/dealersatisfaction</column>
+			<column name="parent_id">401</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

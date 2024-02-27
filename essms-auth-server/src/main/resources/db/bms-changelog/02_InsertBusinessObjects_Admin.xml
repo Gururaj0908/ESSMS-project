@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180305-1">
+		<insert tableName="business_object">
+			<column name="id">1</column>
+			<column name="action" />
+			<column name="display_order">1</column>
+			<column name="display_tag">BMS</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">1</column>
+			<column name="object_name">BMS</column>
+			<column name="url" />
+			<column name="parent_id" />
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-2">
+		<insert tableName="business_object">
+			<column name="id">2</column>
+			<column name="action" />
+			<column name="display_order">1</column>
+			<column name="display_tag">Admin</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">2</column>
+			<column name="object_name">Admin</column>
+			<column name="url" />
+			<column name="parent_id">1</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-3">
+		<insert tableName="business_object">
+			<column name="id">200</column>
+			<column name="action" />
+			<column name="display_order">1</column>
+			<column name="display_tag">Location</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Location</column>
+			<column name="url" />
+			<column name="parent_id">2</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-4">
+		<insert tableName="business_object">
+			<column name="id">2000</column>
+			<column name="action">/essms-admin/state/listwithforms
+			</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">State</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">State</column>
+			<column name="url">/essms-admin/state/listwithforms</column>
+			<column name="parent_id">200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-5">
+		<insert tableName="business_object">
+			<column name="id">20000</column>
+			<column name="action">/essms-admin/state/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/essms-admin/state/create</column>
+			<column name="parent_id">2000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-6">
+		<insert tableName="business_object">
+			<column name="id">20001</column>
+			<column name="action">/essms-admin/state/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/essms-admin/state/update</column>
+			<column name="parent_id">2000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-7">
+		<insert tableName="business_object">
+			<column name="id">20002</column>
+			<column name="action">/essms-admin/state/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/essms-admin/state/activatedeactivate</column>
+			<column name="parent_id">2000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-8">
+		<insert tableName="business_object">
+			<column name="id">20003</column>
+			<column name="action">/essms-admin/state/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/essms-admin/state/delete,/essms-admin/state/restore
+			</column>
+			<column name="parent_id">2000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-9">
+		<insert tableName="business_object">
+			<column name="id">2001</column>
+			<column name="action">/essms-admin/city/listwithforms</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">City</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">City</column>
+			<column name="url">/essms-admin/city/listwithforms</column>
+			<column name="parent_id">200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-10">
+		<insert tableName="business_object">
+			<column name="id">20010</column>
+			<column name="action">/essms-admin/city/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/essms-admin/city/create</column>
+			<column name="parent_id">2001</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-11">
+		<insert tableName="business_object">
+			<column name="id">20011</column>
+			<column name="action">/essms-admin/city/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/essms-admin/city/update</column>
+			<column name="parent_id">2001</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-12">
+		<insert tableName="business_object">
+			<column name="id">20012</column>
+			<column name="action">/essms-admin/city/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/essms-admin/city/activatedeactivate</column>
+			<column name="parent_id">2001</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-13">
+		<insert tableName="business_object">
+			<column name="id">20013</column>
+			<column name="action">/essms-admin/city/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/essms-admin/city/delete,/essms-admin/city/restore
+			</column>
+			<column name="parent_id">2001</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-14">
+		<insert tableName="business_object">
+			<column name="id">2002</column>
+			<column name="action">/essms-admin/area/listwithforms</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Area</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Area</column>
+			<column name="url">/essms-admin/area/listwithforms</column>
+			<column name="parent_id">200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-15">
+		<insert tableName="business_object">
+			<column name="id">20020</column>
+			<column name="action">/essms-admin/area/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/essms-admin/area/create</column>
+			<column name="parent_id">2002</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-16">
+		<insert tableName="business_object">
+			<column name="id">20021</column>
+			<column name="action">/essms-admin/area/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/essms-admin/area/update</column>
+			<column name="parent_id">2002</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-17">
+		<insert tableName="business_object">
+			<column name="id">20022</column>
+			<column name="action">/essms-admin/area/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/essms-admin/area/activatedeactivate</column>
+			<column name="parent_id">2002</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-18">
+		<insert tableName="business_object">
+			<column name="id">20023</column>
+			<column name="action">/essms-admin/area/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/essms-admin/area/delete,/essms-admin/area/restore
+			</column>
+			<column name="parent_id">2002</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-25">
+		<insert tableName="business_object">
+			<column name="id">207</column>
+			<column name="action" />
+			<column name="display_order">8</column>
+			<column name="display_tag">Manage</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Manage</column>
+			<column name="url" />
+			<column name="parent_id">2</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-26">
+		<insert tableName="business_object">
+			<column name="id">2070</column>
+			<column name="action">/essms-auth/user/listwithforms</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Manage Users</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Manage Users</column>
+			<column name="url">/essms-auth/user/listwithforms</column>
+			<column name="parent_id">207</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-27">
+		<insert tableName="business_object">
+			<column name="id">20700</column>
+			<column name="action">/essms-auth/user/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/essms-auth/user/create</column>
+			<column name="parent_id">2070</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-28">
+		<insert tableName="business_object">
+			<column name="id">20701</column>
+			<column name="action">/essms-auth/user/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/essms-auth/user/update</column>
+			<column name="parent_id">2070</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-29">
+		<insert tableName="business_object">
+			<column name="id">20702</column>
+			<column name="action">/essms-auth/user/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/essms-auth/user/activatedeactivate</column>
+			<column name="parent_id">2070</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-30">
+		<insert tableName="business_object">
+			<column name="id">20703</column>
+			<column name="action">/essms-auth/user/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/essms-auth/user/delete,/essms-auth/user/restore
+			</column>
+			<column name="parent_id">2070</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-31">
+		<insert tableName="business_object">
+			<column name="id">2071</column>
+			<column name="action">/essms-auth/role/listwithforms</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Manage Roles</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Manage Roles</column>
+			<column name="url">/essms-auth/role/listwithforms</column>
+			<column name="parent_id">207</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-32">
+		<insert tableName="business_object">
+			<column name="id">20710</column>
+			<column name="action">/essms-auth/role/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/essms-auth/user/create</column>
+			<column name="parent_id">2071</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-33">
+		<insert tableName="business_object">
+			<column name="id">20711</column>
+			<column name="action">/essms-auth/role/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/essms-auth/role/update</column>
+			<column name="parent_id">2071</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-34">
+		<insert tableName="business_object">
+			<column name="id">20712</column>
+			<column name="action">/essms-auth/role/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/essms-auth/role/activatedeactivate</column>
+			<column name="parent_id">2071</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-35">
+		<insert tableName="business_object">
+			<column name="id">20713</column>
+			<column name="action">/essms-auth/role/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/essms-auth/role/delete,/essms-auth/role/restore
+			</column>
+			<column name="parent_id">2071</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180305-36">
+		<insert tableName="business_object">
+			<column name="id">209</column>
+			<column name="action" />
+			<column name="display_order">10</column>
+			<column name="display_tag">Configuration</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Configuration</column>
+			<column name="url" />
+			<column name="parent_id">2</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-1">
+		<insert tableName="business_object">
+			<column name="id">2090</column>
+			<column name="action">/essms-auth/businessobject/listwithforms</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">MenuTree</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">MenuTree</column>
+			<column name="url">/essms-auth/businessobject/listwithforms</column>
+			<column name="parent_id">209</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-2">
+		<insert tableName="business_object">
+			<column name="id">20900</column>
+			<column name="action">/essms-auth/businessobject/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/essms-auth/businessobject/create</column>
+			<column name="parent_id">2090</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-3">
+		<insert tableName="business_object">
+			<column name="id">20901</column>
+			<column name="action">/essms-auth/businessobject/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/essms-auth/businessobject/update</column>
+			<column name="parent_id">2090</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-4">
+		<insert tableName="business_object">
+			<column name="id">20902</column>
+			<column name="action">/essms-auth/businessobject/activatedeactivate
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/essms-auth/businessobject/activatedeactivate
+			</column>
+			<column name="parent_id">2090</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180404-5">
+		<insert tableName="business_object">
+			<column name="id">20903</column>
+			<column name="action">/essms-auth/businessobject/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/essms-auth/businessobject/delete,/essms-auth/businessobject/restore
+			</column>
+			<column name="parent_id">2090</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

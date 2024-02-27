@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180504-1">
+		<insert tableName="role">
+			<column name="name">ADMIN</column>
+			<column name="created_by">SYSTEMDEFINED</column>
+			<column name="last_modified_by">SYSTEMDEFINED</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="is_deleted">false</column>
+			<column name="is_active">true</column>
+			<column name="guid">4d91903a-2ac2-4e6e-8475-1ff3301873dd</column>
+		</insert>
+	</changeSet>
+
+	<changeSet author="Kumar Gaurav" id="20180504-2">
+		<insert tableName="role">
+			<column name="name">MBO</column>
+			<column name="created_by">SYSTEMDEFINED</column>
+			<column name="last_modified_by">SYSTEMDEFINED</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="is_deleted">false</column>
+			<column name="is_active">true</column>
+			<column name="guid">c13c54d4-f23b-4c98-a343-26050ba49ad2</column>
+		</insert>
+	</changeSet>
+	
+	<changeSet author="Kumar Gaurav" id="20180504-3">
+		<insert tableName="role">
+			<column name="name">TECHNICIAN</column>
+			<column name="created_by">SYSTEMDEFINED</column>
+			<column name="last_modified_by">SYSTEMDEFINED</column>
+			<column name="created_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="last_modified_date" valueDate="CURRENT_TIMESTAMP" />
+			<column name="is_deleted">false</column>
+			<column name="is_active">true</column>
+			<column name="guid">82675582-f99a-4d62-8a88-6cbfe877b15dv</column>
+		</insert>
+	</changeSet>
+
+</databaseChangeLog>

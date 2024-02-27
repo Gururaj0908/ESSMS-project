@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<!--
+	<include file="bms-changelog/01_CreateInitialTables.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/02_InsertBusinessObjects_Admin.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/03_InsertBusinessObjects_MBO.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/04_SetupAdmin.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/05_AlterTableSystemUser.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/06_InsertRole_SystemDefined.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/07_AlterBusinessObjects_MBO.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/08_AlterTableBusinessObject.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/09_AlterBusinessObject.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/10_CreateTableAuditLog.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/11_AlterTableSystemUser.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/12_AlterTableAuditLog.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/13_AlterTableBusinessObject.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/14_AlterTableBusinessObject2.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/15_AlterTableSyetemUser.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/16_AlterTableRole.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/17_AlterTableSystemUser.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/18_SetupAdmin.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/19_AlterUserPermission.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/20_InsertBusinessObjects_dashboard.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/21_CountryBusinessObject.xml" relativeToChangelogFile="true"/>
+	-->
+</databaseChangeLog>

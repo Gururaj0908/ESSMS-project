@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gaurav (generated)" id="1579094638052-1">
+        <addColumn tableName="user_permission">
+            <column name="branch_guid" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1579094638052-2">
+        <dropSequence sequenceName="tenant_configuration_id_seq"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1579094638052-3">
+        <dropTable tableName="tenant_configuration"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1579094638052-4">
+        <modifyDataType columnName="created_at" newDataType="timestamp(29,6)" tableName="audit_log"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1579094638052-5">
+        <dropDefaultValue columnDataType="bool" columnName="is_selectable" tableName="role"/>
+    </changeSet>
+</databaseChangeLog>

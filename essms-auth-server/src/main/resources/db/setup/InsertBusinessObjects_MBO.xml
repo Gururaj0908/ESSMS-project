@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180321-1">
+		<insert tableName="business_object">
+			<column name="id">12</column>
+			<column name="action" />
+			<column name="display_order">12</column>
+			<column name="display_tag">MBO</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">2</column>
+			<column name="object_name">MBO</column>
+			<column name="url" />
+			<column name="parent_id">1</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-2">
+		<insert tableName="business_object">
+			<column name="id">120</column>
+			<column name="action" />
+			<column name="display_order">1</column>
+			<column name="display_tag">Project Management</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Project Management</column>
+			<column name="url" />
+			<column name="parent_id">12</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-3">
+		<insert tableName="business_object">
+			<column name="id">1200</column>
+			<column name="action">/bms-objective/projectItem/listwithforms
+			</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Project</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Project</column>
+			<column name="url">/bms-objective/projectItem/listwithforms
+			</column>
+			<column name="parent_id">120</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-4">
+		<insert tableName="business_object">
+			<column name="id">12000</column>
+			<column name="action">/bms-objective/projectItem/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/bms-objective/projectItem/create</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-5">
+		<insert tableName="business_object">
+			<column name="id">12001</column>
+			<column name="action">/bms-objective/projectItem/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/bms-objective/projectItem/update</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-6">
+		<insert tableName="business_object">
+			<column name="id">12002</column>
+			<column name="action">/bms-objective/projectItem/activatedeactivate
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/bms-objective/projectItem/activatedeactivate
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-7">
+		<insert tableName="business_object">
+			<column name="id">12003</column>
+			<column name="action">/bms-objective/projectItem/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/bms-objective/projectItem/delete,/bms-objective/projectItem/restore
+			</column>
+			<column name="parent_id">1200</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-8">
+		<insert tableName="business_object">
+			<column name="id">1201</column>
+			<column name="action">/bms-objective/requirement/listwithforms
+			</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Requirement</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Requirement</column>
+			<column name="url">/bms-objective/requirement/listwithforms
+			</column>
+			<column name="parent_id">120</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-9">
+		<insert tableName="business_object">
+			<column name="id">12010</column>
+			<column name="action">/bms-objective/requirement/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/bms-objective/requirement/create</column>
+			<column name="parent_id">1201</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-10">
+		<insert tableName="business_object">
+			<column name="id">12011</column>
+			<column name="action">/bms-objective/requirement/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/bms-objective/requirement/update</column>
+			<column name="parent_id">1201</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-11">
+		<insert tableName="business_object">
+			<column name="id">12012</column>
+			<column name="action">/bms-objective/requirement/activatedeactivate
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/bms-objective/requirement/activatedeactivate
+			</column>
+			<column name="parent_id">1201</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-12">
+		<insert tableName="business_object">
+			<column name="id">12013</column>
+			<column name="action">/bms-objective/requirement/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/bms-objective/requirement/delete,/bms-objective/requirement/restore
+			</column>
+			<column name="parent_id">1201</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-13">
+		<insert tableName="business_object">
+			<column name="id">1202</column>
+			<column name="action">/bms-objective/issues/listwithforms
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Issue</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Issue</column>
+			<column name="url">/bms-objective/issues/listwithforms
+			</column>
+			<column name="parent_id">120</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-14">
+		<insert tableName="business_object">
+			<column name="id">12020</column>
+			<column name="action">/bms-objective/issues/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/bms-objective/issues/create</column>
+			<column name="parent_id">1202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-15">
+		<insert tableName="business_object">
+			<column name="id">12021</column>
+			<column name="action">/bms-objective/issues/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/bms-objective/issues/update</column>
+			<column name="parent_id">1202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-16">
+		<insert tableName="business_object">
+			<column name="id">12022</column>
+			<column name="action">/bms-objective/issues/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/bms-objective/issues/activatedeactivate</column>
+			<column name="parent_id">1202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-17">
+		<insert tableName="business_object">
+			<column name="id">12023</column>
+			<column name="action">/bms-objective/issues/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/bms-objective/issues/delete,/bms-objective/issues/restore
+			</column>
+			<column name="parent_id">1202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-28">
+		<insert tableName="business_object">
+			<column name="id">121</column>
+			<column name="action" />
+			<column name="display_order">2</column>
+			<column name="display_tag">Settings</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Settings</column>
+			<column name="url" />
+			<column name="parent_id">12</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-18">
+		<insert tableName="business_object">
+			<column name="id">1210</column>
+			<column name="action">/bms-objective/customProperty/listwithforms
+			</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Custom Property</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Custom Property</column>
+			<column name="url">/bms-objective/customProperty/listwithforms
+			</column>
+			<column name="parent_id">121</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-19">
+		<insert tableName="business_object">
+			<column name="id">12100</column>
+			<column name="action">/bms-objective/customProperty/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/bms-objective/customProperty/create</column>
+			<column name="parent_id">1210</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-20">
+		<insert tableName="business_object">
+			<column name="id">12101</column>
+			<column name="action">/bms-objective/customProperty/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/bms-objective/customProperty/update</column>
+			<column name="parent_id">1210</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-21">
+		<insert tableName="business_object">
+			<column name="id">12102</column>
+			<column name="action">/bms-objective/customProperty/activatedeactivate
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/bms-objective/customProperty/activatedeactivate
+			</column>
+			<column name="parent_id">1210</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180321-22">
+		<insert tableName="business_object">
+			<column name="id">12103</column>
+			<column name="action">/bms-objective/customProperty/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/bms-objective/customProperty/delete,/bms-objective/customProperty/restore
+			</column>
+			<column name="parent_id">1210</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

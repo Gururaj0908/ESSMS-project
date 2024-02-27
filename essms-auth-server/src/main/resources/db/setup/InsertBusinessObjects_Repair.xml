@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180327-1">
+		<insert tableName="business_object">
+			<column name="id">5</column>
+			<column name="action" />
+			<column name="display_order">4</column>
+			<column name="display_tag">Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">2</column>
+			<column name="object_name">Repair</column>
+			<column name="url" />
+			<column name="parent_id">1</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-1">
+		<insert tableName="business_object">
+			<column name="id">500</column>
+			<column name="action" />
+			<column name="display_order">1</column>
+			<column name="display_tag">Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Repair</column>
+			<column name="url" />
+			<column name="parent_id">5</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-2">
+		<insert tableName="business_object">
+			<column name="id">5000</column>
+			<column name="action">/ssms-repair/repair/pending/assign</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Pending Assign</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending Assign</column>
+			<column name="url">/ssms-repair/repair/pending/assign</column>
+			<column name="parent_id">500</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-3">
+		<insert tableName="business_object">
+			<column name="id">50000</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Assign</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Assign</column>
+			<column name="url"></column>
+			<column name="parent_id">5000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-4">
+		<insert tableName="business_object">
+			<column name="id">5001</column>
+			<column name="action">/ssms-repair/repair/pending/observation</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Pending Observation</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending Observation</column>
+			<column name="url">/ssms-repair/repair/pending/observation</column>
+			<column name="parent_id">500</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-5">
+		<insert tableName="business_object">
+			<column name="id">50010</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Observe</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Observe</column>
+			<column name="url"></column>
+			<column name="parent_id">5001</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-6">
+		<insert tableName="business_object">
+			<column name="id">5002</column>
+			<column name="action">/ssms-repair/repair/customer/forapproval</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Pending Cust. Approval</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending Cust. Approval</column>
+			<column name="url">/ssms-repair/repair/customer/forapproval</column>
+			<column name="parent_id">500</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-7">
+		<insert tableName="business_object">
+			<column name="id">50020</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url"></column>
+			<column name="parent_id">5002</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-8">
+		<insert tableName="business_object">
+			<column name="id">5003</column>
+			<column name="action">/ssms-repair/repair/pending</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Pending for Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Pending for Repair</column>
+			<column name="url">/ssms-repair/repair/pending</column>
+			<column name="parent_id">500</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-9">
+		<insert tableName="business_object">
+			<column name="id">50030</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Repair</column>
+			<column name="url"></column>
+			<column name="parent_id">5003</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180420-10">
+		<insert tableName="business_object">
+			<column name="id">50031</column>
+			<column name="action"></column>
+			<column name="display_order">2</column>
+			<column name="display_tag">ReObserve</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ReObserve</column>
+			<column name="url"></column>
+			<column name="parent_id">5003</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-1">
+		<insert tableName="business_object">
+			<column name="id">201</column>
+			<column name="action" />
+			<column name="display_order">2</column>
+			<column name="display_tag">Reasons</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Reasons</column>
+			<column name="url" />
+			<column name="parent_id">2</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-2">
+		<insert tableName="business_object">
+			<column name="id">2010</column>
+			<column name="action">/ssms-repair/rerepairreason/listwithforms</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Re-Repair</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Re-Repair</column>
+			<column name="url">/ssms-repair/rerepairreason/listwithforms</column>
+			<column name="parent_id">201</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-3">
+		<insert tableName="business_object">
+			<column name="id">20100</column>
+			<column name="action">/ssms-repair/rerepairreason/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/rerepairreason/create</column>
+			<column name="parent_id">2010</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-4">
+		<insert tableName="business_object">
+			<column name="id">20101</column>
+			<column name="action">/ssms-repair/rerepairreason/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/rerepairreason/update</column>
+			<column name="parent_id">2010</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-5">
+		<insert tableName="business_object">
+			<column name="id">20102</column>
+			<column name="action">/ssms-repair/rerepairreason/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/rerepairreason/activatedeactivate</column>
+			<column name="parent_id">2010</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-6">
+		<insert tableName="business_object">
+			<column name="id">20103</column>
+			<column name="action">/ssms-repair/rerepairreason/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/rerepairreason/delete,/ssms-repair/rerepairreason/restore
+			</column>
+			<column name="parent_id">2010</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-7">
+		<insert tableName="business_object">
+			<column name="id">2011</column>
+			<column name="action">/ssms-repair/repaircancellationreason/listwithforms
+			</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Repair Cancellation</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Repair Cancellation</column>
+			<column name="url">/ssms-repair/repaircancellationreason/listwithforms
+			</column>
+			<column name="parent_id">201</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-63">
+		<insert tableName="business_object">
+			<column name="id">20110</column>
+			<column name="action">/ssms-repair/repaircancellationreason/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/repaircancellationreason/create</column>
+			<column name="parent_id">2011</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-8">
+		<insert tableName="business_object">
+			<column name="id">20111</column>
+			<column name="action">/ssms-repair/repaircancellationreason/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/repaircancellationreason/update</column>
+			<column name="parent_id">2011</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-9">
+		<insert tableName="business_object">
+			<column name="id">20112</column>
+			<column name="action">/ssms-repair/repaircancellationreason/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/repaircancellationreason/activatedeactivate</column>
+			<column name="parent_id">2011</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-10">
+		<insert tableName="business_object">
+			<column name="id">20113</column>
+			<column name="action">/ssms-repair/repaircancellationreason/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/repaircancellationreason/delete,/ssms-repair/repaircancellationreason/restore
+			</column>
+			<column name="parent_id">2011</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-11">
+		<insert tableName="business_object">
+			<column name="id">2012</column>
+			<column name="action">/ssms-repair/replacementreason/listwithforms
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Replacement</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Replacement</column>
+			<column name="url">/ssms-repair/replacementreason/listwithforms
+			</column>
+			<column name="parent_id">201</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-12">
+		<insert tableName="business_object">
+			<column name="id">20120</column>
+			<column name="action">/ssms-repair/replacementreason/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/replacementreason/create</column>
+			<column name="parent_id">2012</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-13">
+		<insert tableName="business_object">
+			<column name="id">20121</column>
+			<column name="action">/ssms-repair/replacementreason/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/replacementreason/update</column>
+			<column name="parent_id">2012</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-14">
+		<insert tableName="business_object">
+			<column name="id">20122</column>
+			<column name="action">/ssms-repair/replacementreason/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/replacementreason/activatedeactivate</column>
+			<column name="parent_id">2012</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-15">
+		<insert tableName="business_object">
+			<column name="id">20123</column>
+			<column name="action">/ssms-repair/replacementreason/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/replacementreason/delete,/ssms-repair/replacementreason/restore
+			</column>
+			<column name="parent_id">2012</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-16">
+		<insert tableName="business_object">
+			<column name="id">202</column>
+			<column name="action" />
+			<column name="display_order">3</column>
+			<column name="display_tag">Repair Info</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Repair Info</column>
+			<column name="url" />
+			<column name="parent_id">2</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-17">
+		<insert tableName="business_object">
+			<column name="id">2020</column>
+			<column name="action">/ssms-repair/block/listwithforms</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Block</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Block</column>
+			<column name="url">/ssms-repair/block/listwithforms</column>
+			<column name="parent_id">202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-18">
+		<insert tableName="business_object">
+			<column name="id">20200</column>
+			<column name="action">/ssms-repair/block/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/block/create</column>
+			<column name="parent_id">2020</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-19">
+		<insert tableName="business_object">
+			<column name="id">20201</column>
+			<column name="action">/ssms-repair/block/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/block/update</column>
+			<column name="parent_id">2020</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-20">
+		<insert tableName="business_object">
+			<column name="id">20202</column>
+			<column name="action">/ssms-repair/block/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/block/activatedeactivate</column>
+			<column name="parent_id">2020</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-21">
+		<insert tableName="business_object">
+			<column name="id">20203</column>
+			<column name="action">/ssms-repair/block/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/block/delete,/ssms-repair/block/restore
+			</column>
+			<column name="parent_id">2020</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-22">
+		<insert tableName="business_object">
+			<column name="id">2021</column>
+			<column name="action">/ssms-repair/blockcomponent/listwithforms</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Block Component</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Block Component</column>
+			<column name="url">/ssms-repair/blockcomponent/listwithforms</column>
+			<column name="parent_id">202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-23">
+		<insert tableName="business_object">
+			<column name="id">20210</column>
+			<column name="action">/ssms-repair/blockcomponent/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/blockcomponent/create</column>
+			<column name="parent_id">2021</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-24">
+		<insert tableName="business_object">
+			<column name="id">20211</column>
+			<column name="action">/ssms-repair/blockcomponent/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/blockcomponent/update</column>
+			<column name="parent_id">2021</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-25">
+		<insert tableName="business_object">
+			<column name="id">20212</column>
+			<column name="action">/ssms-repair/blockcomponent/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/blockcomponent/activatedeactivate</column>
+			<column name="parent_id">2021</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-26">
+		<insert tableName="business_object">
+			<column name="id">20213</column>
+			<column name="action">/ssms-repair/blockcomponent/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/blockcomponent/delete,/ssms-repair/blockcomponent/restore
+			</column>
+			<column name="parent_id">2021</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-27">
+		<insert tableName="business_object">
+			<column name="id">2022</column>
+			<column name="action">/ssms-repair/phenomenon/listwithforms</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Phenomenon</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Phenomenon</column>
+			<column name="url">/ssms-repair/phenomenon/listwithforms</column>
+			<column name="parent_id">202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-28">
+		<insert tableName="business_object">
+			<column name="id">20220</column>
+			<column name="action">/ssms-repair/phenomenon/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/phenomenon/create</column>
+			<column name="parent_id">2022</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-29">
+		<insert tableName="business_object">
+			<column name="id">20221</column>
+			<column name="action">/ssms-repair/phenomenon/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/phenomenon/update</column>
+			<column name="parent_id">2022</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-30">
+		<insert tableName="business_object">
+			<column name="id">20222</column>
+			<column name="action">/ssms-repair/phenomenon/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/phenomenon/activatedeactivate</column>
+			<column name="parent_id">2022</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-31">
+		<insert tableName="business_object">
+			<column name="id">20223</column>
+			<column name="action">/ssms-repair/phenomenon/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/phenomenon/delete,/ssms-repair/phenomenon/restore
+			</column>
+			<column name="parent_id">2022</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-32">
+		<insert tableName="business_object">
+			<column name="id">2023</column>
+			<column name="action">/ssms-repair/reasoncode/listwithforms</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Repair Code</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Repair Code</column>
+			<column name="url">/ssms-repair/reasoncode/listwithforms</column>
+			<column name="parent_id">202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-33">
+		<insert tableName="business_object">
+			<column name="id">20230</column>
+			<column name="action">/ssms-repair/reasoncode/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/reasoncode/create</column>
+			<column name="parent_id">2023</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-34">
+		<insert tableName="business_object">
+			<column name="id">20231</column>
+			<column name="action">/ssms-repair/reasoncode/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/phenomenon/update</column>
+			<column name="parent_id">2023</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-35">
+		<insert tableName="business_object">
+			<column name="id">20232</column>
+			<column name="action">/ssms-repair/reasoncode/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/reasoncode/activatedeactivate</column>
+			<column name="parent_id">2023</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-36">
+		<insert tableName="business_object">
+			<column name="id">20233</column>
+			<column name="action">/ssms-repair/reasoncode/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/reasoncode/delete,/ssms-repair/reasoncode/restore
+			</column>
+			<column name="parent_id">2023</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-37">
+		<insert tableName="business_object">
+			<column name="id">2024</column>
+			<column name="action">/ssms-repair/repaircode/listwithforms</column>
+			<column name="display_order">5</column>
+			<column name="display_tag">Repair Code</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Repair Code</column>
+			<column name="url">/ssms-repair/repaircode/listwithforms</column>
+			<column name="parent_id">202</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-38">
+		<insert tableName="business_object">
+			<column name="id">20240</column>
+			<column name="action">/ssms-repair/repaircode/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/repaircode/create</column>
+			<column name="parent_id">2024</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-39">
+		<insert tableName="business_object">
+			<column name="id">20241</column>
+			<column name="action">/ssms-repair/repaircode/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/repaircode/update</column>
+			<column name="parent_id">2024</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-40">
+		<insert tableName="business_object">
+			<column name="id">20242</column>
+			<column name="action">/ssms-repair/repaircode/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/repaircode/activatedeactivate</column>
+			<column name="parent_id">2024</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-41">
+		<insert tableName="business_object">
+			<column name="id">20243</column>
+			<column name="action">/ssms-repair/repaircode/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/repaircode/delete,/ssms-repair/repaircode/restore
+			</column>
+			<column name="parent_id">2024</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-42">
+		<insert tableName="business_object">
+			<column name="id">203</column>
+			<column name="action" />
+			<column name="display_order">4</column>
+			<column name="display_tag">Outcomes</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Outcomes</column>
+			<column name="url" />
+			<column name="parent_id">2</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-43">
+		<insert tableName="business_object">
+			<column name="id">2030</column>
+			<column name="action">/ssms-repair/observationoutcome/listwithforms
+			</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Observation Outcome</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Observation Outcome</column>
+			<column name="url">/ssms-repair/observationoutcome/listwithforms
+			</column>
+			<column name="parent_id">203</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-44">
+		<insert tableName="business_object">
+			<column name="id">20300</column>
+			<column name="action">/ssms-repair/observationoutcome/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/observationoutcome/create</column>
+			<column name="parent_id">2030</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-45">
+		<insert tableName="business_object">
+			<column name="id">20301</column>
+			<column name="action">/ssms-repair/observationoutcome/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/observationoutcome/update</column>
+			<column name="parent_id">2030</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-46">
+		<insert tableName="business_object">
+			<column name="id">20302</column>
+			<column name="action">/ssms-repair/observationoutcome/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/observationoutcome/activatedeactivate</column>
+			<column name="parent_id">2030</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-47">
+		<insert tableName="business_object">
+			<column name="id">20303</column>
+			<column name="action">/ssms-repair/observationoutcome/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/observationoutcome/delete,/ssms-repair/observationoutcome/restore
+			</column>
+			<column name="parent_id">2030</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-48">
+		<insert tableName="business_object">
+			<column name="id">2031</column>
+			<column name="action">/ssms-repair/replacementoutcome/listwithforms
+			</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Replacement Outcome</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Replacement Outcome</column>
+			<column name="url">/ssms-repair/replacementoutcome/listwithforms
+			</column>
+			<column name="parent_id">203</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-49">
+		<insert tableName="business_object">
+			<column name="id">20310</column>
+			<column name="action">/ssms-repair/replacementoutcome/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/replacementoutcome/create</column>
+			<column name="parent_id">2031</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-50">
+		<insert tableName="business_object">
+			<column name="id">20311</column>
+			<column name="action">/ssms-repair/replacementoutcome/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/replacementoutcome/update</column>
+			<column name="parent_id">2031</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-51">
+		<insert tableName="business_object">
+			<column name="id">20312</column>
+			<column name="action">/ssms-repair/replacementoutcome/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/replacementoutcome/activatedeactivate</column>
+			<column name="parent_id">2031</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-52">
+		<insert tableName="business_object">
+			<column name="id">20313</column>
+			<column name="action">/ssms-repair/replacementoutcome/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/replacementoutcome/delete,/ssms-repair/replacementoutcome/restore
+			</column>
+			<column name="parent_id">2031</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-53">
+		<insert tableName="business_object">
+			<column name="id">2032</column>
+			<column name="action">/ssms-repair/cancellationoutcome/listwithforms
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Cancellation Outcome</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Cancellation Outcome</column>
+			<column name="url">/ssms-repair/cancellationoutcome/listwithforms
+			</column>
+			<column name="parent_id">203</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-54">
+		<insert tableName="business_object">
+			<column name="id">20320</column>
+			<column name="action">/ssms-repair/cancellationoutcome/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/cancellationoutcome/create</column>
+			<column name="parent_id">2032</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-55">
+		<insert tableName="business_object">
+			<column name="id">20321</column>
+			<column name="action">/ssms-repair/cancellationoutcome/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/cancellationoutcome/update</column>
+			<column name="parent_id">2032</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-56">
+		<insert tableName="business_object">
+			<column name="id">20322</column>
+			<column name="action">/ssms-repair/cancellationoutcome/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/cancellationoutcome/activatedeactivate</column>
+			<column name="parent_id">2032</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-57">
+		<insert tableName="business_object">
+			<column name="id">20323</column>
+			<column name="action">/ssms-repair/cancellationoutcome/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/cancellationoutcome/delete,/ssms-repair/cancellationoutcome/restore
+			</column>
+			<column name="parent_id">2032</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-58">
+		<insert tableName="business_object">
+			<column name="id">2033</column>
+			<column name="action">/ssms-repair/repairoutcome/listwithforms</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Repair Undertaken</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Repair Undertaken</column>
+			<column name="url">/ssms-repair/repairoutcome/listwithforms</column>
+			<column name="parent_id">203</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-59">
+		<insert tableName="business_object">
+			<column name="id">20330</column>
+			<column name="action">/ssms-repair/repairoutcome/create</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Create</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Create</column>
+			<column name="url">/ssms-repair/repairoutcome/create</column>
+			<column name="parent_id">2033</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-60">
+		<insert tableName="business_object">
+			<column name="id">20331</column>
+			<column name="action">/ssms-repair/repairoutcome/update</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Update</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Update</column>
+			<column name="url">/ssms-repair/repairoutcome/update</column>
+			<column name="parent_id">2033</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-61">
+		<insert tableName="business_object">
+			<column name="id">20332</column>
+			<column name="action">/ssms-repair/repairoutcome/activatedeactivate</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">ActivateDeactivate</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">ActivateDeactivate</column>
+			<column name="url">/ssms-repair/repairoutcome/activatedeactivate</column>
+			<column name="parent_id">2033</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-62">
+		<insert tableName="business_object">
+			<column name="id">20333</column>
+			<column name="action">/ssms-repair/repairoutcome/delete</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Delete</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Delete</column>
+			<column name="url">/ssms-repair/repairoutcome/delete,/ssms-repair/repairoutcome/restore
+			</column>
+			<column name="parent_id">2033</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180301-64">
+		<insert tableName="business_object">
+			<column name="id">10</column>
+			<column name="action" />
+			<column name="display_order">9</column>
+			<column name="display_tag">TechSheet</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">2</column>
+			<column name="object_name">TechSheet</column>
+			<column name="url" />
+			<column name="parent_id">1</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

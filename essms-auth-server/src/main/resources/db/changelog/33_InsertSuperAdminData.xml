@@ -1,0 +1,2129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="gaurav (generated)" id="159400786786-1">
+		<update tableName="business_object">
+			<column name="action">admin/dashboard</column>
+			<column name="url">/essms-admin/home/home</column>
+			<column name="route_type">3</column>
+			<where>id=3</where>
+		</update>
+	</changeSet> 
+    <changeSet author="gaurav (generated)" id="159400786786-2">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="800"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Parts Inventory"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Parts Inventory"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="6f85d65f-71f1-4273-9486-bedfbc4ca131"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="801"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="New Parts"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="New Parts"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="bb5c9781-e0ca-497d-934f-6f9e8deb7b1b"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="802"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Part Price"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Part Price"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="62dc2fa8-55e9-4a4d-8a80-178aca3c1597"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="803"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Part Consumption"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Part Consumption"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="8ec48f98-f5f2-4adc-974d-7126d7ac71dd"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="804"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="5"/>
+            <column name="display_tag" value="Part Purchase"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Part Purchase"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="3fa36f92-8f40-4264-8e1c-b9313d4d93ee"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="805"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="6"/>
+            <column name="display_tag" value="Stock Transfer"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Stock Transfer"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="9eebc845-0a99-48c3-8350-ad07abcceda2"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="800"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="801"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="802"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="803"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="804"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="805"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-3">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="900"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Product Inventory"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Product Inventory"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="070ba38e-88b8-4b31-8929-64845d23eba6"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="901"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="New Product"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="New Product"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="f2534f3a-5340-4eb9-b10f-57276c3edd2e"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="902"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Product Price"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Product Price"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="972b970d-bb53-4aa6-9cbf-4eac795729ba"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="903"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Product Consumption"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Product Consumption"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="1a7c1302-10c0-47e4-916c-c4bba1c5d036"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="904"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="5"/>
+            <column name="display_tag" value="Product Purchase"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Product Purchase"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="86392cd9-85b0-4eef-8fd1-e6efd095f0f6"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="905"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="6"/>
+            <column name="display_tag" value="Stock Transfer"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Stock Transfer"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="b6ea4bce-14d8-49f1-9c7b-76c5ecb5d210"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="900"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="901"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="902"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="903"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="904"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="905"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-4">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="906"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="7"/>
+            <column name="display_tag" value="Book Cannibalized"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="3"/>
+            <column name="object_name" value="Book Cannibalized"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="46ea43cf-2007-49a5-987d-ec82a2cc1f34"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8000"/>
+            <column name="action" value="/essms-inventory/partstock/listwithforms"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="List Inventory"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="List Inventory"/>
+            <column name="url" value="/essms-inventory/partstock/listwithforms"/>
+            <column name="parent_id" valueNumeric="800"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="8cd36b87-6e0c-4369-b4f1-b4d46b84a7e8"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8001"/>
+            <column name="action" value="/essms-inventory/part/listwithforms"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Search Part List"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Search Part List"/>
+            <column name="url" value="/essms-inventory/part/listwithforms"/>
+            <column name="parent_id" valueNumeric="800"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="49ee830c-b0c0-447a-a416-24536c997482"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80000"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Add To Purchase Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Add To Purchase Cart"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="e0f3b989-da0b-4aec-b602-583eda703785"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80001"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Add To Sale Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Add To Sale Cart"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="235f2c58-da5c-49db-a574-985d76c45388"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80002"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Add To Investor Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Add To Investor Cart"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="268d916a-0383-41e4-ad11-a832292055c8"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80003"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Quotation"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Quotation"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="8264ce90-428c-4405-b786-5c07b710cc13"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80004"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="5"/>
+            <column name="display_tag" value="Book Consumption"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Book Consumption"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="7b030f30-9200-4134-bd11-e674b312d069"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80005"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="6"/>
+            <column name="display_tag" value="Stock Transfer"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Stock Transfer"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="ddb25800-33c6-4ed5-ab64-3ec6762c2a8c"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80006"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="7"/>
+            <column name="display_tag" value="Stock Request"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Stock Request"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="8fb25314-4bd2-4328-b6d3-cad5e30a1b77"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80007"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="8"/>
+            <column name="display_tag" value="Edit"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Edit"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="8000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="dc38401c-52b4-4974-8d0e-eba83c1265eb"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80010"/>
+            <column name="action" value="/essms-inventory/part/create"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Create"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Create"/>
+            <column name="url" value="/essms-inventory/part/create"/>
+            <column name="parent_id" valueNumeric="8001"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="b41321a8-c197-412f-a14d-6e8ae244a537"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80011"/>
+            <column name="action" value="/essms-inventory/part/update"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Update"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Update"/>
+            <column name="url" value="/essms-inventory/part/update"/>
+            <column name="parent_id" valueNumeric="8001"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="4f1631d0-aab0-4c93-b618-a51039de7bbd"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80012"/>
+            <column name="action" value="/essms-inventory/part/activatedeactivate"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="ActivateDeactivate"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="ActivateDeactivate"/>
+            <column name="url" value="/essms-inventory/part/activatedeactivate"/>
+            <column name="parent_id" valueNumeric="8001"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="4f1631d0-aab0-4c93-b618-a51039de7bbd"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="80013"/>
+            <column name="action" value="/essms-inventory/part/delete"/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Delete"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Delete"/>
+            <column name="url" value="/essms-inventory/part/delete,/essms-inventory/part/restore"/>
+            <column name="parent_id" valueNumeric="8001"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="4f1631d0-aab0-4c93-b618-a51039de7bbd"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="906"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8000"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8001"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80000"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80001"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80002"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80003"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80004"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80005"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80006"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80007"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80010"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80011"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80012"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="80013"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-5">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8010"/>
+            <column name="action" value="/essms-inventory/part/form"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Define New Part"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Define New Part"/>
+            <column name="url" value="/essms-inventory/part/form"/>
+            <column name="parent_id" valueNumeric="801"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="6fe11ff8-8dd4-4ee8-be9a-672d701e4e08"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8011"/>
+            <column name="action" value="/essms-inventory/addstock/form/PART"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Add Parts"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Add Parts"/>
+            <column name="url" value="/essms-inventory/addstock/form/PART"/>
+            <column name="parent_id" valueNumeric="801"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="f2095135-c1ae-4247-bd58-afc1758147a4"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8010"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8011"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-6">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9000"/>
+            <column name="action" value="/essms-inventory/productstock/listwithforms"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="List Inventory"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="List Inventory"/>
+            <column name="url" value="/essms-inventory/productstock/listwithforms"/>
+            <column name="parent_id" valueNumeric="900"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="5ac1a091-4e0a-4bf2-ae7d-568e1470f28a"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9001"/>
+            <column name="action" value="/essms-inventory/product/listwithforms"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Search Product List"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Search Product List"/>
+            <column name="url" value="/essms-inventory/product/listwithforms"/>
+            <column name="parent_id" valueNumeric="900"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="0acd421c-0c5a-47f6-b237-8947acc0f3e1"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90000"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Add To Purchase Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Add To Purchase Cart"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="03eaa358-765b-4aa4-bcbf-3e81a8f35978"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90001"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Add To Sale Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Add To Sale Cart"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="73260e17-d77f-423c-a83c-92b581b28dcd"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90002"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Add To Investor Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Add To Investor Cart"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="207c0ab8-08f3-4902-bd71-a2a7369385e6"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90003"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Quotation"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Quotation"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="3e43a379-6a44-4e72-88b2-6df8b5cf5642"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90004"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="5"/>
+            <column name="display_tag" value="Book Consumption"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Book Consumption"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="6b52cb10-1605-4d8f-af53-e6af523e1b97"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90005"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="6"/>
+            <column name="display_tag" value="Book Cannibalization"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Book Cannibalization"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="821032af-da82-46d1-bd54-8f3059878ef6"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90006"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="7"/>
+            <column name="display_tag" value="Stock Transfer"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Stock Transfer"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="ff9074bf-f911-4d0e-93da-8b8aa6cc0630"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90007"/>
+            <column name="action" value=""/>
+            <column name="display_order" valueNumeric="8"/>
+            <column name="display_tag" value="Edit"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Edit"/>
+            <column name="url" value=""/>
+            <column name="parent_id" valueNumeric="9000"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="561b509c-be7a-44c2-8f7c-42d4418b442c"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90010"/>
+            <column name="action" value="/essms-inventory/product/create"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Create"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Create"/>
+            <column name="url" value="/essms-inventory/product/create"/>
+            <column name="parent_id" valueNumeric="9001"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="95a23a4c-d2a4-44ee-9657-1e510332a7cc"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90011"/>
+            <column name="action" value="/essms-inventory/product/update"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Update"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Update"/>
+            <column name="url" value="/essms-inventory/product/update"/>
+            <column name="parent_id" valueNumeric="9001"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="95a23a4c-d2a4-44ee-9657-1e510332a7cc"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90012"/>
+            <column name="action" value="/essms-inventory/product/activatedeactivate"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="ActivateDeactivate"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="ActivateDeactivate"/>
+            <column name="url" value="/essms-inventory/product/activatedeactivate"/>
+            <column name="parent_id" valueNumeric="9001"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="788288b2-754b-4770-a311-55d73069fb11"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="90013"/>
+            <column name="action" value="/essms-inventory/product/delete"/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Delete"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="5"/>
+            <column name="object_name" value="Delete"/>
+            <column name="url" value="/essms-inventory/product/delete,/essms-inventory/product/restore"/>
+            <column name="parent_id" valueNumeric="9001"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="691f1cff-0e8a-4565-b190-3d54df032594"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9000"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9001"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90000"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90001"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90002"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90003"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90004"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90005"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90006"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90007"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90010"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="90011"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-7">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9010"/>
+            <column name="action" value="/essms-inventory/product/form"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Define New Product"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Define New Product"/>
+            <column name="url" value="/essms-inventory/product/form"/>
+            <column name="parent_id" valueNumeric="901"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="d7511e77-94d8-4f42-8242-b330530ffb29"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9011"/>
+            <column name="action" value="/essms-inventory/addstock/form/PRODUCT"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Add Product"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Add Product"/>
+            <column name="url" value="/essms-inventory/addstock/form/PRODUCT"/>
+            <column name="parent_id" valueNumeric="901"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="7c029b32-4003-45f3-8dbc-1dd30a0df6c3"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9010"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9011"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-8">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8020"/>
+            <column name="action" value="/essms-inventory/price/form/create/PART"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Define Price"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Define Price"/>
+            <column name="url" value="/essms-inventory/product/form"/>
+            <column name="parent_id" valueNumeric="802"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="59aea305-b64d-4244-a2fe-adba2be4b147"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8021"/>
+            <column name="action" value="/essms-inventory/price/listwithforms/PART"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Edit Price Definition"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Edit Price Definition"/>
+            <column name="url" value="/essms-inventory/price/listwithforms/PART"/>
+            <column name="parent_id" valueNumeric="802"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="bc52364c-3e21-406f-9157-03dd6e93f382"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8022"/>
+            <column name="action" value="/essms-inventory/priceformulae/part/form"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Upload Price File"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Upload Price File"/>
+            <column name="url" value="/essms-inventory/priceformulae/part/form"/>
+            <column name="parent_id" valueNumeric="802"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="dc765efb-8738-4b35-a9b3-f5c4feecd80c"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8023"/>
+            <column name="action" value="/essms-inventory/priceformulae/listwithforms/PART"/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="View Price Code"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="View Price Code"/>
+            <column name="url" value="/essms-inventory/priceformulae/listwithforms/PART"/>
+            <column name="parent_id" valueNumeric="802"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="a5e04b8d-084f-4dbd-b8cb-e076bed16a02"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8020"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8021"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8022"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8023"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-9">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9020"/>
+            <column name="action" value="/essms-inventory/price/form/create/PRODUCT"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Define Price"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Define Price"/>
+            <column name="url" value="/essms-inventory/price/form/create/PRODUCT"/>
+            <column name="parent_id" valueNumeric="902"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="194e5071-a0c1-43d1-bb66-de42589da5c3"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9021"/>
+            <column name="action" value="/essms-inventory/price/listwithforms/PRODUCT"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Edit Price Definition"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Edit Price Definition"/>
+            <column name="url" value="/essms-inventory/price/listwithforms/PRODUCT"/>
+            <column name="parent_id" valueNumeric="902"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="681ac251-0329-4b08-be22-83f3d687c570"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9022"/>
+            <column name="action" value="/essms-inventory/priceformulae/product/form"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Define Price Formula"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Define Price Formula"/>
+            <column name="url" value="/essms-inventory/priceformulae/product/form"/>
+            <column name="parent_id" valueNumeric="902"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="61de6d40-d5b5-4c59-a54d-4429212e64e6"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9023"/>
+            <column name="action" value="/essms-inventory/priceformulae/listwithforms/PRODUCT"/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="View Price Formula"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="View Price Formula"/>
+            <column name="url" value="/essms-inventory/priceformulae/listwithforms/PRODUCT"/>
+            <column name="parent_id" valueNumeric="902"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="591048b2-cfed-4411-860c-0a99219ed2a2"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9020"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9021"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9022"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9023"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-10">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8030"/>
+            <column name="action" value="/essms-admin/customer/bookconsumption/listwithforms/PART"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Book Consumption"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Book Consumption"/>
+            <column name="url" value="/essms-admin/customer/bookconsumption/listwithforms/PART"/>
+            <column name="parent_id" valueNumeric="803"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="edc4a0e1-28c2-440e-8d79-5b17a368cd44"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8031"/>
+            <column name="action" value="/essms-inventory/cartitem/list2/SALE/PART"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Quick Sale Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Quick Sale Cart"/>
+            <column name="url" value="/essms-inventory/cartitem/list2/SALE/PART"/>
+            <column name="parent_id" valueNumeric="803"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="b3d48beb-ab64-4cec-9108-e934b23e5f7a"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8032"/>
+            <column name="action" value="/essms-inventory/order/statusorallocation/step1/PART"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Status/Allocation"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Status/Allocation"/>
+            <column name="url" value="/essms-inventory/order/statusorallocation/step1/PART"/>
+            <column name="parent_id" valueNumeric="803"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="e3acea97-edb6-41b1-9339-b27f852d6bc8"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8030"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8031"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8032"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-11">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9030"/>
+            <column name="action" value="/essms-admin/customer/bookconsumption/listwithforms/PRODUCT"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Book Consumption"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Book Consumption"/>
+            <column name="url" value="/essms-admin/customer/bookconsumption/listwithforms/PRODUCT"/>
+            <column name="parent_id" valueNumeric="903"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="60e40c97-ae67-4a8c-9e3d-d6d88c0d6492"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9031"/>
+            <column name="action" value="/essms-inventory/cartitem/list2/SALE/PRODUCT"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="E-Quick Sale Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="E-Quick Sale Cart"/>
+            <column name="url" value="/essms-inventory/cartitem/list2/SALE/PRODUCT"/>
+            <column name="parent_id" valueNumeric="903"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="5ad11595-7f27-4db8-a2fc-fb687d9a06df"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9032"/>
+            <column name="action" value="/essms-inventory/order/statusorallocation/step1/PRODUCT"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Status/Allocation"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Status/Allocation"/>
+            <column name="url" value="/essms-inventory/order/statusorallocation/step1/PRODUCT"/>
+            <column name="parent_id" valueNumeric="903"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="8bc91ab6-4c4d-43a6-a4cb-5543ba238162"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9030"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9031"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9032"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-12">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8040"/>
+            <column name="action" value="/essms-inventory/bookpurchase/form/PART"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Book Purchase"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Book Purchase"/>
+            <column name="url" value="/essms-inventory/bookpurchase/form/PART"/>
+            <column name="parent_id" valueNumeric="804"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="26e323e7-1584-4def-bf5b-2de170b97b92"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8041"/>
+            <column name="action" value="/essms-inventory/cartitem/list2/PURCHASE/PART"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Temporary Purchase Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Temporary Purchase Cart"/>
+            <column name="url" value="/essms-inventory/cartitem/list2/PURCHASE/PART"/>
+            <column name="parent_id" valueNumeric="804"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="a4c39009-d817-4493-85a8-8a544ee6d18c"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8042"/>
+            <column name="action" value="/essms-inventory/order/pending/PART"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Pending Purchase"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Pending Purchase"/>
+            <column name="url" value="/essms-inventory/order/pending/PART"/>
+            <column name="parent_id" valueNumeric="804"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="f6e0cf97-e29f-4f20-801b-d726bb0e0cdb"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8043"/>
+            <column name="action" value="/essms-inventory/purchaseorder/status/PART"/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Order Status"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Order Status"/>
+            <column name="url" value="/essms-inventory/purchaseorder/status/PART"/>
+            <column name="parent_id" valueNumeric="804"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="94aaea56-df19-4bd4-97ac-389030e06690"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8040"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8041"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8042"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8043"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-13">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9040"/>
+            <column name="action" value="/essms-inventory/bookpurchase/form/PRODUCT"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Book Purchase"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Book Purchase"/>
+            <column name="url" value="/essms-inventory/bookpurchase/form/PRODUCT"/>
+            <column name="parent_id" valueNumeric="904"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="41d158db-4589-422c-939e-7f5559e8c752"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9041"/>
+            <column name="action" value="/essms-inventory/cartitem/list2/PURCHASE/PRODUCT"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Temporary Purchase Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Temporary Purchase Cart"/>
+            <column name="url" value="/essms-inventory/cartitem/list2/PURCHASE/PRODUCT"/>
+            <column name="parent_id" valueNumeric="904"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="bee58bea-7eb7-4b7c-b5b9-0d3b8a1b0a9c"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9042"/>
+            <column name="action" value="/essms-inventory/order/pending/PRODUCT"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Pending Purchase"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Pending Purchase"/>
+            <column name="url" value="/essms-inventory/order/pending/PRODUCT"/>
+            <column name="parent_id" valueNumeric="904"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="eaf91f90-0392-4b29-930e-ff09c510674a"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9043"/>
+            <column name="action" value="/essms-inventory/purchaseorder/status/PRODUCT"/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Order Status"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Order Status"/>
+            <column name="url" value="/essms-inventory/purchaseorder/status/PRODUCT"/>
+            <column name="parent_id" valueNumeric="904"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="df5ec87b-f2f4-4888-adad-ce2d07cdd8f4"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9040"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9041"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9042"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9043"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-14">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8050"/>
+            <column name="action" value="/essms-inventory/stocktransfer/cartitem/list/PART"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="E-Stock Transfer Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="E-Stock Transfer Cart"/>
+            <column name="url" value="/essms-inventory/stocktransfer/cartitem/list/PART"/>
+            <column name="parent_id" valueNumeric="805"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="5c025766-9893-4498-ab3e-42b75c0b311b"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8051"/>
+            <column name="action" value="/essms-inventory/stocktransfer/cartitem/requestcart/list/PART"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="E-Stock Request Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="E-Stock Request Cart"/>
+            <column name="url" value="/essms-inventory/stocktransfer/cartitem/requestcart/list/PART"/>
+            <column name="parent_id" valueNumeric="805"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="ae31e524-e81d-4b1a-bdd9-86c22c2980f2"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8052"/>
+            <column name="action" value="/essms-inventory/stocktransfer/cartitem/confirmation/list/PART"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Stock Transfer Confirmation"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Stock Transfer Confirmation"/>
+            <column name="url" value="/essms-inventory/stocktransfer/cartitem/confirmation/list/PART"/>
+            <column name="parent_id" valueNumeric="805"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="ce2ab6a2-af56-4533-bdfb-8b4050b9f271"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="8053"/>
+            <column name="action" value="/essms-inventory/stocktransfer/cartitem/transferdisplay/list/PART"/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Stock Transfer Display"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Stock Transfer Display"/>
+            <column name="url" value="/essms-inventory/stocktransfer/cartitem/transferdisplay/list/PART"/>
+            <column name="parent_id" valueNumeric="805"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="d7da24fc-bd4b-4685-8bd7-b38aaf67d188"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8050"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8051"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8052"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="8053"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-15">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9050"/>
+            <column name="action" value="/essms-inventory/stocktransfer/cartitem/list/PRODUCT"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="E-Stock Transfer Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="E-Stock Transfer Cart"/>
+            <column name="url" value="/essms-inventory/stocktransfer/cartitem/list/PRODUCT"/>
+            <column name="parent_id" valueNumeric="905"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="9ecde7ed-6a87-463d-bfa6-5e6d343a3559"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9051"/>
+            <column name="action" value="/essms-inventory/stocktransfer/cartitem/requestcart/list/PRODUCT"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="E-Stock Request Cart"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="E-Stock Request Cart"/>
+            <column name="url" value="/essms-inventory/stocktransfer/cartitem/requestcart/list/PRODUCT"/>
+            <column name="parent_id" valueNumeric="905"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="ed6e9e62-e81c-49f8-86a9-c86ac2d9e700"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9052"/>
+            <column name="action" value="/essms-inventory/stocktransfer/cartitem/confirmation/list/PRODUCT"/>
+            <column name="display_order" valueNumeric="3"/>
+            <column name="display_tag" value="Stock Transfer Confirmation"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Stock Transfer Confirmation"/>
+            <column name="url" value="/essms-inventory/stocktransfer/cartitem/confirmation/list/PRODUCT"/>
+            <column name="parent_id" valueNumeric="905"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="e8eeefa9-685e-4edd-92ad-a9862aae30d4"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9053"/>
+            <column name="action" value="/essms-inventory/stocktransfer/cartitem/transferdisplay/list/PRODUCT"/>
+            <column name="display_order" valueNumeric="4"/>
+            <column name="display_tag" value="Stock Transfer Display"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Stock Transfer Display"/>
+            <column name="url" value="/essms-inventory/stocktransfer/cartitem/transferdisplay/list/PRODUCT"/>
+            <column name="parent_id" valueNumeric="905"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="af58d48c-10b5-4519-b743-c09013ab6fb6"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9050"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9051"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9052"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9053"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="159400786786-16">
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="9060"/>
+            <column name="action" value="/essms-inventory/cannabalize/product/list"/>
+            <column name="display_order" valueNumeric="1"/>
+            <column name="display_tag" value="Cannibalized Product List"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Cannibalized Product List"/>
+            <column name="url" value="/essms-inventory/cannabalize/product/list"/>
+            <column name="parent_id" valueNumeric="906"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="67989e03-c01f-4ecb-ae0b-a0f24c307ca9"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="2091"/>
+            <column name="action" value="/essms-notification/email/config/form"/>
+            <column name="display_order" valueNumeric="2"/>
+            <column name="display_tag" value="Email Configuration"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Email Configuration"/>
+            <column name="url" value="/essms-notification/email/config/form"/>
+            <column name="parent_id" valueNumeric="209"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="031ca8fe-60b0-4f79-8141-b9dacf19d9a2"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="2096"/>
+            <column name="action" value="/essms-inventory/itemdetail/list"/>
+            <column name="display_order" valueNumeric="7"/>
+            <column name="display_tag" value="Item Detail"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Item Detail"/>
+            <column name="url" value="/essms-inventory/itemdetail/list"/>
+            <column name="parent_id" valueNumeric="209"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="f06fcb81-b3cd-4b90-8791-427d160f743d"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="2097"/>
+            <column name="action" value="/essms-admin/tenant/theme/configuration/form"/>
+            <column name="display_order" valueNumeric="8"/>
+            <column name="display_tag" value="Tenant Theme Config"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Tenant Theme Config"/>
+            <column name="url" value="/essms-admin/tenant/theme/configuration/form"/>
+            <column name="parent_id" valueNumeric="209"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="2"/>
+            <column name="guid" value="eb6f9c21-8a2f-4d10-aef5-3c9f9c48b17b"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="2098"/>
+            <column name="action" value="/essms-admin/systemevent/listwithforms"/>
+            <column name="display_order" valueNumeric="9"/>
+            <column name="display_tag" value="System Event Config"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="System Event Config"/>
+            <column name="url" value="/essms-admin/systemevent/listwithforms"/>
+            <column name="parent_id" valueNumeric="209"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="a6d64f96-a474-4181-9001-fd4494286083"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="business_object">
+            <column name="id" valueNumeric="2078"/>
+            <column name="action" value="/essms-inventory/barcode/list/print"/>
+            <column name="display_order" valueNumeric="9"/>
+            <column name="display_tag" value="Manage Barcode"/>
+            <column name="is_deleted" valueBoolean="false"/>
+            <column name="is_hidden" valueBoolean="false"/>
+            <column name="object_level" valueNumeric="4"/>
+            <column name="object_name" value="Manage Barcode"/>
+            <column name="url" value="/essms-inventory/barcode/list/print"/>
+            <column name="parent_id" valueNumeric="207"/>
+            <column name="icon"/>
+            <column name="route_type" valueNumeric="0"/>
+            <column name="guid" value="8da997bb-8a51-4ae1-a8e7-43754c4e48b2"/>
+            <column name="display_on_mobile" valueBoolean="true"/>
+            <column name="is_selectable" valueBoolean="true"/>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="9060"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="2091"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="2096"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="2097"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="2098"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+        <insert tableName="user_permission">
+            <column name="created_by" value="SYSTEM"/>
+            <column name="created_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="last_modified_by" value="SYSTEM"/>
+            <column name="last_modified_date" valueDate="2018-07-17 15:07:37.148"/>
+            <column name="user_guid" value="5609c6a9-3629-40cc-852e-1ba41bbf4aeb"/>
+            <column name="business_object_id" valueNumeric="2078"/>
+            <column name="branch_guid">ddbea950-043e-4459-a416-85694eba0631</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

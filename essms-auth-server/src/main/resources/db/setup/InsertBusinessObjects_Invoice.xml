@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="Kumar Gaurav" id="20180424-1">
+		<insert tableName="business_object">
+			<column name="id">6</column>
+			<column name="action" />
+			<column name="display_order">5</column>
+			<column name="display_tag">Invoice</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">2</column>
+			<column name="object_name">Invoice</column>
+			<column name="url" />
+			<column name="parent_id">1</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-2">
+		<insert tableName="business_object">
+			<column name="id">600</column>
+			<column name="action" />
+			<column name="display_order">1</column>
+			<column name="display_tag">Invoice</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">3</column>
+			<column name="object_name">Invoice</column>
+			<column name="url" />
+			<column name="parent_id">6</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-3">
+		<insert tableName="business_object">
+			<column name="id">6000</column>
+			<column name="action">/ssms-invoice/invoice/repair/listwithforms
+			</column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Repair Invoice</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Receive</column>
+			<column name="url">/ssms-invoice/invoice/repair/listwithforms
+			</column>
+			<column name="parent_id">600</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-4">
+		<insert tableName="business_object">
+			<column name="id">60000</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Prepare Invoice</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Prepare Invoice</column>
+			<column name="url"></column>
+			<column name="parent_id">6000</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-5">
+		<insert tableName="business_object">
+			<column name="id">6001</column>
+			<column name="action">/ssms-invoice/invoice/product/listwithforms
+			</column>
+			<column name="display_order">2</column>
+			<column name="display_tag">Product Invoice</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Product Invoice</column>
+			<column name="url">/ssms-invoice/invoice/product/listwithforms
+			</column>
+			<column name="parent_id">600</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-6">
+		<insert tableName="business_object">
+			<column name="id">60010</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Next</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Next</column>
+			<column name="url"></column>
+			<column name="parent_id">6001</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-7">
+		<insert tableName="business_object">
+			<column name="id">6002</column>
+			<column name="action">/ssms-invoice/invoice/part/listwithforms
+			</column>
+			<column name="display_order">3</column>
+			<column name="display_tag">Part Invoice</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Part Invoice</column>
+			<column name="url">/ssms-invoice/invoice/part/listwithforms
+			</column>
+			<column name="parent_id">600</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-8">
+		<insert tableName="business_object">
+			<column name="id">60020</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Next</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Next</column>
+			<column name="url"></column>
+			<column name="parent_id">6002</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-9">
+		<insert tableName="business_object">
+			<column name="id">6003</column>
+			<column name="action">/ssms-invoice/invoice/listwithforms
+			</column>
+			<column name="display_order">4</column>
+			<column name="display_tag">Repair Invoice</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">false</column>
+			<column name="object_level">4</column>
+			<column name="object_name">Receive</column>
+			<column name="url">/ssms-invoice/invoice/listwithforms
+			</column>
+			<column name="parent_id">600</column>
+		</insert>
+	</changeSet>
+	<changeSet author="Kumar Gaurav" id="20180424-10">
+		<insert tableName="business_object">
+			<column name="id">60030</column>
+			<column name="action"></column>
+			<column name="display_order">1</column>
+			<column name="display_tag">Edit</column>
+			<column name="is_deleted">false</column>
+			<column name="is_hidden">true</column>
+			<column name="object_level">5</column>
+			<column name="object_name">Edit</column>
+			<column name="url"></column>
+			<column name="parent_id">6003</column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

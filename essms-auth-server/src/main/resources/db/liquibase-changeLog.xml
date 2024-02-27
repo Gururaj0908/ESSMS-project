@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<!--
+	<include file="changelog/01_CreateInitialTables.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/02_InsertBusinessObjects_1.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/03_InsertBusinessObjects_2.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/04_InsertBusinessObjects_MBO_1.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/05_SetupAdmin.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/06_SetupAdmin_MBO_1.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/07_InsertBusinessObjects_menutree.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/08_SetupAdmin_menutree.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/09_AlterTableSystemUser.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/10_InsertBusinessObjects_3.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/11_InsertBusinessObjects_4.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/12_AlterSystemUser.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/13_InsertBusinessObjects_5.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/14_InsertRole_SystemDefined.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/15_AlterBOnInsertRole_SystemDefined.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/16_AlterTableBusinessObject.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/17_CreateTableTenantConfiguration.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/18_AlterBusinessObject.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/19_EmailResetTable.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/20_AlterTenantConfiguration.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/21_CreateTableAuditLog.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/22_AlterTableSystemUser.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/23_AlterTableAuditLog.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/24_AlterTableBusinessObject.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/25_AlterTableBusinessObject2.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/26_AlterTableSystemUserNEmailReset.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/27_AlterTableEmailReset.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/28_AlterTableSyetemUser.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/29_AlterTableRole.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/30_AlterTableSystemUser.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/31_CreateBranchNUserBranch.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/32_AlterUserPermission.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/33_InsertSuperAdminData.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/34_InsertSuperAdminData.xml" relativeToChangelogFile="true"/>
+	-->
+	<include file="changelog/35_CountryBusinessObject.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
