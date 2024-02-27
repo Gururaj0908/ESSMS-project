@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Kumar Gaurav (generated)" id="1540866167521-3">
+        <createTable tableName="branch_event">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="branch_event_pkey"/>
+            </column>
+            <column name="count" type="BIGINT"/>
+            <column name="branch_id" type="BIGINT"/>
+            <column name="system_event_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540866167521-4">
+        <createTable tableName="system_event">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="system_event_pkey"/>
+            </column>
+            <column name="display_order" type="INT"/>
+            <column name="menu_category" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="route_type" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="system_event_type" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="url" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540866167521-5">
+        <addUniqueConstraint columnNames="system_event_type" constraintName="uk_9vjs7ogj6t56kboq42l3rj232" tableName="system_event"/>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540866167521-6">
+        <addForeignKeyConstraint baseColumnNames="branch_id" baseTableName="branch_event" constraintName="fk1hoqiwrt1ec0klyvoup4plfey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="branch"/>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540866167521-7">
+        <addForeignKeyConstraint baseColumnNames="system_event_id" baseTableName="branch_event" constraintName="fk98fdw9x01gmyvelom0dqgn0a7" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="system_event"/>
+    </changeSet>
+</databaseChangeLog>

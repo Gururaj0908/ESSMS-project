@@ -1,0 +1,123 @@
+------------------------------------------------------------------------------
+# Application configuration
+------------------------------------------------------------------------------
+bms.tenant.id=bms
+repo.file.system.path=/home/ssms/repo/admin
+------------------------------------------------------------------------------
+# Logging levels
+------------------------------------------------------------------------------
+logging.level.org.springframework = info
+logging.level.com.netflix.eureka= OFF
+logging.level.com.netflix.discovery= OFF
+#logging.level.org.springframework.cloud.sleuth.instrument.web=DEBUG
+#logging.file=admin.log
+------------------------------------------------------------------------------
+# Spring boot Configurations
+------------------------------------------------------------------------------
+app.version=1.0.0
+spring.thymeleaf.cache = false
+#server.contextPath=/essms-admin
+#info.component=Administrator
+server.port = 9103
+server.ssl.enabled = false
+spring.application.name=essms-admin
+management.security.enabled=false
+spring.jackson.default-property-inclusion=non_null
+spring.jackson.serialization.fail-on-empty-beans=false
+spring.jackson.deserialization.fail-on-unknown-properties=false
+spring.http.multipart.max-file-size=25MB
+spring.http.multipart.max-request-size=25MB
+------------------------------------------------------------------------------
+# DataSource Configurations
+------------------------------------------------------------------------------
+default.tenant.id=default
+spring.datasource.url=jdbc:postgresql://localhost/essms_admin?currentSchema=${default.tenant.id}
+spring.datasource.username=postgres
+spring.datasource.password=root
+spring.datasource.driver-class-name=org.postgresql.Driver
+# Keep the connection alive if idle for a long time (needed in production)
+spring.datasource.test-while-idle=true
+spring.datasource.time-between-eviction-runs-millis=60000
+spring.datasource.test-on-borrow=true
+spring.datasource.validation-query=SELECT 1;
+spring.datasource.validation-interval=30000
+spring.datasource.remove-abandoned=true
+spring.datasource.remove-abandoned-timeout=60
+# max 5
+spring.datasource.tomcat.initial-size=5
+spring.datasource.tomcat.max-idle=2
+spring.datasource.tomcat.min-idle=1
+spring.datasource.tomcat.default-auto-commit=false
+liquibase.enabled=true
+------------------------------------------------------------------------------
+# = JPA / HIBERNATE
+------------------------------------------------------------------------------
+# Hibernate ddl auto (create, create-drop, update): with "update" the database
+# schema will be automatically updated accordingly to java entities found in
+# the project
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.open-in-view=false
+# Naming strategy
+spring.jpa.hibernate.naming.implicit-strategy = org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+
+# Use spring.jpa.properties.* for Hibernate native properties (the prefix is
+# stripped before adding them to the entity manager).
+
+# Allows Hibernate to generate SQL optimized for a particular DBMS
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.show_sql = false
+spring.jpa.properties.hibernate.format_sql = false
+spring.jpa.properties.hibernate.id.new_generator_mappings = true
+spring.jpa.properties.hibernate.jdbc.time_zone = UTC
+spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true
+spring.jpa.properties.hibernate.jdbc.batch_size=50
+spring.jpa.properties.hibernate.order_inserts = true
+spring.jpa.properties.hibernate.order_updates = true
+spring.jpa.properties.hibernate.jdbc.batch_versioned_data = true
+------------------------------------------------------------------------------
+# = Eureka Client Configurations
+------------------------------------------------------------------------------
+#eureka.client.enabled = false
+# Change this if you want to use a DNS based lookup for determining other eureka servers (see example below)
+eureka.shouldUseDns=false
+eureka.instance.leaseRenewalIntervalInSeconds: 1
+eureka.instance.leaseExpirationDurationInSeconds: 2
+eureka.client.serviceUrl.defaultZone=http://localhost:9101/eureka
+eureka.client.region=default
+eureka.client.healthcheck.enabled=true
+eureka.client.lease.duration=5
+eureka.client.registerWithEureka=true
+ribbon.eureka.enabled=true
+------------------------------------------------------------------------------
+# = Distributed logging Configurations
+------------------------------------------------------------------------------
+spring.sleuth.sampler.percentage=1.0
+spring.sleuth.web.skipPattern=(^cleanup.*)
+#spring.zipkin.locator.discovery.enabled=true
+#spring.zipkin.baseUrl=http://localhost:9411/
+------------------------------------------------------------------------------
+# = Rabbit MQ configuration
+------------------------------------------------------------------------------
+#spring.rabbitmq.listener.default-requeue-rejected=false
+spring.rabbitmq.listener.retry.enabled= true
+spring.rabbitmq.listener.retry.initial-interval: 2000
+spring.rabbitmq.listener.retry.max-attempts: 3
+spring.rabbitmq.listener.retry.multiplier: 1.5
+spring.rabbitmq.listener.retry.max-interval: 2000
+spring.rabbitmq.host = localhost
+spring.rabbitmq.port = 5672
+spring.rabbitmq.username = guest
+spring.rabbitmq.password = guest
+
+auth.rabbitmq.exchange.user=userExchange
+location.rabbitmq.exchange.state=stateExchange
+location.rabbitmq.exchange.city=cityExchange
+location.rabbitmq.exchange.area=areaExchange
+admin.rabbitmq.exchange.endcustomer=endCustomerExchange
+admin.rabbitmq.queue.endcustomer=endCustomer
+admin.rabbitmq.dlx.queue.endcustomer=dlxEndCustomer
+admin.rabbitmq.exchange.systemevent=systemEventExchange
+admin.rabbitmq.queue.systemevent=systemEvent
+admin.rabbitmq.dlx.queue.systemevent=dlxSystemEvent
+operation.rabbitmq.exchange.entity=entityOperationExchange
+location.rabbitmq.exchange.branch=branchExchange

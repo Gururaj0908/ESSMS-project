@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gaurav (generated)" id="1523614301786-2">
+        <createTable tableName="end_customer">
+            <column name="alt_mobile_no" type="VARCHAR(20)"/>
+            <column name="anniversary_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="birth_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="marital_status" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-3">
+        <createTable tableName="end_customer_address">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="end_customer_address_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="address_type" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_default" type="BOOL"/>
+            <column name="address_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_customer_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-4">
+        <addColumn tableName="customer">
+            <column name="email_id" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-5">
+        <addColumn tableName="customer">
+            <column name="mobile_no" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-6">
+        <addColumn tableName="customer">
+            <column name="name" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-7">
+        <addColumn tableName="customer">
+            <column name="reg_no" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-8">
+        <addColumn tableName="customer">
+            <column name="username" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-9">
+        <addPrimaryKey columnNames="id" constraintName="end_customer_pkey" tableName="end_customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-10">
+        <addUniqueConstraint columnNames="reg_no" constraintName="uk_1d7ts1arquj6pnabd30jyha5l" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-11">
+        <addUniqueConstraint columnNames="username" constraintName="uk_irnrrncatp2fvw52vp45j7rlw" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-12">
+        <addUniqueConstraint columnNames="email_id" constraintName="uk_p1nyof8six1aupbuhnlax3tkk" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-13">
+        <addForeignKeyConstraint baseColumnNames="end_customer_id" baseTableName="end_customer_address" constraintName="fk40680hmk91x612jue6kehpan5" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="end_customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-14">
+        <addForeignKeyConstraint baseColumnNames="id" baseTableName="end_customer" constraintName="fkk4og9kflordt0pwfes9w0osx3" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-15">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="end_customer_address" constraintName="fkp0jiywnrnpoju5eafyhov484e" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-16">
+        <addForeignKeyConstraint baseColumnNames="id" baseTableName="outlet" constraintName="fkpbahae2r7gp032cr3s9i695fy" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-17">
+        <dropForeignKeyConstraint baseTableName="customer_address" constraintName="fkr9ofa0ydsgbaqmt9leb3v5eii"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-18">
+        <dropForeignKeyConstraint baseTableName="customer_address" constraintName="fksvxvq2qjr406k3l7ws3i0mwy6"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-19">
+        <dropSequence sequenceName="customer_address_id_seq"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-20">
+        <dropSequence sequenceName="outlet_id_seq"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-21">
+        <dropTable tableName="customer_address"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-22">
+        <dropColumn columnName="alt_mobile_no" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-23">
+        <dropColumn columnName="anniversary_date" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-24">
+        <dropColumn columnName="birth_date" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-25">
+        <dropColumn columnName="created_by" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-26">
+        <dropColumn columnName="created_date" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-27">
+        <dropColumn columnName="guid" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-28">
+        <dropColumn columnName="is_active" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-29">
+        <dropColumn columnName="is_deleted" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-30">
+        <dropColumn columnName="last_modified_by" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-31">
+        <dropColumn columnName="last_modified_date" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-32">
+        <dropColumn columnName="marital_status" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-33">
+        <dropColumn columnName="name" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-34">
+        <dropColumn columnName="userguid" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523614301786-35">
+        <modifyDataType columnName="id" newDataType="bigint" tableName="outlet"/>
+        <dropDefaultValue columnDataType="bigint" columnName="id" tableName="outlet"/>
+    </changeSet>
+</databaseChangeLog>

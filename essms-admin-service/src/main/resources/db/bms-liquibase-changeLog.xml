@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	
+	<include file="bms-changelog/01_InitialTables.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/02_AlterNAddEmployeeTable.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/03_AddNAlterCustomerOutlet.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/04_AlterVendorCustomerOutlet.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/05_AlterState.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/06_AlterTableState.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/07_CreateTableAuditLog.xml" relativeToChangelogFile="true"/>
+	<include file="bms-changelog/08_AlterTableAuditLog.xml" relativeToChangelogFile="true"/>
+	
+</databaseChangeLog>

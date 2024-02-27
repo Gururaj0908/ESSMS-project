@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	
+	<include file="changelog/01_InitialTables.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/02_AlterNAddEmployeeTable.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/03_AddNAlterCustomerOutlet.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/04_AlterVendorCustomerOutlet.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/05_AlterCustomerOutlet.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/06_DropColumnEndCustomer.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/07_AlterEmployeeDropColumnUserGUID.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/08_CreateCustomerCard.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/09_CreateNAlterCustomerCardNPreference.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/10_AlterStateNEndCustomer.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/11_AlterTableState.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/12_AlterTableStateNCustomer.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/13_CreateTableAuditLog.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/14_AlterTableAuditLog.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/15_Add_Investor_Table.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/15_CreateTableSystemNBranchEvent.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/16_AlterTableSystemEvent.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/17_AlterTableSystemEvent_2.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/18_AlterNDropTable.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/19_AlterEndCustomer.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/20_CreateTenantThemeConfig.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/21_CreateTenantConfiguration.xml" relativeToChangelogFile="true"/>
+	<include file="changelog/22_InsertMainBranch.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

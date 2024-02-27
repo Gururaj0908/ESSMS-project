@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<changeSet author="gaurav (generated)" id="1554401995082-1">
+		<insert tableName="branch">
+			<column name="guid"
+				value="ddbea950-043e-4459-a416-85694eba0631" />
+			<column name="is_active" valueBoolean="true" />
+			<column name="is_deleted" valueBoolean="false" />
+			<column name="created_by" value="SYSTEM" />
+			<column name="created_date"
+				valueDate="2018-11-12 21:35:33.669" />
+			<column name="last_modified_by" value="SYSTEM" />
+			<column name="last_modified_date"
+				valueDate="2018-11-12 21:35:33.669" />
+			<column name="code" value="MAINBRANCH" />
+			<column name="email_id" value="BRANCH@DUMMY.COM" />
+			<column name="gstin_number" value="11111111" />
+			<column name="is_service_center" valueBoolean="true" />
+			<column name="name" value="MAIN BRANCH" />
+			<column name="office_type" valueNumeric="1" />
+		</insert>
+	</changeSet>
+	<changeSet author="gaurav" id="1554401995082-2">
+		<loadData file="csv/state.csv" encoding="UTF-8"
+			relativeToChangelogFile="true" separator="," tableName="state">
+			<column header="id" name="id" type="NUMERIC" />
+			<column header="guid" name="guid" type="STRING" />
+			<column header="is_active" name="is_active" type="BOOLEAN" />
+			<column header="is_deleted" name="is_deleted" type="BOOLEAN" />
+			<column header="created_by" name="created_by" type="STRING" />
+			<column header="created_date" name="created_date" type="DATE" />
+			<column header="last_modified_by" name="last_modified_by"
+				type="STRING" />
+			<column header="last_modified_date" name="last_modified_date"
+				type="DATE" />
+			<column header="name" name="name" type="STRING" />
+			<column header="code" name="code" type="STRING" />
+			<column header="tin" name="tin" type="STRING" />
+		</loadData>
+		<loadData file="csv/city.csv" encoding="UTF-8"
+			relativeToChangelogFile="true" separator="," tableName="city">
+			<column header="id" name="id" type="NUMERIC" />
+			<column header="guid" name="guid" type="STRING" />
+			<column header="is_active" name="is_active" type="BOOLEAN" />
+			<column header="is_deleted" name="is_deleted" type="BOOLEAN" />
+			<column header="created_by" name="created_by" type="STRING" />
+			<column header="created_date" name="created_date" type="DATE" />
+			<column header="last_modified_by" name="last_modified_by"
+				type="STRING" />
+			<column header="last_modified_date" name="last_modified_date"
+				type="DATE" />
+			<column header="name" name="name" type="STRING" />
+			<column header="state_id" name="state_id" type="NUMERIC" />
+		</loadData>
+		<loadData file="csv/area.csv" encoding="UTF-8"
+			relativeToChangelogFile="true" separator="," tableName="area">
+			<column header="id" name="id" type="NUMERIC" />
+			<column header="guid" name="guid" type="STRING" />
+			<column header="is_active" name="is_active" type="BOOLEAN" />
+			<column header="is_deleted" name="is_deleted" type="BOOLEAN" />
+			<column header="created_by" name="created_by" type="STRING" />
+			<column header="created_date" name="created_date" type="DATE" />
+			<column header="last_modified_by" name="last_modified_by"
+				type="STRING" />
+			<column header="last_modified_date" name="last_modified_date"
+				type="DATE" />
+			<column header="name" name="name" type="STRING" />
+			<column header="city_id" name="city_id" type="NUMERIC" />
+		</loadData>
+	</changeSet>
+	<changeSet author="gaurav" id="1554401995082-3">
+		<loadData file="csv/system_event.csv" encoding="UTF-8"
+			relativeToChangelogFile="true" separator="," tableName="system_event">
+			<column header="id" name="id" type="NUMERIC" />
+			<column header="display_order" name="display_order"
+				type="NUMERIC" />
+			<column header="menu_category" name="menu_category"
+				type="NUMERIC" />
+			<column header="route_type" name="route_type" type="NUMERIC" />
+			<column header="system_event_type" name="system_event_type"
+				type="NUMERIC" />
+			<column header="business_object_id" name="business_object_id"
+				type="NUMERIC" />
+			<column header="created_by" name="created_by" type="STRING" />
+			<column header="created_date" name="created_date" type="DATE" />
+			<column header="guid" name="guid" type="STRING" />
+			<column header="is_active" name="is_active" type="BOOLEAN" />
+			<column header="is_deleted" name="is_deleted" type="BOOLEAN" />
+			<column header="last_modified_by" name="last_modified_by"
+				type="STRING" />
+			<column header="last_modified_date" name="last_modified_date"
+				type="DATE" />
+			<column header="detail_url" name="detail_url" type="STRING" />
+			<column header="menu_action" name="menu_action" type="STRING" />
+			<column header="total_count" name="total_count" type="NUMERIC" />
+		</loadData>
+	</changeSet>
+	<changeSet author="gaurav" id="1554401995082-4">
+		<dropSequence sequenceName="state_id_seq"/>
+		<createSequence sequenceName="state_id_seq" startValue="30"/>
+		<dropSequence sequenceName="city_id_seq"/>
+		<createSequence sequenceName="city_id_seq" startValue="153"/>
+		<dropSequence sequenceName="area_id_seq"/>
+		<createSequence sequenceName="area_id_seq" startValue="177"/>
+		<dropSequence sequenceName="branch_id_seq"/>
+		<createSequence sequenceName="branch_id_seq" startValue="2"/>
+	</changeSet>
+	<changeSet author="gaurav (generated)" id="1554401995082-5">
+        <addDefaultValue columnDataType="bigint" columnName="id" defaultValueComputed="nextval('area_id_seq')" tableName="area"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1554401995082-6">
+        <addDefaultValue columnDataType="bigint" columnName="id" defaultValueComputed="nextval('branch_id_seq')" tableName="branch"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1554401995082-7">
+        <addDefaultValue columnDataType="bigint" columnName="id" defaultValueComputed="nextval('city_id_seq')" tableName="city"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1554401995082-8">
+        <addDefaultValue columnDataType="bigint" columnName="id" defaultValueComputed="nextval('state_id_seq')" tableName="state"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gaurav (generated)" id="1553275329805-1">
+        <dropUniqueConstraint constraintName="uk_irnrrncatp2fvw52vp45j7rlw" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1553275329805-3">
+        <dropNotNullConstraint columnDataType="varchar(100)" columnName="username" tableName="customer"/>
+    </changeSet>
+</databaseChangeLog>

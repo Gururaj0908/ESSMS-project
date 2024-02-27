@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Kumar Gaurav (generated)" id="1540969604387-1">
+        <addColumn tableName="system_event">
+            <column name="business_object_id" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540969604387-2">
+        <addColumn tableName="system_event">
+            <column name="created_by" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540969604387-3">
+        <addColumn tableName="system_event">
+            <column name="created_date" type="timestamp(29, 6)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540969604387-4">
+        <addColumn tableName="system_event">
+            <column name="guid" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540969604387-5">
+        <addColumn tableName="system_event">
+            <column name="is_active" type="bool">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540969604387-6">
+        <addColumn tableName="system_event">
+            <column name="is_deleted" type="bool">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540969604387-7">
+        <addColumn tableName="system_event">
+            <column name="last_modified_by" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Kumar Gaurav (generated)" id="1540969604387-8">
+        <addColumn tableName="system_event">
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gaurav (generated)" id="1542904659349-1">
+        <dropSequence sequenceName="investor_id_seq1"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1542904659349-2">
+        <dropSequence sequenceName="system_event_count_id_seq"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1542904659349-3">
+        <dropSequence sequenceName="system_event_count_id_seq1"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1542904659349-4">
+        <dropTable tableName="system_event_count"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1542904659349-5">
+        <addDefaultValue columnDataType="bigint" columnName="id" defaultValueComputed="nextval('investor_id_seq'::regclass)" tableName="investor"/>
+    </changeSet>
+</databaseChangeLog>

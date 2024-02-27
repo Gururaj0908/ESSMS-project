@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="PC (generated)" id="1527593638625-2">
+        <createTable tableName="customer_cards">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="customer_cards_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="card_no" type="VARCHAR(20)"/>
+            <column name="expriry_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="name_of_card" type="VARCHAR(100)"/>
+            <column name="name_on_card" type="VARCHAR(100)"/>
+            <column name="end_customer_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="PC (generated)" id="1527593638625-3">
+        <addForeignKeyConstraint baseColumnNames="end_customer_id" baseTableName="customer_cards" constraintName="fkg69va060w3n19t6qr5dtmif7f" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="end_customer"/>
+    </changeSet>
+</databaseChangeLog>

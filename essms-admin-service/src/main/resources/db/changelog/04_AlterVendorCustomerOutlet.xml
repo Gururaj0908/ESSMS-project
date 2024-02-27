@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gaurav (generated)" id="1523903400000-1">
+        <dropColumn columnName="userguid" tableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523903400000-2">
+        <dropColumn columnName="userguid" tableName="vendor"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523903400000-3">
+        <dropColumn columnName="gstin_number" tableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523903400000-4">
+        <dropTable tableName="investor"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1523903400000-5">
+        <addColumn tableName="customer">
+        	<column name="gstin_number" type="varchar(20)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

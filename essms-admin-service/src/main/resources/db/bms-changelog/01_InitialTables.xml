@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gaurav (generated)" id="1522487295078-20">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="address_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="address_line1" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address_line2" type="VARCHAR(255)"/>
+            <column name="fax_no" type="VARCHAR(20)"/>
+            <column name="latitude" type="FLOAT8"/>
+            <column name="longitude" type="FLOAT8"/>
+            <column name="nearest_land_mark" type="VARCHAR(255)"/>
+            <column name="phone_no" type="VARCHAR(20)"/>
+            <column name="pin_code" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="area_id" type="BIGINT"/>
+            <column name="city_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-21">
+        <createTable tableName="area">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="area_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-22">
+        <createTable tableName="branch">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="branch_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="code" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email_id" type="VARCHAR(200)"/>
+            <column name="gstin_number" type="VARCHAR(20)"/>
+            <column name="is_service_center" type="BOOL"/>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="office_type" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-23">
+        <createTable tableName="city">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="city_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-24">
+        <createTable tableName="contact_detail">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="contact_detail_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="contact_email_id" type="VARCHAR(200)"/>
+            <column name="contact_mobile" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contact_person" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="designation" type="SMALLINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-25">
+        <createTable tableName="courier">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="courier_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="gstin_number" type="VARCHAR(20)"/>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="userguid" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-26">
+        <createTable tableName="courier_contact_detail">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="courier_contact_detail_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="contact_detail_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="courier_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-27">
+        <createTable tableName="customer">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="customer_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="alt_mobile_no" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="anniversary_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="birth_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="customer_type" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="marital_status" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="userguid" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-28">
+        <createTable tableName="customer_address">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="customer_address_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="address_type" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_default" type="BOOL"/>
+            <column name="address_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-29">
+        <createTable tableName="investor">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="investor_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="joining_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="userguid" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-30">
+        <createTable tableName="outlet">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="outlet_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="gstin_number" type="VARCHAR(20)"/>
+            <column name="name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="userguid" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="websiteurl" type="VARCHAR(100)"/>
+            <column name="address_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="service_branch_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-31">
+        <createTable tableName="outlet_contact_detail">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="outlet_contact_detail_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="is_email_enabled" type="BOOL"/>
+            <column name="issmsenabled" type="BOOL"/>
+            <column name="contact_detail_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="outlet_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-32">
+        <createTable tableName="outlet_supporting_brand">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="outlet_supporting_brand_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="brandguid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="outlet_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-33">
+        <createTable tableName="state">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="state_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-34">
+        <createTable tableName="static_data">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="static_data_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="data_text" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data_type" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data_value" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-35">
+        <createTable tableName="tenant_logo">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="tenant_logo_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="file_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="file_type" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="logo" type="VARCHAR(1000)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-36">
+        <createTable tableName="vendor">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="vendor_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="gstin_number" type="VARCHAR(20)"/>
+            <column name="name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="userguid" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vendorurl" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-37">
+        <createTable tableName="vendor_address">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="vendor_address_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="office_type" type="SMALLINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vendor_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-38">
+        <createTable tableName="vendor_contact_detail">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="vendor_contact_detail_pkey"/>
+            </column>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_active" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_deleted" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP(29) WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)"/>
+            <column name="last_modified_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="is_email_enabled" type="BOOL"/>
+            <column name="issmsenabled" type="BOOL"/>
+            <column name="contact_detail_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vendor_address_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-39">
+        <addUniqueConstraint columnNames="name" constraintName="uk_226rm1fd8fl8ewh0a7n1k8f94" tableName="area"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-40">
+        <addUniqueConstraint columnNames="name" constraintName="uk_2g0hi7w44i4sjkffh61pusaav" tableName="state"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-41">
+        <addUniqueConstraint columnNames="code" constraintName="uk_f0gwphsg8g5i4rfbyeo6vvf11" tableName="branch"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-42">
+        <addUniqueConstraint columnNames="name" constraintName="uk_qsstlki7ni5ovaariyy9u8y79" tableName="city"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-43">
+        <addForeignKeyConstraint baseColumnNames="contact_detail_id" baseTableName="vendor_contact_detail" constraintName="fk2vkbmh9h6a6f91fxvir52c2he" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="contact_detail"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-44">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="outlet" constraintName="fk5itmo2mky64wosq0ap3440eo3" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-45">
+        <addForeignKeyConstraint baseColumnNames="outlet_id" baseTableName="outlet_contact_detail" constraintName="fk66bja67vcc7lqx18pqma5y2so" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-46">
+        <addForeignKeyConstraint baseColumnNames="state_id" baseTableName="city" constraintName="fk6p2u50v8fg2y0js6djc6xanit" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="state"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-47">
+        <addForeignKeyConstraint baseColumnNames="city_id" baseTableName="area" constraintName="fk7gpdo1p011b4rddf8gbf3afqx" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="city"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-48">
+        <addForeignKeyConstraint baseColumnNames="contact_detail_id" baseTableName="courier_contact_detail" constraintName="fkbo6jth8k14orlfyygnr9akw1e" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="contact_detail"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-49">
+        <addForeignKeyConstraint baseColumnNames="vendor_address_id" baseTableName="vendor_contact_detail" constraintName="fkd1a9phedymbcb3uj95klvao6m" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="vendor_address"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-50">
+        <addForeignKeyConstraint baseColumnNames="outlet_id" baseTableName="outlet_supporting_brand" constraintName="fkdq0go7kx1ypnpowlah8cjyvpe" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="outlet"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-51">
+        <addForeignKeyConstraint baseColumnNames="contact_detail_id" baseTableName="outlet_contact_detail" constraintName="fke0sncaqu5bqvadrnxtecg910" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="contact_detail"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-52">
+        <addForeignKeyConstraint baseColumnNames="service_branch_id" baseTableName="outlet" constraintName="fkjrswp70qjwjvwxgfx5npidfav" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="branch"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-53">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="vendor_address" constraintName="fkkkb70k5cs28dm4a9brgn8ep4f" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-54">
+        <addForeignKeyConstraint baseColumnNames="vendor_id" baseTableName="vendor_address" constraintName="fkklmqbilos7bkvm3da83nw2hp2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="vendor"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-55">
+        <addForeignKeyConstraint baseColumnNames="courier_id" baseTableName="courier_contact_detail" constraintName="fkkyn8lmudjqhe3g2tvr5uhepxo" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="courier"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-56">
+        <addForeignKeyConstraint baseColumnNames="city_id" baseTableName="address" constraintName="fkpo044ng5x4gynb291cv24vtea" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="city"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-57">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="branch" constraintName="fkr5n331c13dyb3kbq1jlo53mh5" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-58">
+        <addForeignKeyConstraint baseColumnNames="customer_id" baseTableName="customer_address" constraintName="fkr9ofa0ydsgbaqmt9leb3v5eii" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="customer"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-59">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="investor" constraintName="fkrga81xovaj520possfs4q4p5f" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-60">
+        <addForeignKeyConstraint baseColumnNames="area_id" baseTableName="address" constraintName="fkrgwfi8lanaq12p2pwrvcy1j8n" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="area"/>
+    </changeSet>
+    <changeSet author="gaurav (generated)" id="1522487295078-61">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="customer_address" constraintName="fksvxvq2qjr406k3l7ws3i0mwy6" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address"/>
+    </changeSet>
+</databaseChangeLog>
